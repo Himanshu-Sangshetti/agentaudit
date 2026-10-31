@@ -152,3 +152,22 @@ def test_auditor_skip_runs_no_endpoints(tmp_path, monkeypatch):
     skip = clocked_mod.ENDPOINTS - {"decide", "pipeline"}
     rep = Auditor(NoCalls(), skip=skip).run(collect_manifest(MANIFEST))
     assert verdict_of(rep) == "approve" and rep.findings == []
+
+
+def test_registry_is_deduplicated(monkeypatch):
+    seen = {}
+
+    class Rec:
+        usage = clocked_mod.Usage()
+
+        def compare(self, **p):
+            seen["ids"] = [d["id"] for d in p["documents"]]
+            return type("C", (), {"result": {"pairs": []}})()
+
+        def decide(self, **p):
+            return type("C", (), {"result": {"answers": {"verdict": {"choice": "approve"}}}})()
+
+    a = collect_manifest(MANIFEST)
+    skip = clocked_mod.ENDPOINTS - {"compare", "decide", "pipeline"}
+    Auditor(Rec(), skip=skip).run(a, [("x", "t"), ("x", "t2"), (a.name, "self")])
+    assert seen["ids"] == [a.name, "x"]
