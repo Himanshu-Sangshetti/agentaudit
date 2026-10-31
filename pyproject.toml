@@ -1,0 +1,26 @@
+[project]
+name = "agentaudit"
+version = "0.1.0"
+description = "Pre-deployment audit for AI agents, built on Clocked"
+authors = [
+    { name = "Himanshu-Sangshetti", email = "himanshusangshetty@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "httpx>=0.28.1",
+    "numpy>=2.5.4",
+    "python-dotenv>=1.2.4",
+    "pyyaml>=6.0.3",
+    "rich>=15.0.0",
+    "scipy>=1.18.1",
+    "typer>=0.27.3",
+]
+
+[build-system]
+requires = ["uv_build>=0.11.14,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
