@@ -48,7 +48,7 @@ def run(split: str, setup: str, limit: int | None, budget: float) -> Path:
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--split", choices=["dev", "test"], required=True)
+    ap.add_argument("--split", choices=["dev", "test", "external"], required=True)
     ap.add_argument("--setup", choices=list(SETUPS), required=True)
     ap.add_argument("--limit", type=int)
     ap.add_argument("--budget", type=float, default=1500)
