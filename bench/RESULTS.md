@@ -155,3 +155,52 @@ Per source (frozen arm): mtp_pair 50/50 · registry_real 187/199
 | Clocked Inspect, default, whole file | 79.0 [70.9, 86.5] | 59.5 [43.2, 75.7] | 1.5 [0.0, 4.5] | 0.807 | 0.174 | 721 | 16.2 | reference |
 | AgentAudit pipeline ★ frozen (Guard + Inspect on code + supply-chain) | 84.4 [76.3, 91.9] | 70.3 [54.1, 83.8] | 1.5 [0.0, 4.5] | 0.987 | 0.093 | 905 | 25.5 | 4–0 rows, p=0.25 |
 |   ablation: supply-chain check alone | 82.4 [74.3, 90.5] | 64.9 [48.6, 78.4] | 0.0 [0.0, 0.0] | 0.971 | 0.106 | — | — | 3–0 rows, p=0.25 |
+
+## RQ4: governance verdicts and endpoint ablation
+
+48 agents built from real public MCP servers by a committed recipe (12 per verdict; quarantine = 4 poisoned tools from a published set, 4 Atomic Red Team scripts, 4 fake keys). Dev = every 5th agent (10); test = 38. Owner rule v2 (registry metadata); v1 shown for disclosure. Cells: agents with the correct verdict.
+
+**test (n=38)**
+
+| Arm | Accuracy | poisoned_tool | malicious_script | embedded_secret | duplicate | none |
+|---|---|---|---|---|---|---|
+| Full audit (all endpoints), default mode | 78.9 | 4/4 | 3/3 | 3/3 | 7/9 | 13/19 |
+| Full audit, precision mode | 89.5 | 4/4 | 2/3 | 3/3 | 9/9 | 16/19 |
+| Control: one Decide call over raw artifacts | 60.5 | 2/4 | 2/3 | 1/3 | 3/9 | 15/19 |
+|   without Guard | 78.9 | 0/4 | 2/3 | 3/3 | 9/9 | 16/19 |
+|   without Inspect | 73.7 | 4/4 | 1/3 | 3/3 | 7/9 | 13/19 |
+|   without Protect | 73.7 | 4/4 | 3/3 | 1/3 | 7/9 | 13/19 |
+|   without Extract | 78.9 | 4/4 | 3/3 | 3/3 | 7/9 | 13/19 |
+|   without Fill | 78.9 | 4/4 | 3/3 | 3/3 | 7/9 | 13/19 |
+|   without Verify | 78.9 | 4/4 | 3/3 | 3/3 | 7/9 | 13/19 |
+|   without Compare | 65.8 | 4/4 | 3/3 | 3/3 | 0/9 | 15/19 |
+|   without Rerank | 81.6 | 4/4 | 3/3 | 3/3 | 7/9 | 14/19 |
+| v1 (owner inferred by Fill), default mode | 65.8 | 4/4 | 3/3 | 3/3 | 7/9 | 8/19 |
+
+**all (n=48)**
+
+| Arm | Accuracy | poisoned_tool | malicious_script | embedded_secret | duplicate | none |
+|---|---|---|---|---|---|---|
+| Full audit (all endpoints), default mode | 77.1 | 4/4 | 4/4 | 4/4 | 9/12 | 16/24 |
+| Full audit, precision mode | 91.7 | 4/4 | 3/4 | 4/4 | 12/12 | 21/24 |
+| Control: one Decide call over raw artifacts | 58.3 | 2/4 | 2/4 | 1/4 | 3/12 | 20/24 |
+|   without Guard | 83.3 | 0/4 | 3/4 | 4/4 | 12/12 | 21/24 |
+|   without Inspect | 72.9 | 4/4 | 2/4 | 4/4 | 9/12 | 16/24 |
+|   without Protect | 70.8 | 4/4 | 4/4 | 1/4 | 9/12 | 16/24 |
+|   without Extract | 77.1 | 4/4 | 4/4 | 4/4 | 9/12 | 16/24 |
+|   without Fill | 77.1 | 4/4 | 4/4 | 4/4 | 9/12 | 16/24 |
+|   without Verify | 77.1 | 4/4 | 4/4 | 4/4 | 9/12 | 16/24 |
+|   without Compare | 62.5 | 4/4 | 4/4 | 4/4 | 0/12 | 18/24 |
+|   without Rerank | 79.2 | 4/4 | 4/4 | 4/4 | 9/12 | 17/24 |
+| v1 (owner inferred by Fill), default mode | 66.7 | 4/4 | 4/4 | 4/4 | 9/12 | 11/24 |
+
+Confusion matrix, full audit, default mode, all 48 (rows = truth):
+
+| | approve | needs_owner | reuse_existing | quarantine |
+|---|---|---|---|---|
+| approve | 8 | 0 | 1 | 3 |
+| needs_owner | 0 | 8 | 1 | 3 |
+| reuse_existing | 0 | 0 | 9 | 3 |
+| quarantine | 0 | 0 | 0 | 12 |
+
+Reading the ablation: drop an endpoint and the defect it covers stops being caught (Guard → poisoned tools, Inspect → scripts, Protect → secrets, Compare → duplicates). Overall accuracy can rise when Guard is removed, because its per-tool false positives also disappear; see precision mode. Extract, Fill, Verify and Rerank don't change verdicts on this set. They feed the registry record and reuse suggestions instead.
