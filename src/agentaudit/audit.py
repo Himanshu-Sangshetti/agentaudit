@@ -39,8 +39,9 @@ SECRET_ENTITIES = {
     "person": None, "email": None, "phone": None, "address": None, "ip_address": None,
     "api_key": "An API key, access token, bearer token, private key or password value (not a placeholder "
                "such as YOUR_API_KEY, <token> or ${ENV_VAR}).",
-    "internal_url": "A URL or hostname of a private or internal system (intranet, localhost services, "
-                    "internal admin panels), not a public documentation link.",
+    "internal_url": "A URL or hostname of a private company system (intranet hosts, internal admin panels, "
+                    "private cloud endpoints). Not localhost, 127.0.0.1 or other default local development "
+                    "addresses, not example.com-style placeholders, and not public documentation links.",
 }
 
 
