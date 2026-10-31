@@ -83,7 +83,7 @@ def capability_claims(agent: Agent) -> str:
     sents = re.split(r"(?<=[.!?])\s+|\n+", text)
     keep = re.compile(r"\b(only|never|read-only|readonly|does not|doesn't|won't|cannot|no (?:data|network|write)|"
                       r"secure|safe|local|privacy|private|sandbox|allows?|can|lets you|provides?|enables?)\b", re.I)
-    claims = [s.strip(" -*#>`") for s in sents if keep.search(s) and 25 < len(s) < 400 and "```" not in s]
+    claims = [s.strip(" -*#>`") for s in sents if keep.search(s) and 12 < len(s) < 400 and "```" not in s]
     return "\n".join(claims[:30])
 
 

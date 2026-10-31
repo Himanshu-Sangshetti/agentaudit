@@ -1,0 +1,12 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync
+      - run: uv run pytest -q
+      - name: Scan this repo's own demo agent offline (no key: collection only)
+        run: uv run python -c "from agentaudit.collect import collect_manifest; a=collect_manifest('examples/payroll-helper.yaml'); assert len(a.tools)==3"
