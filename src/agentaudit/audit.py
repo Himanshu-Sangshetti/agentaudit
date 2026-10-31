@@ -7,6 +7,7 @@ Facts       Verify (claims vs capabilities) · Compare (duplicates) · Rerank (r
 
 from __future__ import annotations
 
+import collections
 import re
 from dataclasses import asdict, dataclass, field
 
@@ -98,6 +99,8 @@ def capability_claims(agent: Agent) -> str:
 
 
 # --- Findings & report ------------------------------------------------------
+
+MAX_PROTECT = 58_000  # Protect admits 60,000 characters per request
 
 SEVERITY_RANK = {"none": 0, "low": 1, "medium": 2, "high": 3, "critical": 4}
 
@@ -254,20 +257,46 @@ class Auditor:
         return out
 
     def protect(self, agent: Agent) -> list[Finding]:
-        out = []
-        for a in agent.artifacts:
-            if a.kind not in {"instructions", "tool_description", "config"} or not a.text.strip():
-                continue
-            r = self.c.pii(text=a.text, entities=SECRET_ENTITIES, anonymize="mask").result
-            ents = r.get("entities", [])
-            self._sensitive.update(e["value"] for e in ents if len(e.get("value", "")) >= 4)
-            if ents:
+        """One Protect call per batch of artifacts (up to the 60K limit); offsets are mapped back per artifact."""
+        arts = [a for a in agent.artifacts
+                if a.kind in {"instructions", "tool_description", "config"} and a.text.strip()]
+        out, batch, spans, size = [], [], [], 0
+
+        def flush():
+            if not batch:
+                return
+            text = "".join(batch)
+            r = self.c.pii(text=text, entities=SECRET_ENTITIES).result
+            hits = {}
+            for e in r.get("entities", []):
+                if len(e.get("value", "")) >= 4:
+                    self._sensitive.add(e["value"])
+                for art, start, end in spans:
+                    if start <= e["start"] < end:
+                        hits.setdefault(art.path, (art, []))[1].append(
+                            e | {"start": e["start"] - start, "end": e["end"] - start})
+                        break
+            for path, (art, ents) in hits.items():
                 secret = any(e["type"] == "api_key" for e in ents)
                 out.append(Finding("protect", "high" if secret else "medium",
-                                   "Embedded secret" if secret else "Personal data in agent config", a.path,
+                                   "Embedded secret" if secret else "Personal data in agent config", path,
                                    [{"quote": "•" * min(len(e["value"]), 12), "start": e["start"], "end": e["end"],
                                      "type": e["type"]} for e in ents],  # never echo the value itself
-                                   {"counts": r.get("counts")}))
+                                   {"counts": dict(collections.Counter(e["type"] for e in ents))}))
+            batch.clear()
+            spans.clear()
+
+        for a in arts:
+            text = a.text[:MAX_PROTECT]
+            header = f"\n\n### {a.path}\n"
+            if size + len(header) + len(text) > MAX_PROTECT:
+                flush()
+                size = 0
+            start = size + len(header)
+            batch.append(header + text)
+            spans.append((a, start, start + len(text)))
+            size = start + len(text)
+        flush()
         return out
 
     # Documents ------------------------------------------------------------
