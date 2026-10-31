@@ -157,6 +157,11 @@ Extract, Fill, Verify and Rerank don't change verdicts here. They supply the rec
 
 **Systems finding.** Per-artifact false positives compound. At ~5% per tool description, a 6-tool agent has ~26% odds of a false flag. This is why agent-level verdicts need either a low per-item FPR (Guard went from 25.9% to 2.2%) or a second opinion (precision mode).
 
+**Real-world study** (9 public MCP repos, hand-verified; `bench/REALWORLD.md`).
+- No confirmed issues.
+- Default mode would have wrongly quarantined 2/9 servers, all due to short-imperative Guard flags. Precision mode: 0/9.
+- For registry gating of reputable servers we therefore recommend precision mode. Default mode stays the maximum-recall setting for CI on untrusted code.
+
 **Determinism and cost.**
 - A 30-row uncached re-run was identical (Δp = 0).
 - Median round trip: 0.3–0.5 s per call.

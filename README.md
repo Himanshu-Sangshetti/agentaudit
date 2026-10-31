@@ -70,7 +70,11 @@ Full tables, ablations and per-source breakdowns are in **[bench/RESULTS.md](ben
 | Tool poisoning, test (253) | 84.9 BAcc · 25.9% FPR | **97.6 · 2.2% FPR** | p = 9×10⁻⁸. The policy does most of the work, the rule the rest |
 | Tool poisoning, external (249) | 88.4 · 23.2% FPR | **97.3 · 5.4% FPR** | Real-world benign MCP tools + published attacks, never used for design |
 | Scripts, test (206) | 84.4 | **89.9** | Change scope turns 50% (chance) into 79% on scope pairs |
-| Malicious skills, real campaign | see RESULTS.md | see RESULTS.md | New Extract + Decide supply-chain check |
+| Malicious skills, real campaign (244) | 72.9 (best single endpoint) | **88.6** · 3.2% FPR | New Extract + Decide supply-chain check: recall 48% → 81% |
+| Governance verdicts, held-out agents (38) | 60.5 (one Decide call) | **78.9** · **89.5** in `--precision` | Leave-one-out: each safety endpoint and Compare is necessary for its own defect type |
+| Real-world: 9 public MCP repos | — | 0 false quarantines in `--precision` (2 in default) | Hand-verified, aggregate only (`bench/REALWORLD.md`) |
+
+**Which mode?** Use `--precision` to gate a registry of mostly reputable agents. The default is the maximum-recall setting for CI on untrusted code. Full write-up: [docs/REPORT.md](docs/REPORT.md).
 
 Open-source baselines (ProtectAI and deepset DeBERTa, keyword regex) are in every table. They're scored both at their standard threshold and at a threshold tuned on dev, to match the tuning our configuration got.
 
