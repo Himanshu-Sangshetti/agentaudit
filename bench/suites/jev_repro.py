@@ -82,7 +82,7 @@ def main():
                 except Exception as e:  # unanswered counts as wrong, as in the benchmark
                     recs.append({"id": r["id"], "label": r["label"], "pred": None, "error": str(e)[:200]})
             ok_c = [x["pred"] == x["label"] for x in recs]
-            ok_j = [jev[x["id"]]["pred"] == x["label"] for x in recs]
+            ok_j = [jev[x["id"]].get("pred") == x["label"] for x in recs]
             only_c, only_j, p = mcnemar(ok_c, ok_j)
             lat = [x["rtt_ms"] for x in recs if "rtt_ms" in x]
             out[task] = {"n": len(recs), "clocked": sum(ok_c), "jev": sum(ok_j), "clocked_only": only_c,

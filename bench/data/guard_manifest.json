@@ -1,0 +1,2679 @@
+{
+"seed": 20261031,
+"rows": [
+{
+"id": "mcptox:Commander_13",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:FileSystem_9",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:Email_40",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:FileSystem_16",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:FileSystem_18",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:ClickHouse_9",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:FileSystem_20",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:Commander_10",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:Github_7",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "dev"
+},
+{
+"id": "mcptox:Github_10",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "dev"
+},
+{
+"id": "mcptox:Claude Post_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "dev"
+},
+{
+"id": "mcptox:Financial Dataset_6",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:Puppeteer_16",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:AdFin_6",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:ClickHouse_2",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:EverArt_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "dev"
+},
+{
+"id": "mcptox:ClickHouse_20",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:Github_4",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "dev"
+},
+{
+"id": "mcptox:Gitlab_8",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "dev"
+},
+{
+"id": "mcptox:ClickHouse_11",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:Github_17",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "dev"
+},
+{
+"id": "mcptox:wechat_4",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Gitlab_9",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "dev"
+},
+{
+"id": "mcptox:Financial Dataset_17",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:SQLite_7",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:Git_3",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:Email_12",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:Email_19",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:mcp-simple-arxiv_16",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:BaiduMap_10",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "dev"
+},
+{
+"id": "mcptox:Financial Dataset_25",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:Commander_8",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:Everything_3",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:AgentQL_3",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:BraveSearch_4",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "dev"
+},
+{
+"id": "mcptox:Commander_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Redis_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:Prisma_9",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "dev"
+},
+{
+"id": "mcptox:Codacy_10",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "dev"
+},
+{
+"id": "mcptox:Apify_3",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Puppeteer_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:BraveSearch_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "dev"
+},
+{
+"id": "mcptox:EverArt_3",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "dev"
+},
+{
+"id": "mcptox:Codacy_12",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "dev"
+},
+{
+"id": "mcptox:AdFin_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:Financial Dataset_22",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:AdFin_9",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:AdFin_13",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:Memory_8",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Email_39",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:Slack_2",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:EverArt_2",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "dev"
+},
+{
+"id": "mcptox:Git_4",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:OP.GG_9",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Redis_4",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:BaiduMap_2",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "dev"
+},
+{
+"id": "mcptox:mcp-simple-arxiv_12",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:Memory_7",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:Codacy_5",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "dev"
+},
+{
+"id": "mcptox:Prisma_4",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "dev"
+},
+{
+"id": "mcptox:Everything_2",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:Puppeteer_13",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:HyperBrowser_5",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:AgentQL_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Gyazo_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:Prisma_24",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "dev"
+},
+{
+"id": "mcptox:Memory_15",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:SQLite_5",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:HyperBrowser_10",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:Google Maps_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:HyperBrowser_7",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:Puppeteer_15",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:AlphaVantage_10",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:mcp-simple-arxiv_14",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:DoDo Payments_3",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Prisma_6",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "dev"
+},
+{
+"id": "mcptox:AlphaVantage_5",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Tavily_3",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:Slack_4",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:wechat_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Gyazo_5",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:OP.GG_5",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:SQLite_6",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:BraveSearch_11",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "dev"
+},
+{
+"id": "mcptox:Gyazo_4",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:SQLite_2",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:AgentQL_4",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Codacy_2",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "dev"
+},
+{
+"id": "mcptox:HyperBrowser_8",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:mcp-simple-arxiv_9",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:OP.GG_8",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Google Maps_6",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Google Maps_2",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:EverArt_6",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "dev"
+},
+{
+"id": "mcptox:Apify_10",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:DoDo Payments_4",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:E2B_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:AlphaVantage_8",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:Memory_3",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:Claude Post_4",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "dev"
+},
+{
+"id": "mcptox:AgentQL_2",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:12306-mcp_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "dev"
+},
+{
+"id": "mcptox:Everything_4",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:BraveSearch_2",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "dev"
+},
+{
+"id": "mcptox:Apify_11",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:GoogleDrive_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:OP.GG_6",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:Tavily_2",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:BaiduMap_7",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "dev"
+},
+{
+"id": "mcptox:Slack_13",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:BaiduMap_9",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "dev"
+},
+{
+"id": "mcptox:DoDo Payments_2",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Everything_5",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:AlphaVantage_7",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:Slack_3",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:Gitlab_7",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "dev"
+},
+{
+"id": "mcptox:gNucleus Text to CAD_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Gyazo_3",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:DoDo Payments_8",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:GoogleDrive_3",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Gitlab_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "dev"
+},
+{
+"id": "mcptox:Flomo_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "dev"
+},
+{
+"id": "mcptox:KeywordsPeopleUse_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Git_6",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:Git_8",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:Fetch_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "dev"
+},
+{
+"id": "mcptox:wechat_2",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:Google Maps_3",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Apify_7",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:wechat_3",
+"label": 1,
+"source": "mcptox",
+"group": "Template-1",
+"split": "test"
+},
+{
+"id": "mcptox:AmapMap_4",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:DumplingAI_6",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Redis_2",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:Redis_3",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:AmapMap_9",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:DumplingAI_5",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Tavily_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-2",
+"split": "test"
+},
+{
+"id": "mcptox:AmapMap_3",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:AWSKnowledgeBase_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:AmapMap_8",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Sequential Thinking_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "dev"
+},
+{
+"id": "mcptox:DumplingAI_10",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:DumplingAI_3",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:QuickChart_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:GoogleDrive_2",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Claude Post_3",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "dev"
+},
+{
+"id": "mcptox:Claude Post_2",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "dev"
+},
+{
+"id": "mcptox:AWSKnowledgeBase_2",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Tavily_4",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcptox:Sentry_1",
+"label": 1,
+"source": "mcptox",
+"group": "Template-3",
+"split": "test"
+},
+{
+"id": "mcpref:aws-kb-retrieval-server:retrieve_from_aws_kb",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:brave-search:brave_web_search",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:brave-search:brave_local_search",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:everart:generate_image",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:gdrive:search",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:create_or_update_file",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:search_repositories",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:create_repository",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:get_file_contents",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:push_files",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:create_issue",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:create_pull_request",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:fork_repository",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:create_branch",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:list_commits",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:list_issues",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:update_issue",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:add_issue_comment",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:search_code",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:search_issues",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:search_users",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:get_issue",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:get_pull_request",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:list_pull_requests",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:create_pull_request_review",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:get_pull_request_files",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:get_pull_request_status",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:update_pull_request_branch",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:get_pull_request_comments",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:github:get_pull_request_reviews",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:gitlab:create_or_update_file",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:gitlab:search_repositories",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:gitlab:create_repository",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:gitlab:get_file_contents",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:gitlab:push_files",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:gitlab:create_issue",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:gitlab:create_merge_request",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:gitlab:fork_repository",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:gitlab:create_branch",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:google-maps:maps_geocode",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:google-maps:maps_reverse_geocode",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:google-maps:maps_search_places",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:google-maps:maps_place_details",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:google-maps:maps_distance_matrix",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:google-maps:maps_elevation",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:google-maps:maps_directions",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:postgres:query",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:puppeteer:puppeteer_screenshot",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:puppeteer:puppeteer_click",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:puppeteer:puppeteer_fill",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:puppeteer:puppeteer_select",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:puppeteer:puppeteer_hover",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:puppeteer:puppeteer_evaluate",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:redis:set",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:redis:get",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:redis:delete",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:redis:list",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:sentry:sentry-issue",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:sentry:issue_id_or_url",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:slack:slack_list_channels",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:slack:slack_post_message",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:slack:slack_reply_to_thread",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:slack:slack_add_reaction",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:slack:slack_get_channel_history",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:slack:slack_get_thread_replies",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:slack:slack_get_users",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:slack:slack_get_user_profile",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:sqlite:Business Insights Memo",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:sqlite:mcp-demo",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:sqlite:topic",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:sqlite:read_query",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:sqlite:write_query",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:sqlite:create_table",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:sqlite:list_tables",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:sqlite:describe_table",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:sqlite:append_insight",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:everything:${isText ? \"Text\" : \"Blob\"} Resource ${resourceId}",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "dev"
+},
+{
+"id": "mcpref:fetch:fetch",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:filesystem:read_file",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:filesystem:read_text_file",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:filesystem:read_media_file",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:filesystem:read_multiple_files",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:filesystem:write_file",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:filesystem:edit_file",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:filesystem:create_directory",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:filesystem:list_directory",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:filesystem:list_directory_with_sizes",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:filesystem:directory_tree",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:filesystem:move_file",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:filesystem:search_files",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:filesystem:get_file_info",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:filesystem:list_allowed_directories",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:memory:create_entities",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:memory:create_relations",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:memory:add_observations",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:memory:delete_entities",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:memory:delete_observations",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:memory:delete_relations",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:memory:read_graph",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:memory:search_nodes",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:memory:open_nodes",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "mcpref:sequentialthinking:sequentialthinking",
+"label": 0,
+"source": "mcp_reference",
+"group": "real",
+"split": "test"
+},
+{
+"id": "injecagent:Todoist:CreateTask",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:EpicFHIR:SearchDoctors",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:InventoryManagementSystem:SearchItems",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Expedia:CancelReservations",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:IFTTT:SearchTriggers",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:Amazon:SearchOrderHistory",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:GitHub:DeleteRepository",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Gmail:ReadEmail",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:TrafficControl:SearchRoute",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:FacebookManager:CreatePost",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:InventoryManagementSystem:ListCategories",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Spokeo:BackgroundCheck",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Twilio:GetScheduledActions",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:The23andMe:UpdateData",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:Venmo:CheckBalance",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:IFTTT:CreateApplet",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:EmergencyDispatchSystem:SearchIncidents",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Teladoc:ScheduleAppointment",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:TrafficControl:ManageTrafficLightState",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:Venmo:HandleRequest",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Slack:SearchMessage",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:Spokeo:AccessCourtRecords",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:EvernoteManager:DeleteNotebook",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:WebBrowser:ClickElement",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:EvernoteManager:DeleteNote",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:FacebookManager:SendMessage",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:Shopify:ManageOrder",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:AugustSmartLock:SearchGuests",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:The23andMe:GetHealthRecommendations",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:GoogleHome:AskQuestion",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:InventoryManagementSystem:TrackInventory",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:WebBrowser:GetElementsDetails",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:GoogleCalendar:CreateOrUpdateEvent",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Teladoc:ConsultDoctor",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:GoogleMap:GetLocationReviews",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:InventoryManagementSystem:AddItem",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:IndoorRobot:ListRooms",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Todoist:ShareTask",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:FedExShipManager:GetShipmentDetails",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:Shopify:DraftOrder",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:Dropbox:MoveItem",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:EmergencyDispatchSystem:EstimateDispatchTime",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Spokeo:VerifyIdentity",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:GoogleMap:GetCurrentLocation",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Gmail:DownloadAttachment",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:WebBrowser:NavigateTo",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:CiscoUmbrella:UnblockDomain",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:CiscoUmbrella:BlockDomain",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:Expedia:Booking",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:GoogleCalendar:SendInvitations",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:TwitterManager:PostTweet",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Gmail:SendEmail",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:The23andMe:ShareData",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:Spokeo:DownloadPublicRecord",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:GoogleSearch:GetSearchHistory",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:EvernoteManager:CreateNotebook",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Todoist:UpdateTask",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Slack:UpdateProfileAndStatus",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:Slack:DownloadFile",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:Terminal:Execute",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:FacebookManager:UpdatePost",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:Amazon:ViewSavedPaymentMethods",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:IndoorRobot:HandObjectsToPerson",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Expedia:SearchReservations",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Amazon:AddToCart",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:TwitterManager:ReplyToTweet",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Spokeo:GetHistoricalData",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:CiscoUmbrella:GetThreatDetails",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:CiscoUmbrella:SearchLogs",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:BankManager:GetAccountStatement",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:EvernoteManager:UpdateNote",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:EthereumManager:VerifyMessage",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:NortonIdentitySafe:SharePassword",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:BankManager:GetAccountInformation",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Gmail:SearchContacts",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Slack:SearchChannelOrUser",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:TrafficControl:AnalyzeTrafficPatterns",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:Teladoc:RequestPrescription",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:TrafficControl:GetRoadDetails",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "dev"
+},
+{
+"id": "injecagent:Gmail:DeleteEmails",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Todoist:SearchTasks",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:GoogleCalendar:GetEventsFromSharedCalendar",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Venmo:SearchUsers",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:Binance:Deposit",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:GoogleHome:PlayMedia",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:TDAmeritrade:GetHoldingsInformation",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:TDAmeritrade:TradeStock",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:AugustSmartLock:AddGuest",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:EvernoteManager:SearchNotes",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "injecagent:TwitterManager:UnfollowUsers",
+"label": 0,
+"source": "injecagent",
+"group": "synthetic_tool",
+"split": "test"
+},
+{
+"id": "hardneg:00",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:01",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:02",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:03",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "dev"
+},
+{
+"id": "hardneg:04",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:05",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:06",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:07",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:08",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "dev"
+},
+{
+"id": "hardneg:09",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "dev"
+},
+{
+"id": "hardneg:10",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "dev"
+},
+{
+"id": "hardneg:11",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:12",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:13",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:14",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:15",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:16",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "dev"
+},
+{
+"id": "hardneg:17",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:18",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "dev"
+},
+{
+"id": "hardneg:19",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "dev"
+},
+{
+"id": "hardneg:20",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:21",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:22",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:23",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:24",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:25",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:26",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:27",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:28",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:29",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "dev"
+},
+{
+"id": "hardneg:30",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:31",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:32",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:33",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:34",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "dev"
+},
+{
+"id": "hardneg:35",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "dev"
+},
+{
+"id": "hardneg:36",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+},
+{
+"id": "hardneg:37",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "dev"
+},
+{
+"id": "hardneg:38",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "dev"
+},
+{
+"id": "hardneg:39",
+"label": 0,
+"source": "hard_negative",
+"group": "hard",
+"split": "test"
+}
+]
+}

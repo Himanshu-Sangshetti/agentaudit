@@ -1,0 +1,10 @@
+route {'n': 180, 'clocked': 152, 'jev': 154, 'clocked_only': 4, 'jev_only': 6, 'p': np.float64(0.7539), 'median_rtt_ms': 291.5456669870764}
+triage {'n': 148, 'clocked': 102, 'jev': 105, 'clocked_only': 8, 'jev_only': 11, 'p': np.float64(0.6476), 'median_rtt_ms': 294.22722950403113}
+Traceback (most recent call last):
+  File "/Users/hims/huggingface-challenge/bench/suites/jev_repro.py", line 99, in <module>
+    main()
+    ~~~~^^
+  File "/Users/hims/huggingface-challenge/bench/suites/jev_repro.py", line 85, in main
+    ok_j = [jev[x["id"]]["pred"] == x["label"] for x in recs]
+            ~~~~~~~~~~~~^^^^^^^^
+KeyError: 'pred'

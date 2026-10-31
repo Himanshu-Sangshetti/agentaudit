@@ -1,0 +1,45 @@
+{
+ "tasks": {
+  "route": {
+   "n": 180,
+   "clocked": 152,
+   "jev": 154,
+   "clocked_only": 4,
+   "jev_only": 6,
+   "p": 0.7539,
+   "median_rtt_ms": 291.5456669870764
+  },
+  "triage": {
+   "n": 148,
+   "clocked": 102,
+   "jev": 105,
+   "clocked_only": 8,
+   "jev_only": 11,
+   "p": 0.6476,
+   "median_rtt_ms": 294.22722950403113
+  },
+  "score": {
+   "n": 360,
+   "clocked": 128,
+   "jev": 134,
+   "clocked_only": 28,
+   "jev_only": 34,
+   "p": 0.5258,
+   "median_rtt_ms": 294.8378745059017
+  },
+  "gate": {
+   "n": 180,
+   "clocked": 125,
+   "jev": 115,
+   "clocked_only": 32,
+   "jev_only": 22,
+   "p": 0.2203,
+   "median_rtt_ms": 286.98495851131156
+  }
+ },
+ "totals": {
+  "clocked": 507,
+  "jev": 508,
+  "n": 868
+ }
+}
