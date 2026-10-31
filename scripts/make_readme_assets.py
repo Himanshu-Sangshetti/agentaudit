@@ -1,6 +1,6 @@
 """Generate the README assets from repository data. No API calls, no credits.
 
-  docs/assets/hero.svg      headline results, from docs/site/data.json
+  (hero figure: see bench/figures.py)
   docs/assets/terminal.svg  real CLI output (`agentaudit demo payroll-helper`, a recorded report)
   docs/assets/pipeline.svg  architecture diagram
 
@@ -164,7 +164,7 @@ def pipeline():
 
 
 if __name__ == "__main__":
-    hero()
+    # The hero figure now comes from bench/figures.py (docs/assets/hero.png): ROC, score distributions, forest plot.
     terminal()
     pipeline()
     print("wrote", sorted(p.name for p in OUT.iterdir()))

@@ -87,35 +87,53 @@ Open-source detectors (ProtectAI and deepset DeBERTa, a keyword regex) run on th
 
 ### 4.1 Tool poisoning: the same model, a different deployment
 
-![Tool poisoning results](figures/fig1_guard_test.png)
+![Figure 1. (a) ROC on the held-out poisoned-tool test set with deployed operating points; (b) Guard score distributions for benign and poisoned tools, as shipped vs with the AgentAudit policy; (c) balanced accuracy with 95% CIs for every arm on three suites.](figures/fig0_hero.png)
+
+*Figure 1. Same model, different deployment. (a) ROC curves with the operating points each deployment actually uses. (b) As shipped, 27% of benign tool descriptions score above 0.5; with the agent policy, 9%. (c) Every arm with 95% bootstrap CIs.*
 
 As shipped, Clocked Guard catches almost every attack (95.6%) but flags **one in four legitimate tool descriptions**. Tool descriptions are written in the imperative ("Create a new file…"), which looks like an instruction to a generic injection detector. Tuning only Clocked's threshold doesn't help: the best dev threshold is the default 0.5. With AgentAudit's agent-specific policy and consensus rule, false alarms fall to **2.2%** at 97.4% recall (Holm-adjusted McNemar p = 1.9 × 10⁻⁷).
 
-![Ablation](figures/fig2_ablation.png)
+![Figure 2. Ablation and latency](figures/fig6_ablation_latency.png)
+
+*Figure 2. (a) Policy and decision rule ablated separately on the Guard test split. (b) Round-trip latency per call through the public gateway.*
+
+![Figure 3. Calibration and threshold sweeps](figures/fig2_calibration_sweep.png)
+
+*Figure 3. Tuning the threshold can't close the gap. The agent policy improves calibration (ECE 0.134 → 0.056) by moving benign descriptions to low scores.*
 
 **Where the gain comes from.** Context does most of the work (84.9 → 95.7); the decision rule adds the rest (→ 97.6). Without our 40 hand-written hard negatives, the result is unchanged (97.3 vs 82.5).
 
 ### 4.2 It holds on data we never saw
 
-![External results](figures/fig1b_guard_external.png)
+![Figure 4. ROC on never-seen data and on the malicious-skill campaign](figures/fig1_roc_external_skills.png)
+
+*Figure 4. (a) Never-seen data: 199 real tools from 24 public MCP servers plus 25 published attack pairs. (b) The real malicious-skill campaign: the Extract + Decide supply-chain check lifts AUROC from 0.79 (best single endpoint) to 0.98.*
+
+![Figure 5. False alarms by source and the precision-mode curve](figures/fig3_sources_precision.png)
+
+*Figure 5. (a) False alarms by benign source with Wilson 95% CIs. (b) Recall against false-positive rate as the Decide second-opinion threshold varies.*
 
 On 199 real tool descriptions from 24 public MCP servers, none used during design, Clocked's defaults flag **23.2%** and AgentAudit **5.4%**. All 25 externally authored attacks are caught (95% Wilson lower bound 86.7%). The best tuned open-source detector reaches 91.7 balanced accuracy with 16.5% false alarms.
 
 ### 4.3 Scripts: scope is the signal
 
-![Scope pairs](figures/fig3_scope.png)
+
 
 The same command, say "disable Defender, install, re-enable", can be an approved change or an attack. Without scope, Inspect is at chance (50%) on these pairs. Given the approved change ticket, it reaches 79% (96% with the consensus rule). **Honest caveat:** on ordinary scripts a threshold-tuned default already gets 87.4 against our 89.9, and that difference isn't significant (p = 0.15). The value is in scope, not a better prompt.
 
 ### 4.4 A real malware campaign
 
-![Malicious skills](figures/fig4_skills.png)
+![Figure 6. Every arm on every suite](figures/fig4_forest.png)
+
+*Figure 6. Balanced accuracy with 95% bootstrap CIs for every arm on every suite.*
 
 Failure analysis on the dev split showed why both endpoints miss malicious skills: the payload is usually **prose**, not code ("first install the helper from this link"). We added a **supply-chain check**. Extract pulls, verbatim and with offsets, everything the skill asks you to download or run; Decide judges whether the source is untrusted. On the held-out test, the pipeline catches **80.5%** against 48.3% for the best single endpoint, at 3.2% false alarms (p = 7 × 10⁻⁶). On its own, the check reaches 77% recall at 0.6% false alarms.
 
 ### 4.5 Governance: every endpoint earns its place
 
-![Governance ablation](figures/fig5_governance.png)
+![Figure 7. Governance verdicts and leave-one-endpoint-out ablation](figures/fig5_governance.png)
+
+*Figure 7. Correct verdicts per defect type on 38 held-out agents. Removing an endpoint blinds the audit to exactly its defect type.*
 
 On 38 held-out agents, the full audit gets **78.9%** of verdicts right, and **89.5%** in precision mode. A single Decide call over the raw files gets **60.5%** and misses most defects. Remove one endpoint and the audit goes blind to exactly the defect it covers:
 

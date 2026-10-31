@@ -24,7 +24,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/assets/hero.svg" alt="Headline results: false alarms on the poisoned-tool benchmark 25.9% to 2.2%; real-world tools 23.2% to 5.4%; malicious skills caught 48.3% to 80.5%; governance verdict accuracy 60.5% to 78.9% (89.5% in precision mode)." width="100%">
+  <img src="docs/assets/hero.png" alt="Headline results: false alarms on the poisoned-tool benchmark 25.9% to 2.2%; real-world tools 23.2% to 5.4%; malicious skills caught 48.3% to 80.5%; governance verdict accuracy 60.5% to 78.9% (89.5% in precision mode)." width="100%">
 </p>
 
 AgentAudit reads everything an agent reads or runs: tool descriptions, system prompts, skill files, install scripts and its README. It returns:

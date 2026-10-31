@@ -111,9 +111,168 @@ def jev():
              "jev": round(100 * v["jev"] / v["n"], 1)} for t, v in s["tasks"].items()]
 
 
+import numpy as np  # noqa: E402
+
+from bench.metrics import auroc  # noqa: E402
+
+
+def roc_points(labels, scores, max_pts=120):
+    y, sc = np.asarray(labels), np.asarray(scores, float)
+    ths = np.unique(np.concatenate([[np.inf], np.sort(sc)[::-1]]))[::-1]
+    P, N = (y == 1).sum(), (y == 0).sum()
+    pts = [(float(((sc >= t) & (y == 0)).sum() / N), float(((sc >= t) & (y == 1)).sum() / P), float(t if np.isfinite(t) else 1.0)) for t in ths]
+    pts = sorted(set(pts))
+    if len(pts) > max_pts:
+        idx = np.linspace(0, len(pts) - 1, max_pts).astype(int)
+        pts = [pts[i] for i in idx]
+    return [{"fpr": round(a, 4), "tpr": round(b, 4), "t": round(c, 4)} for a, b, c in pts]
+
+
+def op_point(recs, rule):
+    L = [r["label"] for r in recs]
+    P = [rule(r) for r in recs]
+    tp = sum(1 for y, p in zip(L, P) if y == 1 and p is True); fn = sum(1 for y, p in zip(L, P) if y == 1 and p is not True)
+    tn = sum(1 for y, p in zip(L, P) if y == 0 and p is False); fp = sum(1 for y, p in zip(L, P) if y == 0 and p is not False)
+    return {"fpr": round(fp / (fp + tn), 4), "tpr": round(tp / (tp + fn), 4)}
+
+
+def guard_curves(split):
+    d = {r["id"]: r for r in R.load(R.RES / f"guard_{split}_default.jsonl")}
+    a = {r["id"]: r for r in R.load(R.RES / f"guard_{split}_agentaudit.jsonl")}
+    ids = list(d)
+    L = [d[i]["label"] for i in ids]
+    arms = {"Clocked Guard (default)": [d[i].get("p") or 0 for i in ids],
+            "Clocked + AgentAudit policy": [a[i].get("p") or 0 for i in ids]}
+    for m, nice in (("protectai", "ProtectAI DeBERTa"), ("deepset", "deepset DeBERTa")):
+        p = R.RES / f"baseline_guard_{split}_{m}.jsonl"
+        if p.exists():
+            b = {r["id"]: r for r in R.load(p)}
+            arms[nice] = [b[i].get("p") or 0 for i in ids]
+    curves = [{"arm": k, "auroc": round(auroc(L, v), 3), "points": roc_points(L, v)} for k, v in arms.items()]
+    ops = {"Clocked default verdict": op_point(list(d.values()), rule_verdict),
+           "AgentAudit frozen (consensus)": op_point(list(a.values()), rule_consensus)}
+    pp = R.RES / f"guard_{split}_precision.jsonl"
+    if pp.exists():
+        ops["AgentAudit precision mode"] = op_point(R.load(pp), lambda r: bool(rule_consensus(r) and r.get("adjudicated", 1) >= 0.3))
+    return {"curves": curves, "operating_points": ops}
+
+
+def score_dist(split):
+    d = {r["id"]: r for r in R.load(R.RES / f"guard_{split}_default.jsonl")}
+    a = {r["id"]: r for r in R.load(R.RES / f"guard_{split}_agentaudit.jsonl")}
+    return [{"label": d[i]["label"], "source": d[i]["source"], "p_default": round(d[i].get("p") or 0, 4),
+             "p_agentaudit": round(a[i].get("p") or 0, 4)} for i in d]
+
+
+def calibration(split):
+    out = {}
+    for name, f in (("Clocked Guard (default)", "default"), ("Clocked + AgentAudit policy", "agentaudit")):
+        recs = R.load(R.RES / f"guard_{split}_{f}.jsonl")
+        y = np.array([r["label"] for r in recs], float); p = np.array([r.get("p") or 0 for r in recs], float)
+        bins = []
+        for lo in np.arange(0, 1, 0.1):
+            m = (p >= lo) & ((p < lo + 0.1) if lo < 0.9 else (p <= 1))
+            if m.any():
+                bins.append({"lo": round(lo, 1), "mean_p": round(float(p[m].mean()), 3), "frac_pos": round(float(y[m].mean()), 3), "n": int(m.sum())})
+        out[name] = {"ece": round(R.ece(list(y), list(p)), 3), "bins": bins}
+    return out
+
+
+def sweep(split):
+    out = {}
+    for name, f in (("Clocked Guard (default)", "default"), ("Clocked + AgentAudit policy", "agentaudit")):
+        recs = R.load(R.RES / f"guard_{split}_{f}.jsonl")
+        L = [r["label"] for r in recs]
+        rows = []
+        for t in np.round(np.arange(0.02, 1.0, 0.02), 2):
+            P = [(r.get("p") or 0) >= t for r in recs]
+            tp = sum(1 for y, q in zip(L, P) if y and q); fn = sum(1 for y, q in zip(L, P) if y and not q)
+            tn = sum(1 for y, q in zip(L, P) if not y and not q); fp = sum(1 for y, q in zip(L, P) if not y and q)
+            rows.append({"t": float(t), "bacc": round(50 * (tp / (tp + fn) + tn / (tn + fp)), 1), "fpr": round(100 * fp / (fp + tn), 1),
+                         "recall": round(100 * tp / (tp + fn), 1)})
+        out[name] = rows
+    return out
+
+
+def by_source():
+    out = []
+    for split in ("test", "external"):
+        d = R.load(R.RES / f"guard_{split}_default.jsonl"); a = R.load(R.RES / f"guard_{split}_agentaudit.jsonl")
+        for src in sorted({r["source"] for r in d if r["label"] == 0}):
+            for name, recs, rule in (("Clocked Guard (default)", d, rule_verdict), ("Clocked + AgentAudit", a, rule_consensus)):
+                sub = [r for r in recs if r["source"] == src and r["label"] == 0]  # false alarms: benign rows only
+                ok = [rule(r) is True for r in sub]
+                k, n = sum(ok), len(ok)
+                lo, hi = wilson(k, n)
+                out.append({"split": split, "source": src, "arm": name, "flagged": k, "n": n, "fpr": round(100 * k / n, 1),
+                            "ci": [round(100 * lo, 1), round(100 * hi, 1)]})
+    return out
+
+
+def wilson(k, n, z=1.96):
+    if n == 0:
+        return 0.0, 0.0
+    ph = k / n; den = 1 + z * z / n; c = ph + z * z / (2 * n); r = z * ((ph * (1 - ph) + z * z / (4 * n)) / n) ** 0.5
+    return (c - r) / den, (c + r) / den
+
+
+def precision_curve():
+    recs = R.load(R.RES / "guard_test_precision.jsonl")
+    L = [r["label"] for r in recs]
+    rows = []
+    for t in [0.0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95]:
+        P = [bool(rule_consensus(r) and r.get("adjudicated", 1) >= t) for r in recs]
+        tp = sum(1 for y, q in zip(L, P) if y and q); fn = sum(1 for y, q in zip(L, P) if y and not q)
+        tn = sum(1 for y, q in zip(L, P) if not y and not q); fp = sum(1 for y, q in zip(L, P) if not y and q)
+        rows.append({"t": t, "recall": round(100 * tp / (tp + fn), 1), "fpr": round(100 * fp / (fp + tn), 2),
+                     "bacc": round(50 * (tp / (tp + fn) + tn / (tn + fp)), 1)})
+    return rows
+
+
+def skills_roc():
+    G, I, S = (R.load(R.RES / f"skills_test_{x}.jsonl") for x in ("guard_default", "inspect_default", "supplychain"))
+    A = {r["id"]: r for r in R.load(R.RES / "skills_test_agentaudit.jsonl")}
+    sc = {r["id"]: r for r in S}
+    ids = [r["id"] for r in G]
+    L = [r["label"] for r in G]
+    g = {r["id"]: (r.get("guard") or {}).get("injection") or 0 for r in G}
+    i = {r["id"]: (r.get("inspect") or {}).get("malicious") or 0 for r in I}
+    s_ = {k: v.get("p_untrusted") or 0 for k, v in sc.items()}
+    pipe = {k: max((A[k].get("guard") or {}).get("injection") or 0, (A[k].get("inspect") or {}).get("malicious") or 0, s_.get(k, 0)) for k in ids}
+    arms = {"Clocked Guard (default)": g, "Clocked Inspect (default)": i, "Supply-chain check": s_, "AgentAudit pipeline": pipe}
+    return [{"arm": k, "auroc": round(auroc(L, [v[x] for x in ids]), 3), "points": roc_points(L, [v[x] for x in ids])} for k, v in arms.items()]
+
+
+def latency():
+    out = []
+    for name, path in (("Guard (tool descriptions)", "guard_test_agentaudit"), ("Inspect (scripts)", "inspect_test_agentaudit"),
+                       ("Decide (jev-benchmark)", None)):
+        if path:
+            ms = sorted(r["rtt_ms"] for r in R.load(R.RES / f"{path}.jsonl") if r.get("rtt_ms"))
+        else:
+            ms = sorted(json.loads(l)["rtt_ms"] for t in ("route", "triage", "score", "gate")
+                        for l in (R.RES / f"jev_repro_{t}.jsonl").read_text().splitlines() if json.loads(l).get("rtt_ms"))
+        q = lambda f: round(ms[int(f * (len(ms) - 1))])  # noqa: E731
+        out.append({"endpoint": name, "n": len(ms), "p10": q(.1), "p25": q(.25), "p50": q(.5), "p75": q(.75), "p90": q(.9)})
+    return out
+
+
+def forest():
+    rows = []
+    for suite, arms in (("Tool poisoning (test)", guard("test")), ("Real-world tools (external)", guard("external")),
+                        ("Scripts (test)", inspect()["all"]), ("Malicious skills (test)", skills())):
+        for a in arms:
+            rows.append({"suite": suite, **{k: a[k] for k in ("arm", "group", "bacc", "bacc_ci", "fpr", "credits", "median_ms")}})
+    return rows
+
+
 data = {"guard_test": guard("test"), "guard_external": guard("external"), "ablation": ablation(),
         "inspect": inspect(), "skills": skills(), "governance": governance(), "jev": jev(),
-        "determinism": json.loads((R.RES / "determinism.json").read_text())}
+        "determinism": json.loads((R.RES / "determinism.json").read_text()),
+        "roc": {"test": guard_curves("test"), "external": guard_curves("external")},
+        "score_dist": {"test": score_dist("test")}, "calibration": calibration("test"),
+        "threshold_sweep": sweep("test"), "by_source": by_source(), "precision_curve": precision_curve(),
+        "skills_roc": skills_roc(), "latency": latency(), "forest": forest()}
 out = ROOT / "docs/site/data.json"
 out.write_text(json.dumps(data, indent=1))
 print("wrote", out, f"({out.stat().st_size // 1024} KB)")
