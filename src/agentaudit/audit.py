@@ -179,7 +179,9 @@ class Auditor:
         Clocked's defaults and trusts the raw verdict. skip names endpoints to leave out (for ablations)."""
         self.c = client
         self.setup = setup
-        self.rule = "consensus" if setup == "agentaudit" else "verdict"
+        # Decision rule per endpoint, chosen on the dev splits by balanced accuracy (bench/PROTOCOL.md).
+        self.rules = ({"guard": "consensus", "inspect": "verdict"} if setup == "agentaudit"
+                      else {"guard": "verdict", "inspect": "verdict"})
         self.guard_threshold = guard_threshold
         self.inspect_threshold = inspect_threshold
         self.skip = skip or set()
@@ -197,7 +199,7 @@ class Auditor:
                                  evidence=True, **policy).result
             if own and self.setup == "agentaudit" and r.get("category") in EXPECTED_IN_INSTRUCTIONS:
                 continue
-            if is_attack(r, self.rule):
+            if is_attack(r, self.rules["guard"]):
                 out.append(Finding("guard", r.get("severity", "high"), f"Possible injection: {r.get('category')}",
                                    a.path, [{"quote": e["quote"], "start": e["start"], "end": e["end"]}
                                             for e in r.get("evidence", [])],
@@ -211,7 +213,7 @@ class Auditor:
                 continue
             scope = {"instructions": policy} if self.setup == "agentaudit" else {}
             r = self.c.script(script=a.text, threshold=self.inspect_threshold, evidence=True, **scope).result
-            if is_attack(r, self.rule):
+            if is_attack(r, self.rules["inspect"]):
                 out.append(Finding("inspect", r.get("severity", "high"), f"Risky script: {r.get('category')}",
                                    a.path, [{"quote": e["line"], "start": e["start"], "end": e["end"]}
                                             for e in r.get("evidence", [])],

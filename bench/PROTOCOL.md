@@ -39,3 +39,12 @@ This file is written and committed **before** the runs it governs. The git histo
 - **Small benign set.** We expand real benign tool descriptions beyond the reference servers with a sample from public MCP registries, using hand-checked labels.
 - **Single run.** Clocked reports deterministic outputs at a fixed engine version. We record the engine version and re-run a 30-row sample to measure agreement.
 - **Policy overfit.** Policy text is kept generic, not tied to MCPTox wording. RQ3 tests this directly.
+
+## Frozen configurations (selected on dev by balanced accuracy)
+
+| Endpoint | Setup | Rule | Dev BAcc | Frozen at |
+|---|---|---|---|---|
+| Guard | agentaudit (tool-description policy) | consensus | 93.4 (default + verdict: 86.4) | commit 279c578, Oct 31 |
+| Inspect | agentaudit (deployment context + change scope) | verdict | 90.4 (consensus 88.6; default + verdict 86.6) | Oct 31, this commit |
+
+Inspect note: consensus has the lower dev FPR (3.8% vs 9.6%). We report both, but the pre-registered selection criterion is balanced accuracy.
