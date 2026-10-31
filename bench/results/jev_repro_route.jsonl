@@ -1,0 +1,5 @@
+{"id": "4600bb33", "label": "frontend", "pred": "backend", "conf": 0.0573, "rtt_ms": 410.04029198666103, "model_ms": 18.457216}
+{"id": "832d0877", "label": "frontend", "pred": "frontend", "conf": 0.8759, "rtt_ms": 293.9307919878047, "model_ms": 18.52224}
+{"id": "847f6ac7", "label": "backend", "pred": "backend", "conf": 0.9882, "rtt_ms": 286.12929198425263, "model_ms": 18.452448}
+{"id": "990068ff", "label": "frontend", "pred": "frontend", "conf": 0.5696, "rtt_ms": 289.60420898511074, "model_ms": 13.498944}
+{"id": "0a745d16", "label": "frontend", "pred": "frontend", "conf": 0.8999, "rtt_ms": 307.0202090020757, "model_ms": 18.611776}

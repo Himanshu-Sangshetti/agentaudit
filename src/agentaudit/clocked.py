@@ -85,13 +85,13 @@ class Clocked:
         # Every paid call is appended to a ledger tagged with the experiment that spent it.
         self.tag = tag
         self.budget = budget
+        self._http = httpx.Client(timeout=timeout)
 
     @staticmethod
     def ledger_total() -> float:
         if not LEDGER.exists():
             return 0.0
         return sum(json.loads(l).get("credits") or 0 for l in LEDGER.read_text().splitlines() if l.strip())
-        self._http = httpx.Client(timeout=timeout)
 
     def close(self) -> None:
         self._http.close()
