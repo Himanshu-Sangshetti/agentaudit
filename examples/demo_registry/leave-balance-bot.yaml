@@ -1,0 +1,15 @@
+# SYNTHETIC demo agent for the AgentAudit demo registry. Not a real product.
+name: leave-balance-bot
+owner: Finance Shared Services
+builder: r.mehta
+purpose: Tells employees how many days of annual and sick leave they have left and explains leave policy.
+instructions: |
+  You help employees check their leave. Look up their balance and explain the relevant leave policy.
+tools:
+  - name: lookup_leave
+    description: Looks up an employee's remaining annual, sick and parental leave days. Read-only.
+  - name: leave_policy_search
+    description: Searches the HR leave policy documents and returns relevant sections.
+readme: |
+  Leave Balance Bot answers "how much leave do I have?" questions and explains leave policy.
+  It only reads leave data.

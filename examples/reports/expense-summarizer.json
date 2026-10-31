@@ -1,0 +1,293 @@
+{
+ "agent": "expense-summarizer",
+ "origin": "/Users/hims/huggingface-challenge/examples/demo_registry/expense-summarizer.yaml",
+ "findings": [],
+ "record": {
+  "purpose": {
+   "value": "Expense Summarizer produces manager-ready summaries of expense reports",
+   "confidence": 0.9687397338576216,
+   "source": "generated"
+  },
+  "owner": {
+   "value": null,
+   "confidence": 1
+  },
+  "can_write": {
+   "value": false,
+   "confidence": 0.991,
+   "probabilities": {
+    "yes": 0.004691552458318871,
+    "no": 0.9953084475416811
+   }
+  },
+  "reaches_network": {
+   "value": false,
+   "confidence": 0.981,
+   "probabilities": {
+    "yes": 0.009371130403545203,
+    "no": 0.9906288695964548
+   }
+  },
+  "data_sensitivity": {
+   "value": "internal",
+   "confidence": 0.346,
+   "probabilities": {
+    "public": 0.17109057502175246,
+    "internal": 0.509256215005958,
+    "confidential": 0.22255284465651107,
+    "regulated": 0.09710036531577851
+   }
+  },
+  "blast_radius": {
+   "value": "single user",
+   "confidence": 0.797,
+   "expected": 1.27,
+   "probabilities": {
+    "single user": 0.8474413496534846,
+    "team": 0.08010004816239671,
+    "department": 0.027145843123704223,
+    "organization": 0.04531275906041445
+   }
+  }
+ },
+ "facts": {
+  "owner": {
+   "value": null,
+   "confidence": 1,
+   "p_blank": 0,
+   "rejected_value": "Expense Summarizer",
+   "rejected_p_verify": 0,
+   "reason": "verification_rejected"
+  },
+  "systems_reached": {
+   "value": null,
+   "confidence": 0.737,
+   "p_blank": 0.737
+  },
+  "data_touched": {
+   "value": [
+    "expense reports",
+    "manager-ready summaries",
+    "totals by category",
+    "policy exceptions",
+    "missing receipts"
+   ],
+   "items": [
+    {
+     "value": "expense reports",
+     "start": 177,
+     "end": 192,
+     "p_start": 1,
+     "p_close": 1,
+     "p_point": 0.325,
+     "p_verify": 1,
+     "alternatives": [
+      {
+       "value": "expense reports",
+       "start": 25,
+       "p_verify": 1
+      }
+     ],
+     "p_more": 0.998,
+     "confidence": 1
+    },
+    {
+     "value": "manager-ready summaries",
+     "start": 150,
+     "end": 173,
+     "p_start": 0.831,
+     "p_close": 0.995,
+     "p_point": 0.025,
+     "p_verify": 1,
+     "p_more": 0.977,
+     "confidence": 0.831
+    },
+    {
+     "value": "totals by category",
+     "start": 50,
+     "end": 68,
+     "p_start": 0.725,
+     "p_close": 1,
+     "p_point": 0.028,
+     "p_verify": 1,
+     "p_more": 1,
+     "confidence": 0.725
+    },
+    {
+     "value": "policy exceptions",
+     "start": 70,
+     "end": 87,
+     "p_start": 1,
+     "p_close": 1,
+     "p_point": 0.268,
+     "p_verify": 1,
+     "p_more": 1,
+     "confidence": 1
+    },
+    {
+     "value": "missing receipts",
+     "start": 93,
+     "end": 109,
+     "p_start": 1,
+     "p_close": 1,
+     "p_point": 0.504,
+     "p_verify": 1,
+     "p_more": 0.245,
+     "confidence": 1
+    }
+   ],
+   "confidence": 0.725,
+   "finish": "closed"
+  },
+  "credentials_required": {
+   "value": null,
+   "confidence": 0.971,
+   "p_blank": 0.971
+  },
+  "license": {
+   "value": "read-only",
+   "start": 200,
+   "end": 209,
+   "p_start": 0.973,
+   "p_close": 1,
+   "p_point": 0.835,
+   "p_verify": 0.999,
+   "alternatives": [
+    {
+     "value": "ready",
+     "start": 158,
+     "p_verify": 0
+    },
+    {
+     "value": "readme",
+     "start": 114,
+     "p_verify": 0
+    }
+   ],
+   "confidence": 0.973
+  }
+ },
+ "verdict": {
+  "verdict": {
+   "type": "choice",
+   "choice": "needs_owner",
+   "probabilities": {
+    "approve": 0.0013,
+    "needs_owner": 0.9955,
+    "reuse_existing": 0.0017,
+    "quarantine": 0.0015
+   },
+   "confidence": 0.994
+  },
+  "risk_of_acting": {
+   "type": "score",
+   "score": 2.3622,
+   "legend": {
+    "0": "negligible",
+    "1": "low",
+    "2": "moderate",
+    "3": "high",
+    "4": "severe"
+   },
+   "probabilities": {
+    "0": 0.0282,
+    "1": 0.1557,
+    "2": 0.2812,
+    "3": 0.4955,
+    "4": 0.0394
+   },
+   "confidence": 0.3694
+  },
+  "autonomy": {
+   "type": "choice",
+   "choice": "blocked",
+   "probabilities": {
+    "autonomous": 0.0307,
+    "approval_required": 0.0625,
+    "blocked": 0.9068
+   },
+   "confidence": 0.8603
+  }
+ },
+ "duplicates": [],
+ "reuse": [
+  {
+   "agent": "payroll-helper",
+   "action": "skip",
+   "score": 0.0061
+  },
+  {
+   "agent": "mcp-memory",
+   "action": "skip",
+   "score": 0.0032
+  },
+  {
+   "agent": "hr-policy-assistant",
+   "action": "skip",
+   "score": 0.0014
+  }
+ ],
+ "usage": {
+  "calls": 58,
+  "cached": 56,
+  "credits": 5.0,
+  "cost_usd": 0.001,
+  "credits_this_report": 2.0
+ },
+ "verdict_label": "needs_owner",
+ "artifacts": [
+  {
+   "path": "instructions",
+   "kind": "instructions",
+   "text": "Summarize expense reports clearly: totals by category, policy exceptions, and missing receipts.\n",
+   "truncated": false
+  },
+  {
+   "path": "manifest::list_expense_reports",
+   "kind": "tool_description",
+   "text": "Lists expense reports submitted by an employee in a date range.",
+   "truncated": false
+  },
+  {
+   "path": "manifest::get_expense_report",
+   "kind": "tool_description",
+   "text": "Returns the line items and receipts of one expense report.",
+   "truncated": false
+  },
+  {
+   "path": "readme",
+   "kind": "readme",
+   "text": "Expense Summarizer produces manager-ready summaries of expense reports. It is read-only.\n",
+   "truncated": false
+  }
+ ],
+ "tools": [
+  {
+   "name": "list_expense_reports",
+   "description": "Lists expense reports submitted by an employee in a date range.",
+   "source": "manifest"
+  },
+  {
+   "name": "get_expense_report",
+   "description": "Returns the line items and receipts of one expense report.",
+   "source": "manifest"
+  }
+ ],
+ "declared": {
+  "builder": "t.nguyen",
+  "purpose": "Summarizes an employee's submitted expense reports for their manager."
+ },
+ "markdown": "# AgentAudit: expense-summarizer\n\n**Verdict:** `needs_owner` (99% confidence)\n**Autonomy:** `blocked`  \u00b7  **Risk of acting:** 2.36 / 4\n\n## Registry record\n\n| Field | Value |\n|---|---|\n| purpose | Expense Summarizer produces manager-ready summaries of expense reports |\n| owner | \u2014 |\n| can_write | False |\n| reaches_network | False |\n| data_sensitivity | internal |\n| blast_radius | single user |\n\n## Findings (0)\n\nNo findings.\n\n## Existing agents for the same job\n\n- payroll-helper: skip (score 0.01)\n- mcp-memory: skip (score 0.00)\n- hr-policy-assistant: skip (score 0.00)\n\n<sub>58 Clocked calls \u00b7 5 credits \u00b7 $0.0010</sub>",
+ "endpoints_used": [
+  "Compare /compare",
+  "Decide /decide",
+  "Extract /extract",
+  "Fill /fill",
+  "Guard /injection",
+  "Inspect /script",
+  "Protect /pii",
+  "Rerank /rerank",
+  "Verify /grounding"
+ ],
+ "blurb": "A clean, read-only agent with no named owner."
+}

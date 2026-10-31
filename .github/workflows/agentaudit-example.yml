@@ -1,0 +1,25 @@
+# Example: audit the agents in this repository on every pull request.
+# Copy into your repo and add a CLOCKED_API_KEY repository secret.
+name: AgentAudit
+
+on:
+  pull_request:
+    paths: ["**/*.ts", "**/*.py", "**/*.md", "**/*.yaml", "**/*.json", "**/*.sh", "**/*.ps1"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write   # for SARIF upload to code scanning
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./action          # or <owner>/<repo>/action@main from another repository
+        with:
+          path: examples/payroll-helper.yaml
+          clocked-api-key: ${{ secrets.CLOCKED_API_KEY }}
+          registry: examples/demo_registry
+          fail-on: high
+          budget: "150"

@@ -1,0 +1,69 @@
+name: AgentAudit
+description: Audit AI agents (MCP servers, skills, agent manifests) before they ship. Built on Clocked.
+author: AgentAudit
+branding:
+  icon: shield
+  color: orange
+
+inputs:
+  path:
+    description: Paths, GitHub URLs or agent manifests to audit (space-separated).
+    default: "."
+  clocked-api-key:
+    description: Clocked API key. Store it as a repository secret.
+    required: true
+  fail-on:
+    description: Fail when any finding is at or above this severity (critical, high, medium, low). Quarantine always fails.
+    default: high
+  budget:
+    description: Maximum Clocked credits this run may spend.
+    default: "200"
+  registry:
+    description: Optional directory of approved agent manifests, for duplicate and reuse checks.
+    default: ""
+  upload-sarif:
+    description: Upload findings to GitHub code scanning.
+    default: "true"
+
+outputs:
+  exit-code:
+    description: 0 when the audit passed, 1 when it should block.
+    value: ${{ steps.scan.outputs.exit-code }}
+
+runs:
+  using: composite
+  steps:
+    - uses: astral-sh/setup-uv@v5
+    - name: Install AgentAudit
+      shell: bash
+      run: uv tool install "${{ github.action_path }}/.."
+    - name: Audit agents
+      id: scan
+      shell: bash
+      env:
+        CLOCKED_API_KEY: ${{ inputs.clocked-api-key }}
+        AGENTAUDIT_LEDGER: ${{ runner.temp }}/agentaudit-ledger.jsonl
+        AGENTAUDIT_CACHE: ${{ runner.temp }}/agentaudit-cache
+      run: |
+        set +e
+        REG=""
+        if [ -n "${{ inputs.registry }}" ]; then REG="--registry ${{ inputs.registry }}"; fi
+        agentaudit scan ${{ inputs.path }} $REG --format sarif --out agentaudit.sarif \
+          --fail-on "${{ inputs.fail-on }}" --budget "${{ inputs.budget }}"
+        code=$?
+        agentaudit scan ${{ inputs.path }} $REG --format md --out agentaudit.md \
+          --fail-on "${{ inputs.fail-on }}" --budget "${{ inputs.budget }}" >/dev/null 2>&1 || true
+        [ -f agentaudit.md ] && cat agentaudit.md >> "$GITHUB_STEP_SUMMARY"
+        echo "exit-code=$code" >> "$GITHUB_OUTPUT"
+    - name: Upload SARIF
+      if: ${{ always() && inputs.upload-sarif == 'true' }}
+      uses: github/codeql-action/upload-sarif@v3
+      with:
+        sarif_file: agentaudit.sarif
+        category: agentaudit
+    - name: Enforce verdict
+      if: ${{ steps.scan.outputs.exit-code != '0' }}
+      shell: bash
+      run: |
+        echo "::error::AgentAudit blocked this change (quarantine or a finding at or above '${{ inputs.fail-on }}'). See the job summary and code scanning alerts."
+        exit 1

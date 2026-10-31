@@ -1,0 +1,13 @@
+# SYNTHETIC demo agent for the AgentAudit demo registry. Not a real product.
+name: expense-summarizer
+builder: t.nguyen
+purpose: Summarizes an employee's submitted expense reports for their manager.
+instructions: |
+  Summarize expense reports clearly: totals by category, policy exceptions, and missing receipts.
+tools:
+  - name: list_expense_reports
+    description: Lists expense reports submitted by an employee in a date range.
+  - name: get_expense_report
+    description: Returns the line items and receipts of one expense report.
+readme: |
+  Expense Summarizer produces manager-ready summaries of expense reports. It is read-only.

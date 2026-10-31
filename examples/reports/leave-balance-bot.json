@@ -1,0 +1,334 @@
+{
+ "agent": "leave-balance-bot",
+ "origin": "/Users/hims/huggingface-challenge/examples/demo_registry/leave-balance-bot.yaml",
+ "findings": [],
+ "record": {
+  "purpose": {
+   "value": "Leave Balance Bot answers \"how much leave do I have?\" questions and explains leave policy",
+   "confidence": 0.9873902667559687,
+   "source": "generated"
+  },
+  "owner": {
+   "value": null,
+   "confidence": 1
+  },
+  "can_write": {
+   "value": false,
+   "confidence": 0.985,
+   "probabilities": {
+    "yes": 0.007313403542795194,
+    "no": 0.9926865964572048
+   }
+  },
+  "reaches_network": {
+   "value": false,
+   "confidence": 0.985,
+   "probabilities": {
+    "yes": 0.00742514270348793,
+    "no": 0.9925748572965121
+   }
+  },
+  "data_sensitivity": {
+   "value": "confidential",
+   "confidence": 0.411,
+   "probabilities": {
+    "public": 0.01950087536027077,
+    "internal": 0.25331898904506167,
+    "confidential": 0.5581431195977622,
+    "regulated": 0.16903701599690535
+   }
+  },
+  "blast_radius": {
+   "value": "single user",
+   "confidence": 0.752,
+   "expected": 1.416,
+   "probabilities": {
+    "single user": 0.8136882020808645,
+    "team": 0.05077168201161921,
+    "department": 0.04169032610258104,
+    "organization": 0.09384978980493529
+   }
+  }
+ },
+ "facts": {
+  "owner": {
+   "value": null,
+   "confidence": 1,
+   "p_blank": 0,
+   "rejected_value": "Leave Balance Bot",
+   "rejected_p_verify": 0,
+   "reason": "verification_rejected"
+  },
+  "systems_reached": {
+   "value": [],
+   "items": [],
+   "confidence": 1,
+   "rejected": [
+    "leave data"
+   ],
+   "rejected_items": [
+    {
+     "value": "leave data",
+     "start": 230,
+     "end": 240,
+     "p_start": 1,
+     "p_close": 1,
+     "p_point": 0.904,
+     "p_verify": 0.056,
+     "alternatives": [
+      {
+       "value": "leave",
+       "start": 100,
+       "p_verify": 0
+      },
+      {
+       "value": "leave",
+       "start": 202,
+       "p_verify": 0
+      }
+     ],
+     "confidence": 0.056
+    }
+   ],
+   "finish": "closed"
+  },
+  "data_touched": {
+   "value": [
+    "leave data",
+    "leave",
+    "leave policy",
+    "balance"
+   ],
+   "items": [
+    {
+     "value": "leave data",
+     "start": 230,
+     "end": 240,
+     "p_start": 1,
+     "p_close": 1,
+     "p_point": 0.474,
+     "p_verify": 1,
+     "alternatives": [
+      {
+       "value": "leave",
+       "start": 100,
+       "p_verify": 1
+      },
+      {
+       "value": "leave",
+       "start": 202,
+       "p_verify": 1
+      }
+     ],
+     "p_more": 0.989,
+     "confidence": 1
+    },
+    {
+     "value": "leave",
+     "start": 100,
+     "end": 105,
+     "p_start": 0.995,
+     "p_close": 0.562,
+     "p_point": 0.008,
+     "p_verify": 1,
+     "alternatives": [
+      {
+       "value": "leave",
+       "start": 202,
+       "p_verify": 1
+      },
+      {
+       "value": "leave",
+       "start": 161,
+       "p_verify": 1
+      }
+     ],
+     "p_more": 0.979,
+     "confidence": 0.562
+    },
+    {
+     "value": "leave policy",
+     "start": 202,
+     "end": 214,
+     "p_start": 0.862,
+     "p_close": 1,
+     "p_point": 0.163,
+     "p_verify": 0.594,
+     "p_more": 0.99,
+     "confidence": 0.594
+    },
+    {
+     "value": "balance",
+     "start": 67,
+     "end": 74,
+     "p_start": 0.023,
+     "p_close": 1,
+     "p_point": 0.18,
+     "p_verify": 1,
+     "p_more": 0.984,
+     "confidence": 0.023
+    }
+   ],
+   "confidence": 0.023,
+   "rejected": [
+    "questions"
+   ],
+   "rejected_items": [
+    {
+     "value": "questions",
+     "start": 179,
+     "end": 188,
+     "p_start": 0.002,
+     "p_close": 1,
+     "p_point": 0.15,
+     "p_verify": 0,
+     "confidence": 0
+    }
+   ],
+   "finish": "budget"
+  },
+  "credentials_required": {
+   "value": null,
+   "confidence": 0.795,
+   "p_blank": 0.795
+  },
+  "license": {
+   "value": null,
+   "confidence": 1,
+   "p_blank": 0,
+   "rejected_value": "Leave",
+   "rejected_p_verify": 0,
+   "reason": "verification_rejected"
+  }
+ },
+ "verdict": {
+  "verdict": {
+   "type": "choice",
+   "choice": "reuse_existing",
+   "probabilities": {
+    "approve": 0.0015,
+    "needs_owner": 0.0014,
+    "reuse_existing": 0.9948,
+    "quarantine": 0.0022
+   },
+   "confidence": 0.9931
+  },
+  "risk_of_acting": {
+   "type": "score",
+   "score": 0.5873,
+   "legend": {
+    "0": "negligible",
+    "1": "low",
+    "2": "moderate",
+    "3": "high",
+    "4": "severe"
+   },
+   "probabilities": {
+    "0": 0.5388,
+    "1": 0.3846,
+    "2": 0.0399,
+    "3": 0.0242,
+    "4": 0.0126
+   },
+   "confidence": 0.4235
+  },
+  "autonomy": {
+   "type": "choice",
+   "choice": "blocked",
+   "probabilities": {
+    "autonomous": 0.011,
+    "approval_required": 0.0121,
+    "blocked": 0.9769
+   },
+   "confidence": 0.9653
+  }
+ },
+ "duplicates": [
+  {
+   "agent": "hr-policy-assistant",
+   "relation": "overlapping",
+   "related": 0.9961
+  }
+ ],
+ "reuse": [
+  {
+   "agent": "hr-policy-assistant",
+   "action": "use",
+   "score": 0.679
+  },
+  {
+   "agent": "payroll-helper",
+   "action": "skip",
+   "score": 0.0307
+  },
+  {
+   "agent": "mcp-memory",
+   "action": "skip",
+   "score": 0.0219
+  }
+ ],
+ "usage": {
+  "calls": 29,
+  "cached": 28,
+  "credits": 3.0,
+  "cost_usd": 0.0006,
+  "credits_this_report": 3.0
+ },
+ "verdict_label": "reuse_existing",
+ "artifacts": [
+  {
+   "path": "instructions",
+   "kind": "instructions",
+   "text": "You help employees check their leave. Look up their balance and explain the relevant leave policy.\n",
+   "truncated": false
+  },
+  {
+   "path": "manifest::lookup_leave",
+   "kind": "tool_description",
+   "text": "Looks up an employee's remaining annual, sick and parental leave days. Read-only.",
+   "truncated": false
+  },
+  {
+   "path": "manifest::leave_policy_search",
+   "kind": "tool_description",
+   "text": "Searches the HR leave policy documents and returns relevant sections.",
+   "truncated": false
+  },
+  {
+   "path": "readme",
+   "kind": "readme",
+   "text": "Leave Balance Bot answers \"how much leave do I have?\" questions and explains leave policy.\nIt only reads leave data.\n",
+   "truncated": false
+  }
+ ],
+ "tools": [
+  {
+   "name": "lookup_leave",
+   "description": "Looks up an employee's remaining annual, sick and parental leave days. Read-only.",
+   "source": "manifest"
+  },
+  {
+   "name": "leave_policy_search",
+   "description": "Searches the HR leave policy documents and returns relevant sections.",
+   "source": "manifest"
+  }
+ ],
+ "declared": {
+  "owner": "Finance Shared Services",
+  "builder": "r.mehta",
+  "purpose": "Tells employees how many days of annual and sick leave they have left and explains leave policy."
+ },
+ "markdown": "# AgentAudit: leave-balance-bot\n\n**Verdict:** `reuse_existing` (99% confidence)\n**Autonomy:** `blocked`  \u00b7  **Risk of acting:** 0.59 / 4\n\n## Registry record\n\n| Field | Value |\n|---|---|\n| purpose | Leave Balance Bot answers \"how much leave do I have?\" questions and explains leave policy |\n| owner | \u2014 |\n| can_write | False |\n| reaches_network | False |\n| data_sensitivity | confidential |\n| blast_radius | single user |\n\n## Findings (0)\n\nNo findings.\n\n## Overlapping agents\n\n- hr-policy-assistant (overlapping)\n\n## Existing agents for the same job\n\n- hr-policy-assistant: use (score 0.68)\n- payroll-helper: skip (score 0.03)\n- mcp-memory: skip (score 0.02)\n\n<sub>29 Clocked calls \u00b7 3 credits \u00b7 $0.0006</sub>",
+ "endpoints_used": [
+  "Compare /compare",
+  "Decide /decide",
+  "Extract /extract",
+  "Fill /fill",
+  "Guard /injection",
+  "Inspect /script",
+  "Protect /pii",
+  "Rerank /rerank",
+  "Verify /grounding"
+ ],
+ "blurb": "Safe, but it duplicates the approved HR Policy Assistant already in the registry."
+}

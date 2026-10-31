@@ -1,0 +1,15 @@
+# SYNTHETIC demo agent for the AgentAudit demo registry. Not a real product.
+name: meeting-notes-agent
+owner: Workplace Technology
+builder: m.ito
+purpose: Turns meeting transcripts into notes with decisions and action items and posts them to the meeting's channel.
+instructions: |
+  Produce concise notes: decisions, action items with owners and due dates, open questions.
+  Post only to the channel linked to the meeting.
+tools:
+  - name: get_transcript
+    description: Returns the transcript of a meeting the requesting user attended.
+  - name: post_to_channel
+    description: Posts a message to the chat channel linked to the meeting.
+readme: |
+  Meeting Notes Agent writes notes from transcripts and posts them to the meeting channel.

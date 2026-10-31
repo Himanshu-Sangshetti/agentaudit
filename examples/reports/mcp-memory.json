@@ -1,0 +1,659 @@
+{
+ "agent": "mcp-memory",
+ "origin": "/Users/hims/huggingface-challenge/data/raw/mcp/official-servers/src/memory",
+ "findings": [
+  {
+   "check": "verify",
+   "severity": "medium",
+   "title": "Claim contradicted by capabilities",
+   "path": "README",
+   "evidence": [
+    {
+     "quote": "Fails if either the source or target entity doesn't exist",
+     "start": -1,
+     "end": -1
+    }
+   ],
+   "detail": {
+    "contradicted": 0.9245,
+    "evidence": null
+   },
+   "endpoint": "Verify /grounding",
+   "group": "facts"
+  },
+  {
+   "check": "verify",
+   "severity": "medium",
+   "title": "Claim contradicted by capabilities",
+   "path": "README",
+   "evidence": [
+    {
+     "quote": "Fails if entity doesn't exist",
+     "start": -1,
+     "end": -1
+    }
+   ],
+   "detail": {
+    "contradicted": 0.8894,
+    "evidence": null
+   },
+   "endpoint": "Verify /grounding",
+   "group": "facts"
+  }
+ ],
+ "record": {
+  "purpose": {
+   "value": "A basic implementation of persistent memory using a local knowledge graph that lets Claude remember information about the user across chats",
+   "confidence": 0.9340905818702904,
+   "source": "generated"
+  },
+  "owner": {
+   "value": null,
+   "confidence": 1
+  },
+  "can_write": {
+   "value": true,
+   "confidence": 0.977,
+   "probabilities": {
+    "yes": 0.988588830880454,
+    "no": 0.011411169119545983
+   }
+  },
+  "reaches_network": {
+   "value": false,
+   "confidence": 0.966,
+   "probabilities": {
+    "yes": 0.01706370750122821,
+    "no": 0.9829362924987718
+   }
+  },
+  "data_sensitivity": {
+   "value": "public",
+   "confidence": 0.401,
+   "probabilities": {
+    "public": 0.5510903574032674,
+    "internal": 0.17945679250301627,
+    "confidential": 0.13373709806893053,
+    "regulated": 0.13571575202478584
+   }
+  },
+  "blast_radius": {
+   "value": "single user",
+   "confidence": 0.383,
+   "expected": 2.104,
+   "probabilities": {
+    "single user": 0.5370595274726757,
+    "team": 0.10561269360400555,
+    "department": 0.0734091330254288,
+    "organization": 0.28391864589788995
+   }
+  }
+ },
+ "facts": {
+  "owner": {
+   "value": null,
+   "confidence": 1,
+   "p_blank": 0,
+   "rejected_value": "Anthropic",
+   "rejected_p_verify": 0,
+   "reason": "verification_rejected"
+  },
+  "systems_reached": {
+   "value": [],
+   "items": [],
+   "confidence": 1,
+   "rejected": [
+    "npm"
+   ],
+   "rejected_items": [
+    {
+     "value": "npm",
+     "start": 201,
+     "end": 204,
+     "p_start": 0.984,
+     "p_close": 1,
+     "p_point": 0.906,
+     "p_verify": 0,
+     "alternatives": [
+      {
+       "value": "npmjs.com",
+       "start": 260,
+       "p_verify": 0
+      }
+     ],
+     "confidence": 0
+    }
+   ],
+   "finish": "closed"
+  },
+  "data_touched": {
+   "value": [
+    "memory.jsonl",
+    "memory.json",
+    "knowledge graph",
+    "entities",
+    "relations",
+    "observations",
+    "memory.jsonl\"\n",
+    "knowledge-graph",
+    "application/json",
+    "memory file",
+    "index.js",
+    "memory"
+   ],
+   "items": [
+    {
+     "value": "memory.jsonl",
+     "start": 6785,
+     "end": 6797,
+     "p_start": 0.646,
+     "p_close": 1,
+     "p_point": 0.443,
+     "p_verify": 1,
+     "alternatives": [
+      {
+       "value": "memory.jsonl\"",
+       "start": 6376,
+       "p_verify": 1
+      },
+      {
+       "value": "memory",
+       "start": 82,
+       "p_verify": 0.993
+      }
+     ],
+     "p_more": 1,
+     "confidence": 0.646
+    },
+    {
+     "value": "memory.json",
+     "start": 6963,
+     "end": 6974,
+     "p_start": 0.946,
+     "p_close": 1,
+     "p_point": 0.291,
+     "p_verify": 1,
+     "alternatives": [
+      {
+       "value": "memory.jsonl\"\n",
+       "start": 6376,
+       "p_verify": 1
+      }
+     ],
+     "p_more": 1,
+     "confidence": 0.946
+    },
+    {
+     "value": "knowledge graph",
+     "start": 103,
+     "end": 118,
+     "p_start": 0.991,
+     "p_close": 1,
+     "p_point": 0.014,
+     "p_verify": 0.999,
+     "alternatives": [
+      {
+       "value": "knowledge graph",
+       "start": 12103,
+       "p_verify": 0.999
+      },
+      {
+       "value": "knowledge-graph",
+       "start": 4236,
+       "p_verify": 0.978
+      }
+     ],
+     "p_more": 1,
+     "confidence": 0.991
+    },
+    {
+     "value": "entities",
+     "start": 4388,
+     "end": 4396,
+     "p_start": 0.995,
+     "p_close": 1,
+     "p_point": 0.069,
+     "p_verify": 0.999,
+     "alternatives": [
+      {
+       "value": "entities",
+       "start": 3742,
+       "p_verify": 0.999
+      },
+      {
+       "value": "entities",
+       "start": 12763,
+       "p_verify": 0.999
+      }
+     ],
+     "p_more": 1,
+     "confidence": 0.995
+    },
+    {
+     "value": "relations",
+     "start": 2027,
+     "end": 2036,
+     "p_start": 0.988,
+     "p_close": 1,
+     "p_point": 0.066,
+     "p_verify": 1,
+     "alternatives": [
+      {
+       "value": "relations",
+       "start": 3755,
+       "p_verify": 1
+      },
+      {
+       "value": "relations",
+       "start": 2741,
+       "p_verify": 1
+      }
+     ],
+     "p_more": 1,
+     "confidence": 0.988
+    },
+    {
+     "value": "observations",
+     "start": 520,
+     "end": 532,
+     "p_start": 1,
+     "p_close": 1,
+     "p_point": 0.174,
+     "p_verify": 1,
+     "alternatives": [
+      {
+       "value": "observations",
+       "start": 12927,
+       "p_verify": 1
+      },
+      {
+       "value": "observations",
+       "start": 606,
+       "p_verify": 1
+      }
+     ],
+     "p_more": 1,
+     "confidence": 1
+    },
+    {
+     "value": "memory.jsonl\"\n",
+     "start": 6376,
+     "end": 6390,
+     "p_start": 0.456,
+     "p_close": 1,
+     "p_point": 0.033,
+     "p_verify": 1,
+     "alternatives": [
+      {
+       "value": "memory\"",
+       "start": 12170,
+       "p_verify": 0.231
+      },
+      {
+       "value": "memory file",
+       "start": 7498,
+       "p_verify": 1
+      }
+     ],
+     "p_more": 0.998,
+     "confidence": 0.456
+    },
+    {
+     "value": "knowledge-graph",
+     "start": 4236,
+     "end": 4251,
+     "p_start": 0.728,
+     "p_close": 1,
+     "p_point": 0.024,
+     "p_verify": 0.978,
+     "p_more": 1,
+     "confidence": 0.728
+    },
+    {
+     "value": "application/json",
+     "start": 4326,
+     "end": 4342,
+     "p_start": 0.508,
+     "p_close": 1,
+     "p_point": 0.025,
+     "p_verify": 0.998,
+     "p_more": 1,
+     "confidence": 0.508
+    },
+    {
+     "value": "memory file",
+     "start": 7498,
+     "end": 7509,
+     "p_start": 0.398,
+     "p_close": 1,
+     "p_point": 0.021,
+     "p_verify": 1,
+     "alternatives": [
+      {
+       "value": "memory\"",
+       "start": 12170,
+       "p_verify": 0.231
+      },
+      {
+       "value": "memory file",
+       "start": 7530,
+       "p_verify": 1
+      }
+     ],
+     "p_more": 1,
+     "confidence": 0.398
+    },
+    {
+     "value": "index.js",
+     "start": 13086,
+     "end": 13094,
+     "p_start": 0.695,
+     "p_close": 1,
+     "p_point": 0.014,
+     "p_verify": 0.5,
+     "alternatives": [
+      {
+       "value": "index.js",
+       "start": 13226,
+       "p_verify": 0.5
+      }
+     ],
+     "p_more": 1,
+     "confidence": 0.5
+    },
+    {
+     "value": "memory",
+     "start": 13060,
+     "end": 13066,
+     "p_start": 0.308,
+     "p_close": 0.706,
+     "p_point": 0.007,
+     "p_verify": 0.993,
+     "p_more": 1,
+     "confidence": 0.308
+    }
+   ],
+   "confidence": 0.308,
+   "rejected": [
+    "mcp.json"
+   ],
+   "rejected_items": [
+    {
+     "value": "mcp.json",
+     "start": 10354,
+     "end": 10362,
+     "p_start": 0.168,
+     "p_close": 1,
+     "p_point": 0.005,
+     "p_verify": 0.289,
+     "alternatives": [
+      {
+       "value": "memory\"",
+       "start": 12170,
+       "p_verify": 0.231
+      },
+      {
+       "value": "memories",
+       "start": 11564,
+       "p_verify": 0.005
+      }
+     ],
+     "confidence": 0.168
+    }
+   ],
+   "finish": "budget"
+  },
+  "credentials_required": {
+   "value": [],
+   "items": [],
+   "confidence": 1,
+   "rejected": [
+    "MEMORY_FILE_PATH"
+   ],
+   "rejected_items": [
+    {
+     "value": "MEMORY_FILE_PATH",
+     "start": 6340,
+     "end": 6356,
+     "p_start": 0.462,
+     "p_close": 1,
+     "p_point": 0.381,
+     "p_verify": 0,
+     "alternatives": [
+      {
+       "value": "MEMORY_FILE_PATH",
+       "start": 6717,
+       "p_verify": 0
+      },
+      {
+       "value": "MEMORY_FILE_PATH",
+       "start": 7367,
+       "p_verify": 0
+      }
+     ],
+     "confidence": 0
+    }
+   ],
+   "finish": "closed"
+  },
+  "license": {
+   "value": "MIT",
+   "start": 13327,
+   "end": 13330,
+   "p_start": 1,
+   "p_close": 1,
+   "p_point": 0.489,
+   "p_verify": 1,
+   "confidence": 1
+  }
+ },
+ "verdict": {
+  "verdict": {
+   "type": "choice",
+   "choice": "needs_owner",
+   "probabilities": {
+    "approve": 0.0022,
+    "needs_owner": 0.9931,
+    "reuse_existing": 0.0025,
+    "quarantine": 0.0021
+   },
+   "confidence": 0.9909
+  },
+  "risk_of_acting": {
+   "type": "score",
+   "score": 1.8153,
+   "legend": {
+    "0": "negligible",
+    "1": "low",
+    "2": "moderate",
+    "3": "high",
+    "4": "severe"
+   },
+   "probabilities": {
+    "0": 0.026,
+    "1": 0.3058,
+    "2": 0.5157,
+    "3": 0.1321,
+    "4": 0.0204
+   },
+   "confidence": 0.3947
+  },
+  "autonomy": {
+   "type": "choice",
+   "choice": "blocked",
+   "probabilities": {
+    "autonomous": 0.0049,
+    "approval_required": 0.0073,
+    "blocked": 0.9878
+   },
+   "confidence": 0.9817
+  }
+ },
+ "duplicates": [],
+ "reuse": [
+  {
+   "agent": "hr-policy-assistant",
+   "action": "skip",
+   "score": 0.0045
+  },
+  {
+   "agent": "payroll-helper",
+   "action": "skip",
+   "score": 0.0029
+  },
+  {
+   "agent": "meeting-notes-agent",
+   "action": "skip",
+   "score": 0.0018
+  }
+ ],
+ "usage": {
+  "calls": 86,
+  "cached": 84,
+  "credits": 5.0,
+  "cost_usd": 0.001,
+  "credits_this_report": 0.0
+ },
+ "verdict_label": "needs_owner",
+ "artifacts": [
+  {
+   "path": "Dockerfile",
+   "kind": "script",
+   "text": "FROM node:24-alpine AS builder\n\nCOPY src/memory /app\nCOPY tsconfig.json /tsconfig.json\n\nWORKDIR /app\n\nRUN --mount=type=cache,target=/root/.npm npm install\n\nRUN --mount=type=cache,target=/root/.npm-production npm ci --ignore-scripts --omit-dev\n\nFROM node:24-alpine AS release\n\nCOPY --from=builder /app/dist /app/dist\nCOPY --from=builder /app/package.json /app/package.json\nCOPY --from=builder /app/package-lock.json /app/package-lock.json\n\nENV NODE_ENV=production\n\nWORKDIR /app\n\nRUN npm ci --ignore-scripts --omit-dev\n\nENTRYPOINT [\"node\", \"dist/index.js\"]",
+   "truncated": false
+  },
+  {
+   "path": "README.md",
+   "kind": "readme",
+   "text": "# Knowledge Graph Memory Server\n\nA basic implementation of persistent memory using a local knowledge graph. This lets Claude remember information about the user across chats.\n\nPublished on npm as [`@modelcontextprotocol/server-memory`](https://www.npmjs.com/package/@modelcontextprotocol/server-memory).\n\n## Core Concepts\n\n### Entities\nEntities are the primary nodes in the knowledge graph. Each entity has:\n- A unique name (identifier)\n- An entity type (e.g., \"person\", \"organization\", \"event\")\n- A list of observations\n\nExample:\n```json\n{\n  \"name\": \"John_Smith\",\n  \"entityType\": \"person\",\n  \"observations\": [\"Speaks fluent Spanish\"]\n}\n```\n\n### Relations\nRelations define directed connections between entities. They are always stored in active voice and describe how entities interact or relate to each other.\n\nExample:\n```json\n{\n  \"from\": \"John_Smith\",\n  \"to\": \"Anthropic\",\n  \"relationType\": \"works_at\"\n}\n```\n### Observations\nObservations are discrete pieces of information about an entity. They are:\n\n- Stored as strings\n- Attached to specific entities\n- Can be added or removed independently\n- Should be atomic (one fact per observation)\n\nExample:\n```json\n{\n  \"entityName\": \"John_Smith\",\n  \"observations\": [\n    \"Speaks fluent Spanish\",\n    \"Graduated in 2019\",\n    \"Prefers morning meetings\"\n  ]\n}\n```\n\n## API\n\n### Tools\n- **create_entities**\n  - Create multiple new entities in the knowledge graph\n  - Input: `entities` (array of objects)\n    - Each object contains:\n      - `name` (string): Entity identifier\n      - `entityType` (string): Type classification\n      - `observations` (string[]): Associated observations\n  - Ignores entities with existing names (and repeats of a name earlier in the same call); their observations are not added\n  - Returns the created entities. When any were skipped, the structured result also lists their names in `skipped`, and a second text item says which were skipped (use `add_observations` to extend an existing entity)\n\n- **create_relations**\n  - Create multiple new relations between entities\n  - Input: `relations` (array of objects)\n    - Each object contains:\n      - `from` (string): Source entity name\n      - `to` (string): Target entity name\n      - `relationType` (string): Relationship type in active voice\n  - Skips duplicate relations\n  - Fails if either the source or target entity doesn't exist\n\n- **add_observations**\n  - Add new observations to existing entities\n  - Input: `observations` (array of objects)\n    - Each object contains:\n      - `entityName` (string): Target entity\n      - `contents` (string[]): New observations to add\n  - Returns added observations per entity\n  - Fails if entity doesn't exist\n\n- **delete_entities**\n  - Remove entities and their relations\n  - Input: `entityNames` (string[])\n  - Cascading deletion of associated relations\n  - No error if an entity doesn't exist; the response reports which names were not found\n\n- **delete_observations**\n  - Remove specific observations from entities\n  - Input: `deletions` (array of objects)\n    - Each object contains:\n      - `entityName` (string): Target entity\n      - `observations` (string[]): Observations to remove\n  - No error if an observation doesn't exist; the response reports how many were deleted\n\n- **delete_relations**\n  - Remove specific relations from the graph\n  - Input: `relations` (array of objects)\n    - Each object contains:\n      - `from` (string): Source entity name\n      - `to` (string): Target entity name\n      - `relationType` (string): Relationship type\n  - No error if a relation doesn't exist; the response reports how many were deleted\n\n- **read_graph**\n  - Read the entire knowledge graph\n  - No input required\n  - Returns complete graph structure with all entities and relations\n\n- **search_nodes**\n  - Search for nodes based on query\n  - Input: `query` (string)\n  - Searches across:\n    - Entity names\n    - Entity types\n    - Observation content\n  - Returns matching entities and their relations\n\n- **open_nodes**\n  - Retrieve specific nodes by name\n  - Input: `names` (string[])\n  - Returns:\n    - Requested entities\n    - Relations between requested entities\n  - Silently skips non-existent nodes\n\n### Resources\n\n- **knowledge-graph** (`memory://knowledge-graph`)\n  - The full knowledge graph as a readable MCP Resource\n  - MIME type: `application/json`\n  - Returns the same shape as `read_graph` (entities and relations)\n  - Mutation tools (`create_entities`, `create_relations`, `add_observations`, `delete_entities`, `delete_observations`, `delete_relations`) emit `notifications/resources/updated` for this URI, so subscribed clients see live changes\n  - How a client subscribes depends on its protocol version: a 2026-07-28 client names the URI in the `resourceSubscriptions` of its `subscriptions/listen` request and gets the updates on that stream; a 2025-era client calls `resources/subscribe`\n\n## Protocol versions\n\nThe server serves both protocol eras on stdio from the same process. The client's first message picks the era of the connection: a 2026-07-28 client opens with `server/discover` and sends its protocol version, identity and capabilities with each request, and a 2025-era client opens with the `initialize` handshake. The tools and the resource are the same on both.\n\n## Requirements\n\nNode.js 24 or later, when the server runs through `npx` or from source.\n\n# Usage with Claude Desktop\n\n### Setup\n\nAdd this to your claude_desktop_config.json:\n\n#### Docker\n\n```json\n{\n  \"mcpServers\": {\n    \"memory\": {\n      \"command\": \"docker\",\n      \"args\": [\"run\", \"-i\", \"-v\", \"claude-memory:/app/dist\", \"--rm\", \"mcp/memory\"]\n    }\n  }\n}\n```\n\n#### NPX\n```json\n{\n  \"mcpServers\": {\n    \"memory\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@modelcontextprotocol/server-memory\"\n      ]\n    }\n  }\n}\n```\n\nOn Windows, use `cmd /c` to launch `npx`:\n\n```json\n{\n  \"mcpServers\": {\n    \"memory\": {\n      \"command\": \"cmd\",\n      \"args\": [\n        \"/c\",\n        \"npx\",\n        \"-y\",\n        \"@modelcontextprotocol/server-memory\"\n      ]\n    }\n  }\n}\n```\n\n#### NPX with custom setting\n\nThe server can be configured using the following environment variables:\n\n```json\n{\n  \"mcpServers\": {\n    \"memory\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@modelcontextprotocol/server-memory\"\n      ],\n      \"env\": {\n        \"MEMORY_FILE_PATH\": \"/path/to/custom/memory.jsonl\"\n      }\n    }\n  }\n}\n```\n\nOn Windows, use:\n\n```json\n{\n  \"mcpServers\": {\n    \"memory\": {\n      \"command\": \"cmd\",\n      \"args\": [\n        \"/c\",\n        \"npx\",\n        \"-y\",\n        \"@modelcontextprotocol/server-memory\"\n      ],\n      \"env\": {\n        \"MEMORY_FILE_PATH\": \"/path/to/custom/memory.jsonl\"\n      }\n    }\n  }\n}\n```\n\n- `MEMORY_FILE_PATH`: Path to the memory storage JSONL file (default: `memory.jsonl` in the server directory)\n\nWhen `MEMORY_FILE_PATH` is not set and the server directory still holds a legacy `memory.json` but no `memory.jsonl`, the server renames `memory.json` to `memory.jsonl` at startup. If that rename fails, the server exits with an error naming both paths and the cause, rather than starting on an empty graph; fix the cause (a permission problem, say) and restart, or set `MEMORY_FILE_PATH` to choose a file explicitly.\n\n#### Sharing one memory file between clients\n\nEach MCP client starts its own server process, so two clients using the same `MEMORY_FILE_PATH` (or both using the default) are two processes writing one file. Every write tool takes an exclusive lock file, `<memory file>.lock`, next to the memory file while it reads, changes and saves the graph, so writes from different processes take turns and none is lost. The lock file exists only while a write is in progress, so the directory holding the memory file must be writable (it already must be, for the atomic save).\n\n- A lock left behind by a server that crashed mid-write is removed automatically: at once if its process is known to have exited on the same machine, otherwise once it has gone 30 seconds without being refreshed (a server holding the lock refreshes it every 15 seconds while it works). Only one waiting server breaks a stale lock at a time, guarded by a momentary `<memory file>.lock.break` file.\n- A write that cannot get the lock within 60 seconds fails with a tool error rather than overwriting the file.\n- The lock relies on exclusive file creation, which local filesystems provide; a network filesystem that does not honour it cannot be shared safely this way.\n\n# VS Code Installation Instructions\n\nFor quick installation, use one of the one-click installation buttons below:\n\n[![Install with NPX in VS Code](https://img.shields.io/badge/VS_Code-NPM-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=memory&config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40modelcontextprotocol%2Fserver-memory%22%5D%7D) [![Install with NPX in VS Code Insiders](https://img.shields.io/badge/VS_Code_Insiders-NPM-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=memory&config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40modelcontextprotocol%2Fserver-memory%22%5D%7D&quality=insiders)\n\n[![Install with Docker in VS Code](https://img.shields.io/badge/VS_Code-Docker-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=memory&config=%7B%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22-v%22%2C%22claude-memory%3A%2Fapp%2Fdist%22%2C%22--rm%22%2C%22mcp%2Fmemory%22%5D%7D) [![Install with Docker in VS Code Insiders](https://img.shields.io/badge/VS_Code_Insiders-Docker-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=memory&config=%7B%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22-v%22%2C%22claude-memory%3A%2Fapp%2Fdist%22%2C%22--rm%22%2C%22mcp%2Fmemory%22%5D%7D&quality=insiders)\n\nFor manual installation, you can configure the MCP server using one of these methods:\n\n**Method 1: User Configuration (Recommended)**\nAdd the configuration to your user-level MCP configuration file. Open the Command Palette (`Ctrl + Shift + P`) and run `MCP: Open User Configuration`. This will open your user `mcp.json` file where you can add the server configuration.\n\n**Method 2: Workspace Configuration**\nAlternatively, you can add the configuration to a file called `.vscode/mcp.json` in your workspace. This will allow you to share the configuration with others.\n\n> For more details about MCP configuration in VS Code, see the [official VS Code MCP documentation](https://code.visualstudio.com/docs/copilot/customization/mcp-servers).\n\n#### NPX\n\n```json\n{\n  \"servers\": {\n    \"memory\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"@modelcontextprotocol/server-memory\"\n      ]\n    }\n  }\n}\n```\n\nOn Windows, use:\n\n```json\n{\n  \"servers\": {\n    \"memory\": {\n      \"command\": \"cmd\",\n      \"args\": [\n        \"/c\",\n        \"npx\",\n        \"-y\",\n        \"@modelcontextprotocol/server-memory\"\n      ]\n    }\n  }\n}\n```\n\n#### Docker\n\n```json\n{\n  \"servers\": {\n    \"memory\": {\n      \"command\": \"docker\",\n      \"args\": [\n        \"run\",\n        \"-i\",\n        \"-v\",\n        \"claude-memory:/app/dist\",\n        \"--rm\",\n        \"mcp/memory\"\n      ]\n    }\n  }\n}\n```\n\n### System Prompt\n\nThe prompt for utilizing memory depends on the use case. Changing the prompt will help the model determine the frequency and types of memories created.\n\nHere is an example prompt for chat personalization. You could use this prompt in the \"Custom Instructions\" field of a [Claude.ai Project](https://www.anthropic.com/news/projects). \n\n```\nFollow these steps for each interaction:\n\n1. User Identification:\n   - You should assume that you are interacting with default_user\n   - If you have not identified default_user, proactively try to do so.\n\n2. Memory Retrieval:\n   - Always begin",
+   "truncated": true
+  },
+  {
+   "path": "README.md#install",
+   "kind": "script",
+   "text": "docker build -t mcp/memory -f src/memory/Dockerfile . \n",
+   "truncated": false
+  },
+  {
+   "path": "package.json#scripts",
+   "kind": "script",
+   "text": "# npm build\ntsc && shx chmod +x dist/*.js\n# npm prepare\nnpm run build\n# npm watch\ntsc --watch\n# npm test\nvitest run\n# npm format\nprettier --write \"**/*.{ts,mts,cts,js,mjs,cjs}\" --ignore-path ../../.prettierignore\n# npm format:check\nprettier --check \"**/*.{ts,mts,cts,js,mjs,cjs}\" --ignore-path ../../.prettierignore\n# npm lint\neslint . --max-warnings 0\n# npm typecheck\ntsc -p tsconfig.test.json\n# npm coverage\nvitest run --coverage\n# npm validate\nnpm run format:check && npm run lint && npm run typecheck && npm run build && npm run test",
+   "truncated": false
+  },
+  {
+   "path": "index.ts::create_entities",
+   "kind": "tool_description",
+   "text": "Create multiple new entities in the knowledge graph. An entity whose name already exists, or repeats an earlier entity in the same call, is skipped and its observations are not added; the result lists the skipped names in `skipped`. Use add_observations to add observations to an existing entity.",
+   "truncated": false
+  },
+  {
+   "path": "index.ts::create_relations",
+   "kind": "tool_description",
+   "text": "Create multiple new relations between entities in the knowledge graph. Relations should be in active voice",
+   "truncated": false
+  },
+  {
+   "path": "index.ts::add_observations",
+   "kind": "tool_description",
+   "text": "Add new observations to existing entities in the knowledge graph",
+   "truncated": false
+  },
+  {
+   "path": "index.ts::delete_entities",
+   "kind": "tool_description",
+   "text": "Delete multiple entities and their associated relations from the knowledge graph",
+   "truncated": false
+  },
+  {
+   "path": "index.ts::delete_observations",
+   "kind": "tool_description",
+   "text": "Delete specific observations from entities in the knowledge graph",
+   "truncated": false
+  },
+  {
+   "path": "index.ts::delete_relations",
+   "kind": "tool_description",
+   "text": "Delete multiple relations from the knowledge graph",
+   "truncated": false
+  },
+  {
+   "path": "index.ts::read_graph",
+   "kind": "tool_description",
+   "text": "Read the entire knowledge graph",
+   "truncated": false
+  },
+  {
+   "path": "index.ts::search_nodes",
+   "kind": "tool_description",
+   "text": "Search for nodes in the knowledge graph based on a query",
+   "truncated": false
+  },
+  {
+   "path": "index.ts::open_nodes",
+   "kind": "tool_description",
+   "text": "Open specific nodes in the knowledge graph by their names",
+   "truncated": false
+  }
+ ],
+ "tools": [
+  {
+   "name": "create_entities",
+   "description": "Create multiple new entities in the knowledge graph. An entity whose name already exists, or repeats an earlier entity in the same call, is skipped and its observations are not added; the result lists the skipped names in `skipped`. Use add_observations to add observations to an existing entity.",
+   "source": "index.ts"
+  },
+  {
+   "name": "create_relations",
+   "description": "Create multiple new relations between entities in the knowledge graph. Relations should be in active voice",
+   "source": "index.ts"
+  },
+  {
+   "name": "add_observations",
+   "description": "Add new observations to existing entities in the knowledge graph",
+   "source": "index.ts"
+  },
+  {
+   "name": "delete_entities",
+   "description": "Delete multiple entities and their associated relations from the knowledge graph",
+   "source": "index.ts"
+  },
+  {
+   "name": "delete_observations",
+   "description": "Delete specific observations from entities in the knowledge graph",
+   "source": "index.ts"
+  },
+  {
+   "name": "delete_relations",
+   "description": "Delete multiple relations from the knowledge graph",
+   "source": "index.ts"
+  },
+  {
+   "name": "read_graph",
+   "description": "Read the entire knowledge graph",
+   "source": "index.ts"
+  },
+  {
+   "name": "search_nodes",
+   "description": "Search for nodes in the knowledge graph based on a query",
+   "source": "index.ts"
+  },
+  {
+   "name": "open_nodes",
+   "description": "Open specific nodes in the knowledge graph by their names",
+   "source": "index.ts"
+  }
+ ],
+ "declared": {},
+ "markdown": "# AgentAudit: mcp-memory\n\n**Verdict:** `needs_owner` (99% confidence)\n**Autonomy:** `blocked`  \u00b7  **Risk of acting:** 1.82 / 4\n\n## Registry record\n\n| Field | Value |\n|---|---|\n| purpose | A basic implementation of persistent memory using a local knowledge graph that lets Claude remember information about the user across chats |\n| owner | \u2014 |\n| can_write | True |\n| reaches_network | False |\n| data_sensitivity | public |\n| blast_radius | single user |\n\n## Findings (2)\n\n- **MEDIUM** \u00b7 AA004 \u00b7 Claim contradicted by capabilities \u2014 `README`\n  - > Fails if either the source or target entity doesn't exist\n- **MEDIUM** \u00b7 AA004 \u00b7 Claim contradicted by capabilities \u2014 `README`\n  - > Fails if entity doesn't exist\n\n## Existing agents for the same job\n\n- hr-policy-assistant: skip (score 0.00)\n- payroll-helper: skip (score 0.00)\n- meeting-notes-agent: skip (score 0.00)\n\n<sub>86 Clocked calls \u00b7 5 credits \u00b7 $0.0010</sub>",
+ "endpoints_used": [
+  "Compare /compare",
+  "Decide /decide",
+  "Extract /extract",
+  "Fill /fill",
+  "Guard /injection",
+  "Inspect /script",
+  "Protect /pii",
+  "Rerank /rerank",
+  "Verify /grounding"
+ ],
+ "blurb": "Anthropic's reference Memory MCP server, scanned straight from its repository."
+}
