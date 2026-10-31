@@ -51,3 +51,8 @@ Inspect note: consensus has the lower dev FPR (3.8% vs 9.6%). We report both, bu
 | Skills pipeline | Guard (instructions policy, consensus) OR Inspect on code blocks (verdict) OR supply-chain check (Extract + Decide, p ≥ 0.5) | — | 84.4 (best single Clocked endpoint: Inspect on whole file, 79.0) | Oct 31 |
 
 Skills note: the supply-chain check was designed on the skills dev split after a failure analysis there. On dev, missed malicious skills carried the payload as prose download instructions with no script. Thresholds 0.5, 0.7 and 0.9 gave identical dev results. Adding Guard changed nothing on dev; it's kept because the product runs it. The test split is run once.
+
+## RQ4 governance (Oct 31)
+- 48 agents built by `bench/suites/build_governance.py`, with labels from the committed recipe. **Dev = every 5th agent (10), test = the other 38.** The dev agents were used to find the per-tool false-positive compounding problem.
+- Rejected on dev: a "short, whole-description" filter (it destroyed recall). While checking it, its numbers were also printed for the Guard test and external splits. It was rejected, so the frozen numbers stand; this look is disclosed here.
+- Adopted as an **optional second operating point** (`precision=True`): a Decide second opinion on Guard flags for tool descriptions, threshold 0.3, chosen on Guard-dev flags plus the governance-dev false positives. On dev it kept 28/32 attacks and 0/6 false flags. The default (safety-first) mode is unchanged. Both modes are reported on the governance test set.

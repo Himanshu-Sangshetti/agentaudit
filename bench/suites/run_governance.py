@@ -45,14 +45,14 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int)
     ap.add_argument("--every", type=int, default=1, help="pilot: take every k-th agent")
-    ap.add_argument("--arms", nargs="+", default=["full", "loo", "decide_only"])
+    ap.add_argument("--arms", nargs="+", default=["full", "loo", "decide_only", "precision"])
     ap.add_argument("--budget", type=float, default=2500)
     a = ap.parse_args()
     labels = json.loads((G / "labels.json").read_text())[:: a.every][: a.limit]
     reg_agents = [collect_manifest(p) for p in sorted(glob.glob(str(G / "registry/*.yaml")))]
     registry = [(x.name, capability_facts(x)) for x in reg_agents]
     arms = (["full"] if "full" in a.arms else []) + ([f"loo:{e}" for e in LOO] if "loo" in a.arms else []) \
-        + (["decide_only"] if "decide_only" in a.arms else [])
+        + (["decide_only"] if "decide_only" in a.arms else []) + (["precision"] if "precision" in a.arms else [])
     results = collections.defaultdict(list)
     with Clocked(tag="governance", budget=a.budget) as c:
         for lab in labels:
@@ -67,7 +67,7 @@ def main():
                     pred = ans
                 else:
                     skip = {arm.split(":")[1]} if arm.startswith("loo:") else set()
-                    rep = Auditor(c, skip=skip).run(agent, registry)
+                    rep = Auditor(c, skip=skip, precision=arm == "precision").run(agent, registry)
                     pred = verdict_of(rep)
                 results[arm].append({"file": lab["file"], "label": truth, "defect": lab["defect"], "pred": pred})
         credits = c.usage.credits
