@@ -180,7 +180,7 @@ def adjudicate_tool_flag(client, description: str) -> float:
 def supply_chain_check(client, text: str) -> dict:
     """Extract what the text asks to download or run (verbatim, with offsets), then Decide whether it is untrusted.
 
-    Designed on the skills dev split: malicious skills mostly hide the payload in prose ("first install the
+    Designed on the skills dev split: the malicious skills Inspect missed carry the payload in prose ("first install the
     helper from <link>"), which neither Guard nor Inspect is built to judge.
     """
     ex = client.extract(text=text[:190_000], fields={"download_targets": {

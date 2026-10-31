@@ -31,7 +31,7 @@ Decision models such as Clocked, TypeSafe Jev, OpenAI Decisions and Microsoft-De
 1. AgentAudit, an open-source audit (CLI, GitHub Action with SARIF, REST hook, web app). Each of Clocked's nine endpoints has a measured job, and authority (autonomy) is set by policy rather than by the model.
 2. AgentAudit-Bench: four suites with server- or source-disjoint dev/test splits, external real-world sets, free open-source baselines, a pre-registered protocol and all per-row records.
 3. An analysis of *where* the gains come from: a policy × rule ablation, a threshold-only control, leave-one-endpoint-out governance ablations, and a single-call control.
-4. A supply-chain check that targets the dominant failure mode in real malicious skills: payloads written as prose prerequisites rather than scripts.
+4. A supply-chain check that targets what Guard and Inspect miss in real malicious skills: payloads written as prose prerequisites rather than scripts.
 
 ## 2. Related work
 

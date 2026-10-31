@@ -208,6 +208,9 @@ def jev_section() -> str:
     return "\n".join(rows)
 
 
+SUPPLY_CHAIN_CREDITS = 18.3  # credit ledger: 4,474 credits over 244 test skills
+
+
 def skills_section(split: str) -> str:
     from agentaudit.audit import EXPECTED_IN_INSTRUCTIONS, is_attack
     paths = {a: RES / f"skills_{split}_{a}.jsonl" for a in ("guard_default", "inspect_default", "agentaudit", "supplychain")}
@@ -236,7 +239,7 @@ def skills_section(split: str) -> str:
 
     merged = [r | {"p": max((r.get("guard") or {}).get("injection") or 0, (r.get("inspect") or {}).get("malicious") or 0,
                             sc.get(r["id"], {}).get("p_untrusted") or 0),
-                   "credits": (r.get("credits") or 0) + 14} for r in A]
+                   "credits": (r.get("credits") or 0) + SUPPLY_CHAIN_CREDITS} for r in A]
     arms = [arm_row("Clocked Guard, default, whole file", with_p(G, "guard"), lambda r: g(r)),
             arm_row("Clocked Inspect, default, whole file", with_p(I, "inspect"), lambda r: g(r, "inspect")),
             arm_row("AgentAudit pipeline ★ frozen (Guard + Inspect on code + supply-chain)", merged, pipeline),

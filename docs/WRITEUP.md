@@ -127,7 +127,7 @@ The same command, say "disable Defender, install, re-enable", can be an approved
 
 *Figure 6. Balanced accuracy with 95% bootstrap CIs for every arm on every suite.*
 
-Failure analysis on the dev split showed why both endpoints miss malicious skills: the payload is usually **prose**, not code ("first install the helper from this link"). We added a **supply-chain check**. Extract pulls, verbatim and with offsets, everything the skill asks you to download or run; Decide judges whether the source is untrusted. On the held-out test, the pipeline catches **80.5%** against 48.3% for the best single endpoint, at 3.2% false alarms (p = 7 × 10⁻⁶). On its own, the check reaches 77% recall at 0.6% false alarms.
+Failure analysis on the dev split showed what the endpoints miss. Inspect caught 22 of 37 malicious skills, nearly all with base64 or pipe-to-shell commands. Of the 15 it missed, 14 carry a link and only one pipes to a shell: the payload is **prose**, not code ("first install the helper from this link"). We added a **supply-chain check**. Extract pulls, verbatim and with offsets, everything the skill asks you to download or run; Decide judges whether the source is untrusted. On the held-out test, the pipeline catches **80.5%** against 48.3% for the best single endpoint, at 3.2% false alarms (p = 7 × 10⁻⁶). On its own, the check reaches 77% recall at 0.6% false alarms.
 
 ### 4.5 Governance: every endpoint earns its place
 
