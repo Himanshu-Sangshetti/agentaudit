@@ -23,6 +23,7 @@ ENDPOINTS = {
     "grounding", "compare", "rerank", "pipeline",
 }
 CACHE_DIR = Path(os.environ.get("AGENTAUDIT_CACHE", ".cache/clocked"))
+LEDGER = Path(os.environ.get("AGENTAUDIT_LEDGER", "bench/credit_ledger.jsonl"))
 
 
 class ClockedError(RuntimeError):
@@ -70,7 +71,8 @@ def _float(v: str | None) -> float | None:
 
 class Clocked:
     def __init__(self, api_key: str | None = None, cache: bool = True, timeout: float = 120.0,
-                 max_retries: int = 4, credit_ceiling: float | None = None):
+                 max_retries: int = 4, credit_ceiling: float | None = None, tag: str = "adhoc",
+                 budget: float | None = None):
         load_dotenv()
         self.api_key = api_key or os.environ.get("CLOCKED_API_KEY")
         if not self.api_key:
@@ -80,6 +82,15 @@ class Clocked:
         # Hard stop so a runaway loop can't drain the account.
         self.credit_ceiling = credit_ceiling or _float(os.environ.get("AGENTAUDIT_CREDIT_CEILING"))
         self.usage = Usage()
+        # Every paid call is appended to a ledger tagged with the experiment that spent it.
+        self.tag = tag
+        self.budget = budget
+
+    @staticmethod
+    def ledger_total() -> float:
+        if not LEDGER.exists():
+            return 0.0
+        return sum(json.loads(l).get("credits") or 0 for l in LEDGER.read_text().splitlines() if l.strip())
         self._http = httpx.Client(timeout=timeout)
 
     def close(self) -> None:
@@ -105,8 +116,10 @@ class Clocked:
                         rec.get("credits"), rec.get("cost_usd"), cached=True)
             self.usage.add(call)
             return call
-        if self.credit_ceiling is not None and self.usage.credits >= self.credit_ceiling:
-            raise RuntimeError(f"credit ceiling {self.credit_ceiling} reached")
+        if self.budget is not None and self.usage.credits >= self.budget:
+            raise RuntimeError(f"experiment '{self.tag}' hit its budget of {self.budget} credits")
+        if self.credit_ceiling is not None and self.ledger_total() >= self.credit_ceiling:
+            raise RuntimeError(f"account ceiling {self.credit_ceiling} reached (see {LEDGER})")
 
         # One idempotency key per logical request, reused across retries (per the docs).
         idem = str(uuid.uuid4())
@@ -136,6 +149,10 @@ class Clocked:
                         _float(resp.headers.get("X-Clocked-Credits")),
                         _float(resp.headers.get("X-Clocked-Cost-Usd")), cached=False)
             self.usage.add(call)
+            LEDGER.parent.mkdir(parents=True, exist_ok=True)
+            with LEDGER.open("a") as fh:
+                fh.write(json.dumps({"ts": time.time(), "tag": self.tag, "endpoint": endpoint,
+                                     "credits": call.credits, "usd": call.cost_usd}) + "\n")
             if self.cache:
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text(json.dumps({

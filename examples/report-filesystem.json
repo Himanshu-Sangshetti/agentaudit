@@ -1,0 +1,446 @@
+{
+ "agent": "filesystem",
+ "origin": "/Users/hims/huggingface-challenge/data/raw/mcp/official-servers/src/filesystem",
+ "findings": [
+  {
+   "check": "guard",
+   "severity": "critical",
+   "title": "Possible injection: benign",
+   "path": "server.ts::read_text_file",
+   "evidence": [
+    {
+     "quote": "Read the complete contents of a file from the file system as text.",
+     "start": 0,
+     "end": 66
+    }
+   ],
+   "detail": {
+    "probability": 0.946294857931632,
+    "category": "benign"
+   }
+  },
+  {
+   "check": "guard",
+   "severity": "critical",
+   "title": "Possible injection: instruction override",
+   "path": "server.ts::write_file",
+   "evidence": [
+    {
+     "quote": "Create a new file or completely overwrite an existing file with new content.",
+     "start": 0,
+     "end": 76
+    }
+   ],
+   "detail": {
+    "probability": 0.9441190114350466,
+    "category": "instruction override"
+   }
+  },
+  {
+   "check": "guard",
+   "severity": "none",
+   "title": "Possible injection: benign",
+   "path": "server.ts::read_multiple_files",
+   "evidence": [],
+   "detail": {
+    "probability": 0.6103599508567459,
+    "category": "benign"
+   }
+  }
+ ],
+ "record": {
+  "purpose": {
+   "value": "Node.js server implementing Model Context Protocol (MCP) for filesystem operations",
+   "confidence": 0.9153103743452933,
+   "source": "generated"
+  },
+  "owner": {
+   "value": null,
+   "confidence": 1
+  },
+  "can_write": {
+   "value": true,
+   "confidence": 0.968,
+   "probabilities": {
+    "yes": 0.9839936415183365,
+    "no": 0.01600635848166354
+   }
+  },
+  "reaches_network": {
+   "value": false,
+   "confidence": 0.958,
+   "probabilities": {
+    "yes": 0.020785556198367194,
+    "no": 0.9792144438016328
+   }
+  },
+  "data_sensitivity": {
+   "value": "public",
+   "confidence": 0.363,
+   "probabilities": {
+    "public": 0.5225185700266026,
+    "internal": 0.15697780824833704,
+    "confidential": 0.16642952769945182,
+    "regulated": 0.15407409402560848
+   }
+  },
+  "blast_radius": {
+   "value": "single user",
+   "confidence": 0.431,
+   "expected": 1.897,
+   "probabilities": {
+    "single user": 0.573263431628352,
+    "team": 0.13078236341830327,
+    "department": 0.12191681056401062,
+    "organization": 0.17403739438933405
+   }
+  }
+ },
+ "facts": {
+  "owner": {
+   "value": null,
+   "confidence": 1,
+   "p_blank": 0,
+   "rejected_value": "modelcontextprotocol",
+   "rejected_p_verify": 0,
+   "reason": "verification_rejected"
+  },
+  "systems_reached": {
+   "value": [],
+   "items": [],
+   "confidence": 1,
+   "rejected": [
+    "local filesystem"
+   ],
+   "rejected_items": [
+    {
+     "value": "local filesystem",
+     "start": 15050,
+     "end": 15066,
+     "p_start": 0.546,
+     "p_close": 1,
+     "p_point": 1,
+     "p_verify": 0,
+     "confidence": 0
+    }
+   ],
+   "finish": "closed"
+  },
+  "data_touched": {
+   "value": [
+    "files",
+    "directories",
+    "media",
+    "text",
+    "audio",
+    "image",
+    "binary data",
+    "JSON tree structure",
+    "metadata"
+   ],
+   "items": [
+    {
+     "value": "files",
+     "start": 285,
+     "end": 290,
+     "p_start": 0.999,
+     "p_close": 1,
+     "p_point": 0.314,
+     "p_verify": 1,
+     "alternatives": [
+      {
+       "value": "files",
+       "start": 358,
+       "p_verify": 1
+      },
+      {
+       "value": "filesystem",
+       "start": 4781,
+       "p_verify": 1
+      }
+     ],
+     "p_more": 1,
+     "confidence": 0.999
+    },
+    {
+     "value": "directories",
+     "start": 312,
+     "end": 323,
+     "p_start": 1,
+     "p_close": 1,
+     "p_point": 0.221,
+     "p_verify": 1,
+     "alternatives": [
+      {
+       "value": "directories",
+       "start": 337,
+       "p_verify": 1
+      },
+      {
+       "value": "directories",
+       "start": 8723,
+       "p_verify": 1
+      }
+     ],
+     "p_more": 1,
+     "confidence": 1
+    },
+    {
+     "value": "media",
+     "start": 5453,
+     "end": 5458,
+     "p_start": 0.964,
+     "p_close": 1,
+     "p_point": 0.099,
+     "p_verify": 0.999,
+     "alternatives": [
+      {
+       "value": "media",
+       "start": 13270,
+       "p_verify": 0.999
+      }
+     ],
+     "p_more": 1,
+     "confidence": 0.964
+    },
+    {
+     "value": "text",
+     "start": 5189,
+     "end": 5193,
+     "p_start": 0.514,
+     "p_close": 1,
+     "p_point": 0.079,
+     "p_verify": 0.996,
+     "alternatives": [
+      {
+       "value": "text",
+       "start": 5357,
+       "p_verify": 0.996
+      },
+      {
+       "value": "text",
+       "start": 5137,
+       "p_verify": 0.996
+      }
+     ],
+     "p_more": 1,
+     "confidence": 0.514
+    },
+    {
+     "value": "audio",
+     "start": 5676,
+     "end": 5681,
+     "p_start": 0.333,
+     "p_close": 0.998,
+     "p_point": 0.123,
+     "p_verify": 1,
+     "alternatives": [
+      {
+       "value": "audio",
+       "start": 5713,
+       "p_verify": 1
+      }
+     ],
+     "p_more": 1,
+     "confidence": 0.333
+    },
+    {
+     "value": "image",
+     "start": 5705,
+     "end": 5710,
+     "p_start": 0.967,
+     "p_close": 1,
+     "p_point": 0.358,
+     "p_verify": 1,
+     "p_more": 1,
+     "confidence": 0.967
+    },
+    {
+     "value": "binary data",
+     "start": 5832,
+     "end": 5843,
+     "p_start": 0.996,
+     "p_close": 1,
+     "p_point": 0.249,
+     "p_verify": 1,
+     "p_more": 1,
+     "confidence": 0.996
+    },
+    {
+     "value": "JSON tree structure",
+     "start": 9843,
+     "end": 9862,
+     "p_start": 0.957,
+     "p_close": 1,
+     "p_point": 0.16,
+     "p_verify": 0.947,
+     "alternatives": [
+      {
+       "value": "JSON",
+       "start": 10044,
+       "p_verify": 0.024
+      }
+     ],
+     "p_more": 1,
+     "confidence": 0.947
+    },
+    {
+     "value": "metadata",
+     "start": 10499,
+     "end": 10507,
+     "p_start": 0.414,
+     "p_close": 1,
+     "p_point": 0.047,
+     "p_verify": 0.986,
+     "alternatives": [
+      {
+       "value": "metadata",
+       "start": 375,
+       "p_verify": 0.986
+      },
+      {
+       "value": "metadata",
+       "start": 11360,
+       "p_verify": 0.986
+      }
+     ],
+     "p_more": 1,
+     "confidence": 0.414
+    }
+   ],
+   "confidence": 0.333,
+   "rejected": [
+    "diff"
+   ],
+   "rejected_items": [
+    {
+     "value": "diff",
+     "start": 7490,
+     "end": 7494,
+     "p_start": 0.694,
+     "p_close": 0.967,
+     "p_point": 0.043,
+     "p_verify": 0,
+     "alternatives": [
+      {
+       "value": "diff",
+       "start": 7862,
+       "p_verify": 0
+      },
+      {
+       "value": "differs",
+       "start": 7344,
+       "p_verify": 0
+      }
+     ],
+     "confidence": 0
+    }
+   ],
+   "finish": "budget"
+  },
+  "credentials_required": {
+   "value": [],
+   "items": [],
+   "confidence": 1,
+   "rejected": [
+    "none"
+   ],
+   "rejected_items": [
+    {
+     "value": "none",
+     "start": 2759,
+     "end": 2763,
+     "p_start": 0.358,
+     "p_close": 1,
+     "p_point": 0.395,
+     "p_verify": 0,
+     "alternatives": [
+      {
+       "value": "none",
+       "start": 2395,
+       "p_verify": 0
+      },
+      {
+       "value": "none",
+       "start": 2404,
+       "p_verify": 0
+      }
+     ],
+     "confidence": 0
+    }
+   ],
+   "finish": "closed"
+  },
+  "license": {
+   "value": "MIT",
+   "start": 20245,
+   "end": 20248,
+   "p_start": 1,
+   "p_close": 1,
+   "p_point": 0.495,
+   "p_verify": 1,
+   "confidence": 1
+  }
+ },
+ "verdict": {
+  "verdict": {
+   "type": "choice",
+   "choice": "quarantine",
+   "probabilities": {
+    "approve": 0.0045,
+    "needs_owner": 0.0388,
+    "reuse_existing": 0.0062,
+    "quarantine": 0.9505
+   },
+   "confidence": 0.934
+  },
+  "risk_of_acting": {
+   "type": "score",
+   "score": 3.8708,
+   "legend": {
+    "0": "negligible",
+    "1": "low",
+    "2": "moderate",
+    "3": "high",
+    "4": "severe"
+   },
+   "probabilities": {
+    "0": 0.0039,
+    "1": 0.0037,
+    "2": 0.0044,
+    "3": 0.0935,
+    "4": 0.8944
+   },
+   "confidence": 0.8681
+  },
+  "autonomy": {
+   "type": "choice",
+   "choice": "blocked",
+   "probabilities": {
+    "autonomous": 0.0065,
+    "approval_required": 0.0134,
+    "blocked": 0.9801
+   },
+   "confidence": 0.9702
+  }
+ },
+ "duplicates": [],
+ "reuse": [
+  {
+   "agent": "memory",
+   "action": "skip",
+   "score": 0.0029
+  },
+  {
+   "agent": "payroll-helper",
+   "action": "skip",
+   "score": 0.0027
+  }
+ ],
+ "usage": {
+  "calls": 54,
+  "cached": 0,
+  "credits": 189.0,
+  "cost_usd": 0.0376
+ }
+}

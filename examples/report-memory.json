@@ -1,0 +1,589 @@
+{
+ "agent": "memory",
+ "origin": "/Users/hims/huggingface-challenge/data/raw/mcp/official-servers/src/memory",
+ "findings": [
+  {
+   "check": "guard",
+   "severity": "critical",
+   "title": "Possible injection: benign",
+   "path": "README.md",
+   "evidence": [
+    {
+     "quote": "- You should assume that you are interacting with default_user",
+     "start": 11826,
+     "end": 11888
+    },
+    {
+     "quote": "- If you have not identified default_user, proactively try to do so.",
+     "start": 11892,
+     "end": 11960
+    },
+    {
+     "quote": "- Always begin your chat by saying only \"Remembering...\"",
+     "start": 11986,
+     "end": 12042
+    },
+    {
+     "quote": "and retrieve all relevant information from your knowledge graph",
+     "start": 12043,
+     "end": 12106
+    }
+   ],
+   "detail": {
+    "probability": 0.5674349569088227,
+    "category": "benign"
+   }
+  },
+  {
+   "check": "verify",
+   "severity": "medium",
+   "title": "Claim contradicted by capabilities",
+   "path": "README",
+   "evidence": [
+    {
+     "quote": "Fails if either the source or target entity doesn't exist",
+     "start": -1,
+     "end": -1
+    }
+   ],
+   "detail": {
+    "contradicted": 0.8875,
+    "evidence": null
+   }
+  },
+  {
+   "check": "verify",
+   "severity": "medium",
+   "title": "Claim contradicted by capabilities",
+   "path": "README",
+   "evidence": [
+    {
+     "quote": "Fails if entity doesn't exist",
+     "start": -1,
+     "end": -1
+    }
+   ],
+   "detail": {
+    "contradicted": 0.6407,
+    "evidence": null
+   }
+  },
+  {
+   "check": "guard",
+   "severity": "none",
+   "title": "Possible injection: benign",
+   "path": "index.ts::create_entities",
+   "evidence": [],
+   "detail": {
+    "probability": 0.9311508700559656,
+    "category": "benign"
+   }
+  },
+  {
+   "check": "guard",
+   "severity": "none",
+   "title": "Possible injection: benign",
+   "path": "index.ts::create_relations",
+   "evidence": [],
+   "detail": {
+    "probability": 0.519663062804715,
+    "category": "benign"
+   }
+  },
+  {
+   "check": "guard",
+   "severity": "none",
+   "title": "Possible injection: benign",
+   "path": "index.ts::delete_observations",
+   "evidence": [],
+   "detail": {
+    "probability": 0.527991243789161,
+    "category": "benign"
+   }
+  },
+  {
+   "check": "guard",
+   "severity": "none",
+   "title": "Possible injection: instruction override",
+   "path": "index.ts::read_graph",
+   "evidence": [
+    {
+     "quote": "Read the entire knowledge graph",
+     "start": 0,
+     "end": 31
+    }
+   ],
+   "detail": {
+    "probability": 0.9363042398409898,
+    "category": "instruction override"
+   }
+  }
+ ],
+ "record": {
+  "purpose": {
+   "value": "A basic implementation of persistent memory using a local knowledge graph that lets Claude remember information about the user across chats",
+   "confidence": 0.9399660641495351,
+   "source": "generated"
+  },
+  "owner": {
+   "value": null,
+   "confidence": 1
+  },
+  "can_write": {
+   "value": true,
+   "confidence": 0.981,
+   "probabilities": {
+    "yes": 0.9906870848732154,
+    "no": 0.00931291512678456
+   }
+  },
+  "reaches_network": {
+   "value": false,
+   "confidence": 0.974,
+   "probabilities": {
+    "yes": 0.01298198108770132,
+    "no": 0.9870180189122987
+   }
+  },
+  "data_sensitivity": {
+   "value": "public",
+   "confidence": 0.367,
+   "probabilities": {
+    "public": 0.5250464291988091,
+    "internal": 0.17880887768984124,
+    "confidential": 0.1710501958998009,
+    "regulated": 0.12509449721154878
+   }
+  },
+  "blast_radius": {
+   "value": "single user",
+   "confidence": 0.452,
+   "expected": 2.002,
+   "probabilities": {
+    "single user": 0.5893380581728771,
+    "team": 0.08875634853968682,
+    "department": 0.052210573971668346,
+    "organization": 0.26969501931576767
+   }
+  }
+ },
+ "facts": {
+  "owner": {
+   "value": null,
+   "confidence": 1,
+   "p_blank": 0,
+   "rejected_value": "Anthropic",
+   "rejected_p_verify": 0,
+   "reason": "verification_rejected"
+  },
+  "systems_reached": {
+   "value": [],
+   "items": [],
+   "confidence": 1,
+   "rejected": [
+    "npm"
+   ],
+   "rejected_items": [
+    {
+     "value": "npm",
+     "start": 201,
+     "end": 204,
+     "p_start": 0.984,
+     "p_close": 1,
+     "p_point": 0.906,
+     "p_verify": 0,
+     "alternatives": [
+      {
+       "value": "npmjs.com",
+       "start": 260,
+       "p_verify": 0
+      }
+     ],
+     "confidence": 0
+    }
+   ],
+   "finish": "closed"
+  },
+  "data_touched": {
+   "value": [
+    "memory.jsonl",
+    "memory.json",
+    "knowledge graph",
+    "entities",
+    "relations",
+    "observations",
+    "memory.jsonl\"\n",
+    "knowledge-graph",
+    "application/json",
+    "memory file",
+    "index.js",
+    "memory"
+   ],
+   "items": [
+    {
+     "value": "memory.jsonl",
+     "start": 6785,
+     "end": 6797,
+     "p_start": 0.646,
+     "p_close": 1,
+     "p_point": 0.443,
+     "p_verify": 1,
+     "alternatives": [
+      {
+       "value": "memory.jsonl\"",
+       "start": 6376,
+       "p_verify": 1
+      },
+      {
+       "value": "memory",
+       "start": 82,
+       "p_verify": 0.993
+      }
+     ],
+     "p_more": 1,
+     "confidence": 0.646
+    },
+    {
+     "value": "memory.json",
+     "start": 6963,
+     "end": 6974,
+     "p_start": 0.946,
+     "p_close": 1,
+     "p_point": 0.291,
+     "p_verify": 1,
+     "alternatives": [
+      {
+       "value": "memory.jsonl\"\n",
+       "start": 6376,
+       "p_verify": 1
+      }
+     ],
+     "p_more": 1,
+     "confidence": 0.946
+    },
+    {
+     "value": "knowledge graph",
+     "start": 103,
+     "end": 118,
+     "p_start": 0.991,
+     "p_close": 1,
+     "p_point": 0.014,
+     "p_verify": 0.999,
+     "alternatives": [
+      {
+       "value": "knowledge graph",
+       "start": 12103,
+       "p_verify": 0.999
+      },
+      {
+       "value": "knowledge-graph",
+       "start": 4236,
+       "p_verify": 0.978
+      }
+     ],
+     "p_more": 1,
+     "confidence": 0.991
+    },
+    {
+     "value": "entities",
+     "start": 4388,
+     "end": 4396,
+     "p_start": 0.995,
+     "p_close": 1,
+     "p_point": 0.069,
+     "p_verify": 0.999,
+     "alternatives": [
+      {
+       "value": "entities",
+       "start": 3742,
+       "p_verify": 0.999
+      },
+      {
+       "value": "entities",
+       "start": 12763,
+       "p_verify": 0.999
+      }
+     ],
+     "p_more": 1,
+     "confidence": 0.995
+    },
+    {
+     "value": "relations",
+     "start": 2027,
+     "end": 2036,
+     "p_start": 0.988,
+     "p_close": 1,
+     "p_point": 0.066,
+     "p_verify": 1,
+     "alternatives": [
+      {
+       "value": "relations",
+       "start": 3755,
+       "p_verify": 1
+      },
+      {
+       "value": "relations",
+       "start": 2741,
+       "p_verify": 1
+      }
+     ],
+     "p_more": 1,
+     "confidence": 0.988
+    },
+    {
+     "value": "observations",
+     "start": 520,
+     "end": 532,
+     "p_start": 1,
+     "p_close": 1,
+     "p_point": 0.174,
+     "p_verify": 1,
+     "alternatives": [
+      {
+       "value": "observations",
+       "start": 12927,
+       "p_verify": 1
+      },
+      {
+       "value": "observations",
+       "start": 606,
+       "p_verify": 1
+      }
+     ],
+     "p_more": 1,
+     "confidence": 1
+    },
+    {
+     "value": "memory.jsonl\"\n",
+     "start": 6376,
+     "end": 6390,
+     "p_start": 0.456,
+     "p_close": 1,
+     "p_point": 0.033,
+     "p_verify": 1,
+     "alternatives": [
+      {
+       "value": "memory\"",
+       "start": 12170,
+       "p_verify": 0.231
+      },
+      {
+       "value": "memory file",
+       "start": 7498,
+       "p_verify": 1
+      }
+     ],
+     "p_more": 0.998,
+     "confidence": 0.456
+    },
+    {
+     "value": "knowledge-graph",
+     "start": 4236,
+     "end": 4251,
+     "p_start": 0.728,
+     "p_close": 1,
+     "p_point": 0.024,
+     "p_verify": 0.978,
+     "p_more": 1,
+     "confidence": 0.728
+    },
+    {
+     "value": "application/json",
+     "start": 4326,
+     "end": 4342,
+     "p_start": 0.508,
+     "p_close": 1,
+     "p_point": 0.025,
+     "p_verify": 0.998,
+     "p_more": 1,
+     "confidence": 0.508
+    },
+    {
+     "value": "memory file",
+     "start": 7498,
+     "end": 7509,
+     "p_start": 0.398,
+     "p_close": 1,
+     "p_point": 0.021,
+     "p_verify": 1,
+     "alternatives": [
+      {
+       "value": "memory\"",
+       "start": 12170,
+       "p_verify": 0.231
+      },
+      {
+       "value": "memory file",
+       "start": 7530,
+       "p_verify": 1
+      }
+     ],
+     "p_more": 1,
+     "confidence": 0.398
+    },
+    {
+     "value": "index.js",
+     "start": 13086,
+     "end": 13094,
+     "p_start": 0.695,
+     "p_close": 1,
+     "p_point": 0.014,
+     "p_verify": 0.5,
+     "alternatives": [
+      {
+       "value": "index.js",
+       "start": 13226,
+       "p_verify": 0.5
+      }
+     ],
+     "p_more": 1,
+     "confidence": 0.5
+    },
+    {
+     "value": "memory",
+     "start": 13060,
+     "end": 13066,
+     "p_start": 0.308,
+     "p_close": 0.706,
+     "p_point": 0.007,
+     "p_verify": 0.993,
+     "p_more": 1,
+     "confidence": 0.308
+    }
+   ],
+   "confidence": 0.308,
+   "rejected": [
+    "mcp.json"
+   ],
+   "rejected_items": [
+    {
+     "value": "mcp.json",
+     "start": 10354,
+     "end": 10362,
+     "p_start": 0.168,
+     "p_close": 1,
+     "p_point": 0.005,
+     "p_verify": 0.289,
+     "alternatives": [
+      {
+       "value": "memory\"",
+       "start": 12170,
+       "p_verify": 0.231
+      },
+      {
+       "value": "memories",
+       "start": 11564,
+       "p_verify": 0.005
+      }
+     ],
+     "confidence": 0.168
+    }
+   ],
+   "finish": "budget"
+  },
+  "credentials_required": {
+   "value": [],
+   "items": [],
+   "confidence": 1,
+   "rejected": [
+    "MEMORY_FILE_PATH"
+   ],
+   "rejected_items": [
+    {
+     "value": "MEMORY_FILE_PATH",
+     "start": 6340,
+     "end": 6356,
+     "p_start": 0.462,
+     "p_close": 1,
+     "p_point": 0.381,
+     "p_verify": 0,
+     "alternatives": [
+      {
+       "value": "MEMORY_FILE_PATH",
+       "start": 6717,
+       "p_verify": 0
+      },
+      {
+       "value": "MEMORY_FILE_PATH",
+       "start": 7367,
+       "p_verify": 0
+      }
+     ],
+     "confidence": 0
+    }
+   ],
+   "finish": "closed"
+  },
+  "license": {
+   "value": "MIT",
+   "start": 13327,
+   "end": 13330,
+   "p_start": 1,
+   "p_close": 1,
+   "p_point": 0.489,
+   "p_verify": 1,
+   "confidence": 1
+  }
+ },
+ "verdict": {
+  "verdict": {
+   "type": "choice",
+   "choice": "needs_owner",
+   "probabilities": {
+    "approve": 0.0148,
+    "needs_owner": 0.6033,
+    "reuse_existing": 0.0166,
+    "quarantine": 0.3652
+   },
+   "confidence": 0.4711
+  },
+  "risk_of_acting": {
+   "type": "score",
+   "score": 2.6186,
+   "legend": {
+    "0": "negligible",
+    "1": "low",
+    "2": "moderate",
+    "3": "high",
+    "4": "severe"
+   },
+   "probabilities": {
+    "0": 0.0243,
+    "1": 0.0763,
+    "2": 0.215,
+    "3": 0.6252,
+    "4": 0.0592
+   },
+   "confidence": 0.5315
+  },
+  "autonomy": {
+   "type": "choice",
+   "choice": "blocked",
+   "probabilities": {
+    "autonomous": 0.0038,
+    "approval_required": 0.0088,
+    "blocked": 0.9874
+   },
+   "confidence": 0.9812
+  }
+ },
+ "duplicates": [],
+ "reuse": [
+  {
+   "agent": "filesystem",
+   "action": "skip",
+   "score": 0.0184
+  },
+  {
+   "agent": "payroll-helper",
+   "action": "skip",
+   "score": 0.0029
+  }
+ ],
+ "usage": {
+  "calls": 82,
+  "cached": 0,
+  "credits": 362.0,
+  "cost_usd": 0.0721
+ }
+}
