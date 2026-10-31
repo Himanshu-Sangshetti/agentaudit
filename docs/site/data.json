@@ -1,0 +1,1082 @@
+{
+ "guard_test": [
+  {
+   "arm": "Clocked Guard (default)",
+   "group": "clocked",
+   "n": 253,
+   "bacc": 84.9,
+   "bacc_ci": [
+    80.5,
+    88.9
+   ],
+   "recall": 95.6,
+   "recall_ci": [
+    91.2,
+    99.1
+   ],
+   "fpr": 25.9,
+   "fpr_ci": [
+    18.7,
+    33.1
+   ],
+   "auroc": 0.946,
+   "median_ms": 351.9907500012778,
+   "credits": 3.067193675889328
+  },
+  {
+   "arm": "Clocked, tuned threshold",
+   "group": "clocked",
+   "n": 253,
+   "bacc": 83.8,
+   "bacc_ci": [
+    79.5,
+    87.8
+   ],
+   "recall": 95.6,
+   "recall_ci": [
+    91.2,
+    99.1
+   ],
+   "fpr": 28.1,
+   "fpr_ci": [
+    20.9,
+    36.0
+   ],
+   "auroc": 0.946,
+   "median_ms": 351.9907500012778,
+   "credits": 3.067193675889328
+  },
+  {
+   "arm": "Keyword regex",
+   "group": "baseline",
+   "n": 253,
+   "bacc": 68.4,
+   "bacc_ci": [
+    63.7,
+    73.2
+   ],
+   "recall": 40.4,
+   "recall_ci": [
+    31.6,
+    49.1
+   ],
+   "fpr": 3.6,
+   "fpr_ci": [
+    0.7,
+    7.2
+   ],
+   "auroc": 0.684,
+   "median_ms": 0.0034580007195472717,
+   "credits": null
+  },
+  {
+   "arm": "ProtectAI DeBERTa (tuned)",
+   "group": "baseline",
+   "n": 253,
+   "bacc": 87.1,
+   "bacc_ci": [
+    83.2,
+    90.9
+   ],
+   "recall": 93.0,
+   "recall_ci": [
+    87.7,
+    97.4
+   ],
+   "fpr": 18.7,
+   "fpr_ci": [
+    12.2,
+    25.2
+   ],
+   "auroc": 0.898,
+   "median_ms": 32.10633300477639,
+   "credits": null
+  },
+  {
+   "arm": "deepset DeBERTa (tuned)",
+   "group": "baseline",
+   "n": 253,
+   "bacc": 90.8,
+   "bacc_ci": [
+    87.3,
+    94.0
+   ],
+   "recall": 97.4,
+   "recall_ci": [
+    93.9,
+    100.0
+   ],
+   "fpr": 15.8,
+   "fpr_ci": [
+    10.1,
+    21.6
+   ],
+   "auroc": 0.954,
+   "median_ms": 32.01237501343712,
+   "credits": null
+  },
+  {
+   "arm": "Clocked + AgentAudit",
+   "group": "agentaudit",
+   "n": 253,
+   "bacc": 97.6,
+   "bacc_ci": [
+    95.5,
+    99.3
+   ],
+   "recall": 97.4,
+   "recall_ci": [
+    93.9,
+    100.0
+   ],
+   "fpr": 2.2,
+   "fpr_ci": [
+    0.0,
+    5.0
+   ],
+   "auroc": 0.999,
+   "median_ms": 349.4278340076562,
+   "credits": 2.940711462450593
+  },
+  {
+   "arm": "AgentAudit, precision mode",
+   "group": "agentaudit",
+   "n": 253,
+   "bacc": 87.3,
+   "bacc_ci": [
+    83.3,
+    90.8
+   ],
+   "recall": 74.6,
+   "recall_ci": [
+    66.7,
+    82.5
+   ],
+   "fpr": 0.0,
+   "fpr_ci": [
+    0.0,
+    0.0
+   ],
+   "auroc": 0.999,
+   "median_ms": 349.4278340076562,
+   "credits": 2.940711462450593
+  }
+ ],
+ "guard_external": [
+  {
+   "arm": "Clocked Guard (default)",
+   "group": "clocked",
+   "n": 249,
+   "bacc": 88.4,
+   "bacc_ci": [
+    85.5,
+    91.1
+   ],
+   "recall": 100.0,
+   "recall_ci": [
+    100.0,
+    100.0
+   ],
+   "fpr": 23.2,
+   "fpr_ci": [
+    17.9,
+    28.6
+   ],
+   "auroc": 0.998,
+   "median_ms": 336.4825829921756,
+   "credits": 2.5261044176706826
+  },
+  {
+   "arm": "Clocked, tuned threshold",
+   "group": "clocked",
+   "n": 249,
+   "bacc": 88.2,
+   "bacc_ci": [
+    85.5,
+    91.1
+   ],
+   "recall": 100.0,
+   "recall_ci": [
+    100.0,
+    100.0
+   ],
+   "fpr": 23.7,
+   "fpr_ci": [
+    18.3,
+    29.5
+   ],
+   "auroc": 0.998,
+   "median_ms": 336.4825829921756,
+   "credits": 2.5261044176706826
+  },
+  {
+   "arm": "Keyword regex",
+   "group": "baseline",
+   "n": 249,
+   "bacc": 68.4,
+   "bacc_ci": [
+    58.9,
+    78.2
+   ],
+   "recall": 40.0,
+   "recall_ci": [
+    20.0,
+    60.0
+   ],
+   "fpr": 3.1,
+   "fpr_ci": [
+    0.9,
+    5.4
+   ],
+   "auroc": 0.684,
+   "median_ms": 0.002540997229516506,
+   "credits": null
+  },
+  {
+   "arm": "ProtectAI DeBERTa (tuned)",
+   "group": "baseline",
+   "n": 249,
+   "bacc": 91.7,
+   "bacc_ci": [
+    89.3,
+    94.0
+   ],
+   "recall": 100.0,
+   "recall_ci": [
+    100.0,
+    100.0
+   ],
+   "fpr": 16.5,
+   "fpr_ci": [
+    11.6,
+    21.4
+   ],
+   "auroc": 0.971,
+   "median_ms": 26.73099999083206,
+   "credits": null
+  },
+  {
+   "arm": "deepset DeBERTa (tuned)",
+   "group": "baseline",
+   "n": 249,
+   "bacc": 87.5,
+   "bacc_ci": [
+    84.6,
+    90.2
+   ],
+   "recall": 100.0,
+   "recall_ci": [
+    100.0,
+    100.0
+   ],
+   "fpr": 25.0,
+   "fpr_ci": [
+    19.2,
+    30.8
+   ],
+   "auroc": 0.989,
+   "median_ms": 26.690166996559128,
+   "credits": null
+  },
+  {
+   "arm": "Clocked + AgentAudit",
+   "group": "agentaudit",
+   "n": 249,
+   "bacc": 97.3,
+   "bacc_ci": [
+    95.8,
+    98.7
+   ],
+   "recall": 100.0,
+   "recall_ci": [
+    100.0,
+    100.0
+   ],
+   "fpr": 5.4,
+   "fpr_ci": [
+    2.7,
+    8.5
+   ],
+   "auroc": 1.0,
+   "median_ms": 316.44820800283924,
+   "credits": 2.3734939759036147
+  },
+  {
+   "arm": "AgentAudit, precision mode",
+   "group": "agentaudit",
+   "n": 249,
+   "bacc": 100.0,
+   "bacc_ci": [
+    100.0,
+    100.0
+   ],
+   "recall": 100.0,
+   "recall_ci": [
+    100.0,
+    100.0
+   ],
+   "fpr": 0.0,
+   "fpr_ci": [
+    0.0,
+    0.0
+   ],
+   "auroc": 1.0,
+   "median_ms": 316.44820800283924,
+   "credits": 2.3734939759036147
+  }
+ ],
+ "ablation": [
+  {
+   "arm": "Clocked policy + verdict rule",
+   "group": "x",
+   "n": 253,
+   "bacc": 84.9,
+   "bacc_ci": [
+    80.7,
+    88.6
+   ],
+   "recall": 95.6,
+   "recall_ci": [
+    91.2,
+    99.1
+   ],
+   "fpr": 25.9,
+   "fpr_ci": [
+    18.7,
+    33.1
+   ],
+   "auroc": 0.946,
+   "median_ms": 351.9907500012778,
+   "credits": 3.067193675889328
+  },
+  {
+   "arm": "Clocked policy + consensus rule",
+   "group": "x",
+   "n": 253,
+   "bacc": 88.1,
+   "bacc_ci": [
+    84.0,
+    91.9
+   ],
+   "recall": 83.3,
+   "recall_ci": [
+    76.3,
+    89.5
+   ],
+   "fpr": 7.2,
+   "fpr_ci": [
+    2.9,
+    11.5
+   ],
+   "auroc": 0.946,
+   "median_ms": 351.9907500012778,
+   "credits": 3.067193675889328
+  },
+  {
+   "arm": "AgentAudit policy + verdict rule",
+   "group": "x",
+   "n": 253,
+   "bacc": 95.7,
+   "bacc_ci": [
+    93.2,
+    97.8
+   ],
+   "recall": 100.0,
+   "recall_ci": [
+    100.0,
+    100.0
+   ],
+   "fpr": 8.6,
+   "fpr_ci": [
+    4.3,
+    13.7
+   ],
+   "auroc": 0.999,
+   "median_ms": 349.4278340076562,
+   "credits": 2.940711462450593
+  },
+  {
+   "arm": "AgentAudit policy + consensus rule",
+   "group": "x",
+   "n": 253,
+   "bacc": 97.6,
+   "bacc_ci": [
+    95.6,
+    99.3
+   ],
+   "recall": 97.4,
+   "recall_ci": [
+    93.9,
+    100.0
+   ],
+   "fpr": 2.2,
+   "fpr_ci": [
+    0.0,
+    5.0
+   ],
+   "auroc": 0.999,
+   "median_ms": 349.4278340076562,
+   "credits": 2.940711462450593
+  }
+ ],
+ "inspect": {
+  "all": [
+   {
+    "arm": "Clocked Inspect (default)",
+    "group": "clocked",
+    "n": 206,
+    "bacc": 84.4,
+    "bacc_ci": [
+     79.5,
+     89.1
+    ],
+    "recall": 81.4,
+    "recall_ci": [
+     73.7,
+     88.1
+    ],
+    "fpr": 12.5,
+    "fpr_ci": [
+     5.7,
+     20.5
+    ],
+    "auroc": 0.901,
+    "median_ms": 420.5977704987163,
+    "credits": 4.529126213592233
+   },
+   {
+    "arm": "Clocked, tuned threshold",
+    "group": "clocked",
+    "n": 206,
+    "bacc": 87.4,
+    "bacc_ci": [
+     82.7,
+     91.9
+    ],
+    "recall": 83.9,
+    "recall_ci": [
+     77.1,
+     89.8
+    ],
+    "fpr": 9.1,
+    "fpr_ci": [
+     3.4,
+     15.9
+    ],
+    "auroc": 0.901,
+    "median_ms": 420.5977704987163,
+    "credits": 4.529126213592233
+   },
+   {
+    "arm": "Clocked + AgentAudit",
+    "group": "agentaudit",
+    "n": 206,
+    "bacc": 89.9,
+    "bacc_ci": [
+     85.5,
+     93.8
+    ],
+    "recall": 89.0,
+    "recall_ci": [
+     83.1,
+     94.1
+    ],
+    "fpr": 9.1,
+    "fpr_ci": [
+     3.4,
+     15.9
+    ],
+    "auroc": 0.968,
+    "median_ms": 463.2326874852879,
+    "credits": 4.349514563106796
+   }
+  ],
+  "scope_pairs": [
+   {
+    "arm": "Script only (Clocked default)",
+    "group": "clocked",
+    "n": 28,
+    "bacc": 50.0,
+    "bacc_ci": [
+     32.1,
+     64.4
+    ],
+    "recall": 71.4,
+    "recall_ci": [
+     42.9,
+     92.9
+    ],
+    "fpr": 71.4,
+    "fpr_ci": [
+     42.9,
+     92.9
+    ],
+    "auroc": 0.5,
+    "median_ms": 405.32443749543745,
+    "credits": 3.0
+   },
+   {
+    "arm": "+ change scope, verdict rule",
+    "group": "agentaudit",
+    "n": 28,
+    "bacc": 78.6,
+    "bacc_ci": [
+     64.3,
+     89.3
+    ],
+    "recall": 100.0,
+    "recall_ci": [
+     100.0,
+     100.0
+    ],
+    "fpr": 42.9,
+    "fpr_ci": [
+     14.3,
+     71.4
+    ],
+    "auroc": 1.0,
+    "median_ms": 469.7285000147531,
+    "credits": 2.9642857142857144
+   },
+   {
+    "arm": "+ change scope, consensus rule",
+    "group": "agentaudit",
+    "n": 28,
+    "bacc": 96.4,
+    "bacc_ci": [
+     89.3,
+     100.0
+    ],
+    "recall": 100.0,
+    "recall_ci": [
+     100.0,
+     100.0
+    ],
+    "fpr": 7.1,
+    "fpr_ci": [
+     0.0,
+     21.4
+    ],
+    "auroc": 1.0,
+    "median_ms": 469.7285000147531,
+    "credits": 2.9642857142857144
+   }
+  ],
+  "no_scope_pairs": [
+   {
+    "arm": "Clocked Inspect (default)",
+    "group": "clocked",
+    "n": 178,
+    "bacc": 90.7,
+    "bacc_ci": [
+     86.6,
+     94.3
+    ],
+    "recall": 82.7,
+    "recall_ci": [
+     75.0,
+     89.4
+    ],
+    "fpr": 1.4,
+    "fpr_ci": [
+     0.0,
+     4.1
+    ],
+    "auroc": 0.965,
+    "median_ms": 426.41497949080076,
+    "credits": 4.769662921348314
+   },
+   {
+    "arm": "Clocked + AgentAudit",
+    "group": "agentaudit",
+    "n": 178,
+    "bacc": 92.4,
+    "bacc_ci": [
+     88.6,
+     95.7
+    ],
+    "recall": 87.5,
+    "recall_ci": [
+     81.7,
+     93.3
+    ],
+    "fpr": 2.7,
+    "fpr_ci": [
+     0.0,
+     6.8
+    ],
+    "auroc": 0.971,
+    "median_ms": 459.60306249617133,
+    "credits": 4.567415730337078
+   }
+  ]
+ },
+ "skills": [
+  {
+   "arm": "Clocked Guard (default)",
+   "group": "clocked",
+   "n": 244,
+   "bacc": 55.2,
+   "bacc_ci": [
+    52.3,
+    58.6
+   ],
+   "recall": 10.3,
+   "recall_ci": [
+    4.6,
+    17.2
+   ],
+   "fpr": 0.0,
+   "fpr_ci": [
+    0.0,
+    0.0
+   ],
+   "auroc": 0.738,
+   "median_ms": 427.83483350649476,
+   "credits": 4.188524590163935
+  },
+  {
+   "arm": "Clocked Inspect (default)",
+   "group": "clocked",
+   "n": 244,
+   "bacc": 72.9,
+   "bacc_ci": [
+    67.7,
+    78.4
+   ],
+   "recall": 48.3,
+   "recall_ci": [
+    37.9,
+    58.6
+   ],
+   "fpr": 2.5,
+   "fpr_ci": [
+    0.6,
+    5.1
+   ],
+   "auroc": 0.792,
+   "median_ms": 685.841687489301,
+   "credits": 17.172131147540984
+  },
+  {
+   "arm": "Supply-chain check only",
+   "group": "agentaudit",
+   "n": 244,
+   "bacc": 88.2,
+   "bacc_ci": [
+    83.6,
+    92.5
+   ],
+   "recall": 77.0,
+   "recall_ci": [
+    67.8,
+    86.2
+   ],
+   "fpr": 0.6,
+   "fpr_ci": [
+    0.0,
+    1.9
+   ],
+   "auroc": 0.976,
+   "median_ms": null,
+   "credits": null
+  },
+  {
+   "arm": "AgentAudit pipeline",
+   "group": "agentaudit",
+   "n": 244,
+   "bacc": 88.6,
+   "bacc_ci": [
+    84.0,
+    92.7
+   ],
+   "recall": 80.5,
+   "recall_ci": [
+    71.3,
+    88.5
+   ],
+   "fpr": 3.2,
+   "fpr_ci": [
+    0.6,
+    6.4
+   ],
+   "auroc": 0.984,
+   "median_ms": 907.1599159942707,
+   "credits": 11.299180327868852
+  }
+ ],
+ "governance": {
+  "defects": [
+   "poisoned_tool",
+   "malicious_script",
+   "embedded_secret",
+   "duplicate",
+   "none"
+  ],
+  "rows": [
+   {
+    "arm": "Full audit",
+    "key": "full",
+    "acc": 78.9,
+    "cells": {
+     "poisoned_tool": [
+      4,
+      4
+     ],
+     "malicious_script": [
+      3,
+      3
+     ],
+     "embedded_secret": [
+      3,
+      3
+     ],
+     "duplicate": [
+      7,
+      9
+     ],
+     "none": [
+      13,
+      19
+     ]
+    }
+   },
+   {
+    "arm": "Full audit, precision mode",
+    "key": "precision",
+    "acc": 89.5,
+    "cells": {
+     "poisoned_tool": [
+      4,
+      4
+     ],
+     "malicious_script": [
+      2,
+      3
+     ],
+     "embedded_secret": [
+      3,
+      3
+     ],
+     "duplicate": [
+      9,
+      9
+     ],
+     "none": [
+      16,
+      19
+     ]
+    }
+   },
+   {
+    "arm": "One Decide call",
+    "key": "decide_only",
+    "acc": 60.5,
+    "cells": {
+     "poisoned_tool": [
+      2,
+      4
+     ],
+     "malicious_script": [
+      2,
+      3
+     ],
+     "embedded_secret": [
+      1,
+      3
+     ],
+     "duplicate": [
+      3,
+      9
+     ],
+     "none": [
+      15,
+      19
+     ]
+    }
+   },
+   {
+    "arm": "without Guard",
+    "key": "loo_injection",
+    "acc": 78.9,
+    "cells": {
+     "poisoned_tool": [
+      0,
+      4
+     ],
+     "malicious_script": [
+      2,
+      3
+     ],
+     "embedded_secret": [
+      3,
+      3
+     ],
+     "duplicate": [
+      9,
+      9
+     ],
+     "none": [
+      16,
+      19
+     ]
+    }
+   },
+   {
+    "arm": "without Inspect",
+    "key": "loo_script",
+    "acc": 73.7,
+    "cells": {
+     "poisoned_tool": [
+      4,
+      4
+     ],
+     "malicious_script": [
+      1,
+      3
+     ],
+     "embedded_secret": [
+      3,
+      3
+     ],
+     "duplicate": [
+      7,
+      9
+     ],
+     "none": [
+      13,
+      19
+     ]
+    }
+   },
+   {
+    "arm": "without Protect",
+    "key": "loo_pii",
+    "acc": 73.7,
+    "cells": {
+     "poisoned_tool": [
+      4,
+      4
+     ],
+     "malicious_script": [
+      3,
+      3
+     ],
+     "embedded_secret": [
+      1,
+      3
+     ],
+     "duplicate": [
+      7,
+      9
+     ],
+     "none": [
+      13,
+      19
+     ]
+    }
+   },
+   {
+    "arm": "without Compare",
+    "key": "loo_compare",
+    "acc": 65.8,
+    "cells": {
+     "poisoned_tool": [
+      4,
+      4
+     ],
+     "malicious_script": [
+      3,
+      3
+     ],
+     "embedded_secret": [
+      3,
+      3
+     ],
+     "duplicate": [
+      0,
+      9
+     ],
+     "none": [
+      15,
+      19
+     ]
+    }
+   },
+   {
+    "arm": "without Extract",
+    "key": "loo_extract",
+    "acc": 78.9,
+    "cells": {
+     "poisoned_tool": [
+      4,
+      4
+     ],
+     "malicious_script": [
+      3,
+      3
+     ],
+     "embedded_secret": [
+      3,
+      3
+     ],
+     "duplicate": [
+      7,
+      9
+     ],
+     "none": [
+      13,
+      19
+     ]
+    }
+   },
+   {
+    "arm": "without Fill",
+    "key": "loo_fill",
+    "acc": 78.9,
+    "cells": {
+     "poisoned_tool": [
+      4,
+      4
+     ],
+     "malicious_script": [
+      3,
+      3
+     ],
+     "embedded_secret": [
+      3,
+      3
+     ],
+     "duplicate": [
+      7,
+      9
+     ],
+     "none": [
+      13,
+      19
+     ]
+    }
+   },
+   {
+    "arm": "without Verify",
+    "key": "loo_grounding",
+    "acc": 78.9,
+    "cells": {
+     "poisoned_tool": [
+      4,
+      4
+     ],
+     "malicious_script": [
+      3,
+      3
+     ],
+     "embedded_secret": [
+      3,
+      3
+     ],
+     "duplicate": [
+      7,
+      9
+     ],
+     "none": [
+      13,
+      19
+     ]
+    }
+   },
+   {
+    "arm": "without Rerank",
+    "key": "loo_rerank",
+    "acc": 81.6,
+    "cells": {
+     "poisoned_tool": [
+      4,
+      4
+     ],
+     "malicious_script": [
+      3,
+      3
+     ],
+     "embedded_secret": [
+      3,
+      3
+     ],
+     "duplicate": [
+      7,
+      9
+     ],
+     "none": [
+      14,
+      19
+     ]
+    }
+   },
+   {
+    "arm": "v1: owner inferred (disclosed)",
+    "key": "full_v1_inferred_owner",
+    "acc": 65.8,
+    "cells": {
+     "poisoned_tool": [
+      4,
+      4
+     ],
+     "malicious_script": [
+      3,
+      3
+     ],
+     "embedded_secret": [
+      3,
+      3
+     ],
+     "duplicate": [
+      7,
+      9
+     ],
+     "none": [
+      8,
+      19
+     ]
+    }
+   }
+  ],
+  "n": 38
+ },
+ "jev": [
+  {
+   "task": "route",
+   "n": 180,
+   "ours": 84.4,
+   "published": 84.4,
+   "jev": 85.6
+  },
+  {
+   "task": "triage",
+   "n": 148,
+   "ours": 68.9,
+   "published": 68.9,
+   "jev": 70.9
+  },
+  {
+   "task": "score",
+   "n": 360,
+   "ours": 35.6,
+   "published": 35.6,
+   "jev": 37.2
+  },
+  {
+   "task": "gate",
+   "n": 180,
+   "ours": 69.4,
+   "published": 69.4,
+   "jev": 63.9
+  }
+ ],
+ "determinism": {
+  "n": 30,
+  "same_verdict": 30,
+  "same_category": 30,
+  "max_abs_dp": 0.0,
+  "mean_abs_dp": 0.0,
+  "credits": 87.0
+ }
+}
