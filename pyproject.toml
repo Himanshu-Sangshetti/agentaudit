@@ -24,3 +24,6 @@ build-backend = "uv_build"
 dev = [
     "pytest>=9.2.0",
 ]
+
+[project.scripts]
+agentaudit = "agentaudit.cli:app"

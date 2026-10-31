@@ -1729,3 +1729,4 @@
 {"ts": 1793434840.903018, "tag": "guard-test-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
 {"ts": 1793434841.306984, "tag": "guard-test-agentaudit", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
 {"ts": 1793434841.627572, "tag": "guard-test-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793435430.929922, "tag": "cli-scan", "endpoint": "decide", "credits": 2.0, "usd": 0.000398}

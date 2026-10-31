@@ -92,6 +92,20 @@ def capability_claims(agent: Agent) -> str:
 SEVERITY_RANK = {"none": 0, "low": 1, "medium": 2, "high": 3, "critical": 4}
 
 
+def is_attack(r: dict, rule: str = "consensus") -> bool:
+    """Decision rule over a Guard or Inspect result.
+
+    "verdict" trusts the endpoint's verdict alone (Clocked default). "consensus" also requires the top
+    category to be an attack category and the severity to be at least medium; on the held-out Guard
+    test split this cut false positives from 8.6% to 2.2% at the same policy (bench/PROTOCOL.md).
+    """
+    flagged = r.get("verdict") not in (None, "benign")
+    if rule == "verdict":
+        return flagged
+    benign_cat = (r.get("category") or "").startswith("benign")
+    return flagged and not benign_cat and SEVERITY_RANK.get(r.get("severity") or "none", 0) >= SEVERITY_RANK["medium"]
+
+
 @dataclass
 class Finding:
     check: str  # guard | inspect | protect | verify | compare
@@ -125,10 +139,16 @@ class Report:
 # --- The audit --------------------------------------------------------------
 
 class Auditor:
-    def __init__(self, client: Clocked, guard_threshold: float = 0.5, inspect_threshold: float = 0.5):
+    def __init__(self, client: Clocked, setup: str = "agentaudit", guard_threshold: float = 0.5,
+                 inspect_threshold: float = 0.5, skip: set[str] | None = None):
+        """setup="agentaudit" uses AgentAudit's policies and the consensus rule; setup="default" sends
+        Clocked's defaults and trusts the raw verdict. skip names endpoints to leave out (for ablations)."""
         self.c = client
+        self.setup = setup
+        self.rule = "consensus" if setup == "agentaudit" else "verdict"
         self.guard_threshold = guard_threshold
         self.inspect_threshold = inspect_threshold
+        self.skip = skip or set()
 
     # Safety ---------------------------------------------------------------
     def guard(self, agent: Agent) -> list[Finding]:
@@ -136,9 +156,10 @@ class Auditor:
         for a in agent.artifacts:
             if a.kind not in {"tool_description", "instructions", "readme", "config"} or not a.text.strip():
                 continue
-            r = self.c.injection(text=a.text, source="content", instructions=GUARD_POLICY,
-                                 threshold=self.guard_threshold, evidence=True).result
-            if r.get("verdict") not in (None, "benign"):
+            policy = {"instructions": GUARD_POLICY} if self.setup == "agentaudit" else {}
+            r = self.c.injection(text=a.text, source="content", threshold=self.guard_threshold,
+                                 evidence=True, **policy).result
+            if is_attack(r, self.rule):
                 out.append(Finding("guard", r.get("severity", "high"), f"Possible injection: {r.get('category')}",
                                    a.path, [{"quote": e["quote"], "start": e["start"], "end": e["end"]}
                                             for e in r.get("evidence", [])],
@@ -150,9 +171,9 @@ class Auditor:
         for a in agent.by_kind("script"):
             if not a.text.strip():
                 continue
-            r = self.c.script(script=a.text, instructions=policy, threshold=self.inspect_threshold,
-                              evidence=True).result
-            if r.get("verdict") not in (None, "benign"):
+            scope = {"instructions": policy} if self.setup == "agentaudit" else {}
+            r = self.c.script(script=a.text, threshold=self.inspect_threshold, evidence=True, **scope).result
+            if is_attack(r, self.rule):
                 out.append(Finding("inspect", r.get("severity", "high"), f"Risky script: {r.get('category')}",
                                    a.path, [{"quote": e["line"], "start": e["start"], "end": e["end"]}
                                             for e in r.get("evidence", [])],
@@ -167,6 +188,7 @@ class Auditor:
                 continue
             r = self.c.pii(text=a.text, entities=SECRET_ENTITIES, anonymize="mask").result
             ents = r.get("entities", [])
+            self._sensitive.update(e["value"] for e in ents if len(e.get("value", "")) >= 4)
             if ents:
                 secret = any(e["type"] == "api_key" for e in ents)
                 out.append(Finding("protect", "high" if secret else "medium",
@@ -282,15 +304,30 @@ class Auditor:
         registry = [(n, t) for n, t in (registry or []) if n != agent.name]
         rep = Report(agent.name, agent.origin)
         facts = capability_facts(agent)
-        rep.findings += self.guard(agent)
-        rep.findings += self.inspect(agent)
-        rep.findings += self.protect(agent)
-        rep.facts = self.extract(agent)
-        rep.record = self.fill(agent, facts + "\n\n" + "\n".join(a.text[:4000] for a in agent.by_kind("readme")))
-        rep.findings += self.verify(agent, facts)
-        rep.duplicates = self.compare(agent, facts, registry)
+        self._sensitive: set[str] = set()
+        on = lambda name: name not in self.skip  # noqa: E731
+        if on("injection"):
+            rep.findings += self.guard(agent)
+        if on("script"):
+            rep.findings += self.inspect(agent)
+        if on("pii"):
+            rep.findings += self.protect(agent)
+        if on("extract"):
+            rep.facts = self.extract(agent)
+        if on("fill"):
+            rep.record = self.fill(agent, facts + "\n\n" + "\n".join(a.text[:4000] for a in agent.by_kind("readme")))
+        if on("grounding"):
+            rep.findings += self.verify(agent, facts)
+        if on("compare"):
+            rep.duplicates = self.compare(agent, facts, registry)
         purpose = (rep.record.get("purpose") or {}).get("value") or agent.declared.get("purpose", "")
-        rep.reuse = self.rerank(purpose, registry)
+        if on("rerank"):
+            rep.reuse = self.rerank(purpose, registry)
+        # Protect's spans also redact any other finding's evidence, so a report never echoes a secret.
+        for f in rep.findings:
+            for e in f.evidence:
+                for v in self._sensitive:
+                    e["quote"] = e["quote"].replace(v, "•" * min(len(v), 12))
         rep.verdict = self.decide(agent, rep)
         rep.findings.sort(key=lambda f: -SEVERITY_RANK.get(f.severity, 0))
         u = self.c.usage
