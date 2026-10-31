@@ -243,6 +243,11 @@
  "duplicates": [],
  "reuse": [
   {
+   "agent": "pdf-tools-skill",
+   "action": "use",
+   "score": 0.9188
+  },
+  {
    "agent": "mcp-memory",
    "action": "skip",
    "score": 0.0027
@@ -251,19 +256,14 @@
    "agent": "payroll-helper",
    "action": "skip",
    "score": 0.0021
-  },
-  {
-   "agent": "leave-balance-bot",
-   "action": "skip",
-   "score": 0.0016
   }
  ],
  "usage": {
   "calls": 56,
-  "cached": 32,
-  "credits": 82.0,
-  "cost_usd": 0.0163,
-  "credits_this_report": 21.0
+  "cached": 40,
+  "credits": 78.0,
+  "cost_usd": 0.0155,
+  "credits_this_report": 13.0
  },
  "verdict_label": "needs_owner",
  "artifacts": [
@@ -308,7 +308,7 @@
   "builder": "t.nguyen",
   "purpose": "Summarizes an employee's submitted expense reports for their manager."
  },
- "markdown": "# AgentAudit: expense-summarizer\n\n**Verdict:** `needs_owner` (99% confidence)\n**Autonomy:** `blocked`  \u00b7  **Risk of acting:** 1.55 / 4\n\n## Registry record\n\n| Field | Value |\n|---|---|\n| purpose | Summarizes an employee's submitted expense reports for their manager |\n| owner | t.nguyen |\n| can_write | False |\n| reaches_network | False |\n| data_sensitivity | confidential |\n| blast_radius | single user |\n| capability_claims | ['Expense Summarizer produces manager-ready summaries of expense reports.'] |\n\n## Findings (0)\n\nNo findings.\n\n## Existing agents for the same job\n\n- mcp-memory: skip (score 0.00)\n- payroll-helper: skip (score 0.00)\n- leave-balance-bot: skip (score 0.00)\n\n<sub>56 Clocked calls \u00b7 82 credits \u00b7 $0.0163</sub>",
+ "markdown": "# AgentAudit: expense-summarizer\n\n**Verdict:** `needs_owner` (99% confidence)\n**Autonomy:** `blocked`  \u00b7  **Risk of acting:** 1.55 / 4\n\n## Registry record\n\n| Field | Value |\n|---|---|\n| purpose | Summarizes an employee's submitted expense reports for their manager |\n| owner | t.nguyen |\n| can_write | False |\n| reaches_network | False |\n| data_sensitivity | confidential |\n| blast_radius | single user |\n| capability_claims | ['Expense Summarizer produces manager-ready summaries of expense reports.'] |\n\n## Findings (0)\n\nNo findings.\n\n## Existing agents for the same job\n\n- pdf-tools-skill: use (score 0.92)\n- mcp-memory: skip (score 0.00)\n- payroll-helper: skip (score 0.00)\n\n<sub>56 Clocked calls \u00b7 78 credits \u00b7 $0.0155</sub>",
  "endpoints_used": [
   "Compare /compare",
   "Decide /decide",

@@ -310,7 +310,7 @@
   {
    "agent": "hr-policy-assistant",
    "relation": "overlapping",
-   "related": 0.9972
+   "related": 0.9963
   }
  ],
  "reuse": [
@@ -332,10 +332,10 @@
  ],
  "usage": {
   "calls": 28,
-  "cached": 16,
-  "credits": 44.0,
-  "cost_usd": 0.0088,
-  "credits_this_report": 18.0
+  "cached": 18,
+  "credits": 51.0,
+  "cost_usd": 0.0102,
+  "credits_this_report": 14.0
  },
  "verdict_label": "reuse_existing",
  "artifacts": [
@@ -381,7 +381,7 @@
   "builder": "r.mehta",
   "purpose": "Tells employees how many days of annual and sick leave they have left and explains leave policy."
  },
- "markdown": "# AgentAudit: leave-balance-bot\n\n**Verdict:** `reuse_existing` (99% confidence)\n**Autonomy:** `blocked`  \u00b7  **Risk of acting:** 1.25 / 4\n\n## Registry record\n\n| Field | Value |\n|---|---|\n| purpose | Tells employees how many days of annual and sick leave they have left and explains leave policy |\n| owner | Finance Shared Services |\n| can_write | False |\n| reaches_network | False |\n| data_sensitivity | confidential |\n| blast_radius | single user |\n| capability_claims | ['Leave Balance Bot answers \"how much leave do I have?', 'It only reads leave data.', 'explains leave policy.'] |\n\n## Findings (1)\n\n- **MEDIUM** \u00b7 AA004 \u00b7 Claim contradicted by capabilities \u2014 `README`\n  - > It only reads leave data.\n\n## Overlapping agents\n\n- hr-policy-assistant (overlapping)\n\n## Existing agents for the same job\n\n- hr-policy-assistant: use (score 0.93)\n- payroll-helper: skip (score 0.03)\n- mcp-memory: skip (score 0.02)\n\n<sub>28 Clocked calls \u00b7 44 credits \u00b7 $0.0088</sub>",
+ "markdown": "# AgentAudit: leave-balance-bot\n\n**Verdict:** `reuse_existing` (99% confidence)\n**Autonomy:** `blocked`  \u00b7  **Risk of acting:** 1.25 / 4\n\n## Registry record\n\n| Field | Value |\n|---|---|\n| purpose | Tells employees how many days of annual and sick leave they have left and explains leave policy |\n| owner | Finance Shared Services |\n| can_write | False |\n| reaches_network | False |\n| data_sensitivity | confidential |\n| blast_radius | single user |\n| capability_claims | ['Leave Balance Bot answers \"how much leave do I have?', 'It only reads leave data.', 'explains leave policy.'] |\n\n## Findings (1)\n\n- **MEDIUM** \u00b7 AA004 \u00b7 Claim contradicted by capabilities \u2014 `README`\n  - > It only reads leave data.\n\n## Overlapping agents\n\n- hr-policy-assistant (overlapping)\n\n## Existing agents for the same job\n\n- hr-policy-assistant: use (score 0.93)\n- payroll-helper: skip (score 0.03)\n- mcp-memory: skip (score 0.02)\n\n<sub>28 Clocked calls \u00b7 51 credits \u00b7 $0.0102</sub>",
  "endpoints_used": [
   "Compare /compare",
   "Decide /decide",

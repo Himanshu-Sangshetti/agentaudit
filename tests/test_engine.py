@@ -181,17 +181,17 @@ def test_protect_batches_and_maps_offsets():
 
         def pii(self, **p):
             calls.append(p["text"])
-            i = p["text"].index("sk_live_X")
+            i = p["text"].index("svc_tok_X")
             return type("C", (), {"result": {"entities": [
-                {"type": "api_key", "value": "sk_live_XYZ1234", "start": i, "end": i + 15}]}})()
+                {"type": "api_key", "value": "svc_tok_XYZ1234", "start": i, "end": i + 15}]}})()
 
     a = Agent("x", "o", artifacts=[Artifact("tool_description", "t1", "Reads a file."),
-                                   Artifact("instructions", "sys", "Use key sk_live_XYZ1234 for calls.")])
+                                   Artifact("instructions", "sys", "Use key svc_tok_XYZ1234 for calls.")])
     aud = Auditor(Fake())
     aud._sensitive = set()
     f = aud.protect(a)
     assert len(calls) == 1 and len(f) == 1 and f[0].path == "sys"
-    assert a.artifacts[1].text[f[0].evidence[0]["start"]:f[0].evidence[0]["end"]] == "sk_live_XYZ1234"
+    assert a.artifacts[1].text[f[0].evidence[0]["start"]:f[0].evidence[0]["end"]] == "svc_tok_XYZ1234"
 
 
 def test_accountable_owner_is_declared_not_inferred():

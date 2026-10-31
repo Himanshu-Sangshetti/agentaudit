@@ -498,11 +498,11 @@
   }
  ],
  "usage": {
-  "calls": 78,
-  "cached": 46,
-  "credits": 137.0,
-  "cost_usd": 0.0273,
-  "credits_this_report": 55.0
+  "calls": 92,
+  "cached": 70,
+  "credits": 111.0,
+  "cost_usd": 0.0221,
+  "credits_this_report": 15.0
  },
  "verdict_label": "needs_owner",
  "artifacts": [
@@ -633,7 +633,7 @@
   }
  ],
  "declared": {},
- "markdown": "# AgentAudit: mcp-memory\n\n**Verdict:** `needs_owner` (99% confidence)\n**Autonomy:** `blocked`  \u00b7  **Risk of acting:** 1.47 / 4\n\n## Registry record\n\n| Field | Value |\n|---|---|\n| purpose | This agent provides a persistent memory implementation using a local knowledge graph to help Claude remember information about the user across chats |\n| owner | \u2014 |\n| can_write | True |\n| reaches_network | False |\n| data_sensitivity | internal |\n| blast_radius | single user |\n| capability_claims | ['This lets Claude remember information about the user across chats.'] |\n\n## Findings (0)\n\nNo findings.\n\n## Existing agents for the same job\n\n- meeting-notes-agent: skip (score 0.00)\n- password-reset-agent: skip (score 0.00)\n- payroll-helper: skip (score 0.00)\n\n<sub>78 Clocked calls \u00b7 137 credits \u00b7 $0.0273</sub>",
+ "markdown": "# AgentAudit: mcp-memory\n\n**Verdict:** `needs_owner` (99% confidence)\n**Autonomy:** `blocked`  \u00b7  **Risk of acting:** 1.47 / 4\n\n## Registry record\n\n| Field | Value |\n|---|---|\n| purpose | This agent provides a persistent memory implementation using a local knowledge graph to help Claude remember information about the user across chats |\n| owner | \u2014 |\n| can_write | True |\n| reaches_network | False |\n| data_sensitivity | internal |\n| blast_radius | single user |\n| capability_claims | ['This lets Claude remember information about the user across chats.'] |\n\n## Findings (0)\n\nNo findings.\n\n## Existing agents for the same job\n\n- meeting-notes-agent: skip (score 0.00)\n- password-reset-agent: skip (score 0.00)\n- payroll-helper: skip (score 0.00)\n\n<sub>92 Clocked calls \u00b7 111 credits \u00b7 $0.0221</sub>",
  "endpoints_used": [
   "Compare /compare",
   "Decide /decide",
