@@ -91,9 +91,10 @@ def _package_scripts(text: str) -> str:
     return "\n".join(f"# npm {k}\n{v}" for k, v in scripts.items())
 
 
-def _fenced_shell(md: str) -> str:
-    blocks = re.findall(r"```(?:bash|sh|shell|console|powershell|ps1|zsh)\n(.*?)```", md, re.S)
-    return "\n".join(blocks)
+def _fenced_shell(md: str, untagged: bool = False) -> str:
+    """Shell code blocks from Markdown. Skill files often leave the language off, so untagged=True keeps those too."""
+    lang = r"(?:bash|sh|shell|console|powershell|ps1|zsh|cmd)" + ("?" if untagged else "")
+    return "\n".join(re.findall(r"```" + lang + r"\n(.*?)```", md, re.S))
 
 
 def collect_repo(root: str | Path, name: str | None = None) -> Agent:
@@ -110,7 +111,11 @@ def collect_repo(root: str | Path, name: str | None = None) -> Agent:
                 if s:
                     agent.artifacts.append(Artifact("script", rel + "#scripts", s))
         if low in INSTRUCTION_NAMES or (p.suffix in {".prompt", ".txt"} and "prompt" in low):
-            agent.artifacts.append(Artifact("instructions", rel, _read(p)))
+            text = _read(p)
+            agent.artifacts.append(Artifact("instructions", rel, text))
+            code = _fenced_shell(text, untagged=True)
+            if code.strip():  # commands a skill tells the agent to run are scripts too
+                agent.artifacts.append(Artifact("script", rel + "#code", code))
         elif low.startswith("readme") and p.parent == root:
             md = _read(p)
             agent.artifacts.append(Artifact("readme", rel, md))
