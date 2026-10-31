@@ -24,21 +24,24 @@ Tool poisoning in MCP tool descriptions. Positives: MCPTox. Negatives: reference
 | Arm | BAcc [95% CI] | Recall [95% CI] | FPR [95% CI] | AUROC | ECE | Median ms | Credits/row | vs reference (Holm p) |
 |---|---|---|---|---|---|---|---|---|
 | Clocked default (verdict) | 84.9 [80.5, 88.9] | 95.6 [91.2, 99.1] | 25.9 [18.7, 33.1] | 0.946 | 0.134 | 352 | 3.1 | reference |
-| Clocked + AgentAudit (consensus) ★ frozen | 97.6 [95.6, 99.3] | 97.4 [93.9, 100.0] | 2.2 [0.0, 5.0] | 0.999 | 0.056 | 349 | 2.9 | 39–4 rows, p=1.6e-07 |
-| Baseline: deepset (threshold 0.5) | 56.1 [53.6, 59.0] | 100.0 [100.0, 100.0] | 87.8 [82.0, 92.8] | 0.954 | 0.477 | 32 | 0 (local) | 10–91 rows, p=1e-16 |
-| Baseline: deepset (dev-tuned threshold 0.998) | 90.8 [87.3, 93.9] | 97.4 [93.9, 100.0] | 15.8 [10.1, 22.3] | 0.954 | 0.477 | 32 | 0 (local) | 36–20 rows, p=0.088 |
-| Baseline: keyword (threshold 0.5) | 68.4 [63.6, 73.2] | 40.4 [31.6, 49.1] | 3.6 [0.7, 7.2] | 0.684 | 0.289 | 0 | 0 (local) | 37–69 rows, p=0.0073 |
-| Baseline: protectai (threshold 0.5) | 58.6 [54.4, 63.1] | 23.7 [15.8, 31.6] | 6.5 [2.9, 10.8] | 0.898 | 0.363 | 32 | 0 (local) | 35–90 rows, p=3.7e-06 |
-| Baseline: protectai (dev-tuned threshold 0.0003) | 87.1 [82.8, 91.0] | 93.0 [88.6, 97.4] | 18.7 [12.9, 25.2] | 0.898 | 0.363 | 32 | 0 (local) | 36–29 rows, p=0.46 |
+| Clocked default, dev-tuned threshold 0.5 | 83.8 [79.5, 87.8] | 95.6 [91.2, 99.1] | 28.1 [20.9, 36.0] | 0.946 | 0.134 | 352 | 3.1 | 0–3 rows, p=0.5 |
+| Clocked + AgentAudit (consensus) ★ frozen | 97.6 [95.6, 99.3] | 97.4 [93.9, 100.0] | 2.2 [0.0, 4.3] | 0.999 | 0.056 | 349 | 2.9 | 39–4 rows, p=1.9e-07 |
+| Baseline: deepset (threshold 0.5) | 56.1 [53.6, 59.0] | 100.0 [100.0, 100.0] | 87.8 [82.0, 92.8] | 0.954 | 0.477 | 32 | 0 (local) | 10–91 rows, p=1.2e-16 |
+| Baseline: deepset (dev-tuned threshold 0.998) | 90.8 [87.3, 94.0] | 97.4 [93.9, 100.0] | 15.8 [10.1, 21.6] | 0.954 | 0.477 | 32 | 0 (local) | 36–20 rows, p=0.13 |
+| Baseline: keyword (threshold 0.5) | 68.4 [63.7, 73.0] | 40.4 [31.6, 49.1] | 3.6 [0.7, 6.5] | 0.684 | 0.289 | 0 | 0 (local) | 37–69 rows, p=0.0098 |
+| Baseline: protectai (threshold 0.5) | 58.6 [54.2, 63.0] | 23.7 [16.7, 31.6] | 6.5 [2.9, 10.8] | 0.898 | 0.363 | 32 | 0 (local) | 35–90 rows, p=4.6e-06 |
+| Baseline: protectai (dev-tuned threshold 0.0003) | 87.1 [82.9, 90.9] | 93.0 [87.7, 97.4] | 18.7 [12.9, 25.2] | 0.898 | 0.363 | 32 | 0 (local) | 36–29 rows, p=0.5 |
 
 **Ablation (policy × decision rule), balanced accuracy [95% CI]:**
 
 | | verdict rule | consensus rule |
 |---|---|---|
-| default policy | 84.9 [80.6, 88.8] · FPR 25.9 | 88.1 [83.9, 92.0] · FPR 7.2 |
-| AgentAudit policy | 95.7 [93.2, 97.8] · FPR 8.6 | 97.6 [95.4, 99.3] · FPR 2.2 |
+| default policy | 84.9 [80.7, 89.0] · FPR 25.9 | 88.1 [84.1, 92.1] · FPR 7.2 |
+| AgentAudit policy | 95.7 [93.2, 97.8] · FPR 8.6 | 97.6 [95.6, 99.2] · FPR 2.2 |
 
 Per source (frozen arm): hard_negative 28/28 · injecagent 63/64 · mcp_reference 45/47 · mcptox 111/114
+
+Robustness, without the author-written hard negatives (n=225): default 82.5 [77.6, 87.0] BAcc, FPR 30.6 → frozen 97.3 [95.1, 99.1] BAcc, FPR 2.7.
 
 ### Inspect: test split (n=206)
 
@@ -46,17 +49,20 @@ Scripts. Positives: Atomic Red Team. Negatives: scripts shipped with real MCP se
 
 | Arm | BAcc [95% CI] | Recall [95% CI] | FPR [95% CI] | AUROC | ECE | Median ms | Credits/row | vs reference (Holm p) |
 |---|---|---|---|---|---|---|---|---|
-| Clocked default (verdict) | 84.4 [79.1, 89.2] | 81.4 [73.7, 88.1] | 12.5 [5.7, 19.3] | 0.901 | 0.221 | 421 | 4.5 | reference |
-| Clocked + AgentAudit (verdict) ★ frozen | 89.9 [85.7, 93.9] | 89.0 [83.1, 94.9] | 9.1 [3.4, 15.9] | 0.968 | 0.093 | 463 | 4.3 | 13–1 rows, p=0.0018 |
+| Clocked default (verdict) | 84.4 [79.1, 89.1] | 81.4 [73.7, 88.1] | 12.5 [5.7, 20.5] | 0.901 | 0.221 | 421 | 4.5 | reference |
+| Clocked default, dev-tuned threshold 0.0132 | 87.4 [82.9, 91.7] | 83.9 [77.1, 90.7] | 9.1 [3.4, 15.9] | 0.901 | 0.221 | 421 | 4.5 | 9–3 rows, p=0.15 |
+| Clocked + AgentAudit (verdict) ★ frozen | 89.9 [85.7, 93.9] | 89.0 [83.1, 94.1] | 9.1 [3.4, 15.9] | 0.968 | 0.093 | 463 | 4.3 | 13–1 rows, p=0.0037 |
 
 **Ablation (policy × decision rule), balanced accuracy [95% CI]:**
 
 | | verdict rule | consensus rule |
 |---|---|---|
-| default policy | 84.4 [79.2, 89.2] · FPR 12.5 | 72.4 [67.5, 77.5] · FPR 6.8 |
-| AgentAudit policy | 89.9 [85.6, 93.8] · FPR 9.1 | 85.0 [80.4, 89.3] · FPR 1.1 |
+| default policy | 84.4 [79.3, 89.1] · FPR 12.5 | 72.4 [67.2, 77.5] · FPR 6.8 |
+| AgentAudit policy | 89.9 [85.7, 93.8] · FPR 9.1 | 85.0 [80.9, 89.0] · FPR 1.1 |
 
 Per source (frozen arm): admin_powershell 27/27 · atomic_red_team 91/104 · installer 2/2 · mcp_repo_script 43/45 · scope_pair 22/28
+
+Robustness, without the author-written scope pairs (n=178): default 90.7 [86.6, 94.2] BAcc, FPR 1.4 → frozen 92.4 [88.6, 95.7] BAcc, FPR 2.7.
 
 ### Guard: dev split (n=129)
 
@@ -64,20 +70,22 @@ Tool poisoning in MCP tool descriptions. Positives: MCPTox. Negatives: reference
 
 | Arm | BAcc [95% CI] | Recall [95% CI] | FPR [95% CI] | AUROC | ECE | Median ms | Credits/row | vs reference (Holm p) |
 |---|---|---|---|---|---|---|---|---|
-| Clocked default (verdict) | 86.4 [79.7, 92.4] | 88.9 [77.8, 97.2] | 16.1 [9.7, 23.7] | 0.939 | 0.130 | 321 | 2.7 | reference |
-| Clocked + AgentAudit (consensus) ★ frozen | 93.4 [87.5, 98.1] | 88.9 [77.8, 97.2] | 2.2 [0.0, 5.4] | 0.987 | 0.058 | 310 | 2.5 | 14–1 rows, p=0.0029 |
-| Baseline: deepset (threshold 0.5) | 71.5 [66.1, 76.4] | 100.0 [100.0, 100.0] | 57.0 [47.3, 66.7] | 0.990 | 0.420 | 26 | 0 (local) | 9–43 rows, p=8.2e-06 |
-| Baseline: keyword (threshold 0.5) | 68.9 [61.1, 76.4] | 38.9 [25.0, 55.6] | 1.1 [0.0, 3.2] | 0.689 | 0.178 | 0 | 0 (local) | 16–20 rows, p=0.62 |
-| Baseline: protectai (threshold 0.5) | 62.0 [55.0, 69.4] | 25.0 [11.1, 39.0] | 1.1 [0.0, 3.2] | 0.957 | 0.206 | 27 | 0 (local) | 15–24 rows, p=0.4 |
+| Clocked default (verdict) | 86.4 [79.8, 92.4] | 88.9 [77.8, 97.2] | 16.1 [9.7, 23.7] | 0.939 | 0.130 | 321 | 2.7 | reference |
+| Clocked + AgentAudit (consensus) ★ frozen | 93.4 [87.6, 98.1] | 88.9 [77.8, 97.2] | 2.2 [0.0, 5.4] | 0.987 | 0.058 | 310 | 2.5 | 14–1 rows, p=0.0029 |
+| Baseline: deepset (threshold 0.5) | 71.5 [66.7, 76.9] | 100.0 [100.0, 100.0] | 57.0 [47.3, 67.7] | 0.990 | 0.420 | 26 | 0 (local) | 9–43 rows, p=8.2e-06 |
+| Baseline: keyword (threshold 0.5) | 68.9 [60.9, 76.7] | 38.9 [22.2, 55.6] | 1.1 [0.0, 3.2] | 0.689 | 0.178 | 0 | 0 (local) | 16–20 rows, p=0.62 |
+| Baseline: protectai (threshold 0.5) | 62.0 [55.0, 69.4] | 25.0 [11.1, 38.9] | 1.1 [0.0, 3.2] | 0.957 | 0.206 | 27 | 0 (local) | 15–24 rows, p=0.4 |
 
 **Ablation (policy × decision rule), balanced accuracy [95% CI]:**
 
 | | verdict rule | consensus rule |
 |---|---|---|
-| default policy | 86.4 [79.8, 92.4] · FPR 16.1 | 84.3 [76.6, 91.8] · FPR 6.5 |
-| AgentAudit policy | 92.1 [86.3, 96.8] · FPR 7.5 | 93.4 [87.6, 98.1] · FPR 2.2 |
+| default policy | 86.4 [79.7, 92.6] · FPR 16.1 | 84.3 [76.6, 91.4] · FPR 6.5 |
+| AgentAudit policy | 92.1 [86.5, 96.8] · FPR 7.5 | 93.4 [87.3, 98.1] · FPR 2.2 |
 
 Per source (frozen arm): hard_negative 11/12 · injecagent 26/26 · mcp_reference 54/55 · mcptox 32/36
+
+Robustness, without the author-written hard negatives (n=117): default 88.3 [81.9, 94.3] BAcc, FPR 12.3 → frozen 93.8 [88.3, 98.6] BAcc, FPR 1.2.
 
 ### Inspect: dev split (n=94)
 
@@ -85,17 +93,19 @@ Scripts. Positives: Atomic Red Team. Negatives: scripts shipped with real MCP se
 
 | Arm | BAcc [95% CI] | Recall [95% CI] | FPR [95% CI] | AUROC | ECE | Median ms | Credits/row | vs reference (Holm p) |
 |---|---|---|---|---|---|---|---|---|
-| Clocked default (verdict) | 86.6 [78.8, 93.1] | 81.0 [69.0, 90.5] | 7.7 [1.9, 15.4] | 0.946 | 0.161 | 463 | 5.5 | reference |
-| Clocked + AgentAudit (verdict) ★ frozen | 90.4 [84.4, 95.9] | 90.5 [81.0, 97.6] | 9.6 [1.9, 17.3] | 0.985 | 0.063 | 431 | 5.3 | 5–2 rows, p=0.45 |
+| Clocked default (verdict) | 86.6 [79.7, 93.3] | 81.0 [69.0, 92.9] | 7.7 [1.9, 15.4] | 0.946 | 0.161 | 463 | 5.5 | reference |
+| Clocked + AgentAudit (verdict) ★ frozen | 90.4 [84.2, 95.9] | 90.5 [81.0, 97.6] | 9.6 [1.9, 17.3] | 0.985 | 0.063 | 431 | 5.3 | 5–2 rows, p=0.45 |
 
 **Ablation (policy × decision rule), balanced accuracy [95% CI]:**
 
 | | verdict rule | consensus rule |
 |---|---|---|
-| default policy | 86.6 [79.4, 93.3] · FPR 7.7 | 75.7 [67.1, 83.6] · FPR 5.8 |
-| AgentAudit policy | 90.4 [84.2, 95.9] · FPR 9.6 | 88.6 [81.6, 94.5] · FPR 3.8 |
+| default policy | 86.6 [79.7, 93.3] · FPR 7.7 | 75.7 [66.9, 83.8] · FPR 5.8 |
+| AgentAudit policy | 90.4 [84.2, 95.9] · FPR 9.6 | 88.6 [81.6, 94.3] · FPR 3.8 |
 
 Per source (frozen arm): admin_powershell 16/18 · atomic_red_team 32/36 · installer 3/3 · mcp_repo_script 25/25 · scope_pair 9/12
+
+Robustness, without the author-written scope pairs (n=82): default 91.7 [84.7, 97.2] BAcc, FPR 0.0 → frozen 92.3 [85.9, 97.5] BAcc, FPR 4.3.
 
 ## RQ3: generalization to data never used for design
 
@@ -105,22 +115,24 @@ Per source (frozen arm): admin_powershell 16/18 · atomic_red_team 32/36 · inst
 
 | Arm | BAcc [95% CI] | Recall [95% CI] | FPR [95% CI] | AUROC | ECE | Median ms | Credits/row | vs reference (Holm p) |
 |---|---|---|---|---|---|---|---|---|
-| Clocked default (verdict) | 88.4 [85.5, 91.1] | 100.0 [100.0, 100.0] | 23.2 [17.9, 29.0] | 0.998 | 0.224 | 336 | 2.5 | reference |
-| Clocked + AgentAudit (consensus) ★ frozen | 97.3 [95.8, 98.7] | 100.0 [100.0, 100.0] | 5.4 [2.7, 8.5] | 1.000 | 0.141 | 316 | 2.4 | 41–1 rows, p=9.8e-11 |
-| Baseline: deepset (threshold 0.5) | 57.8 [55.6, 60.3] | 100.0 [100.0, 100.0] | 84.4 [79.5, 88.8] | 0.989 | 0.751 | 27 | 0 (local) | 11–148 rows, p=5.1e-31 |
-| Baseline: deepset (dev-tuned threshold 0.998) | 87.5 [84.4, 90.2] | 100.0 [100.0, 100.0] | 25.0 [20.1, 30.8] | 0.989 | 0.751 | 27 | 0 (local) | 43–47 rows, p=0.75 |
-| Baseline: keyword (threshold 0.5) | 68.4 [58.9, 78.2] | 40.0 [24.0, 60.0] | 3.1 [0.9, 5.4] | 0.684 | 0.088 | 0 | 0 (local) | 51–21 rows, p=0.0016 |
-| Baseline: protectai (threshold 0.5) | 63.8 [55.8, 73.6] | 28.0 [12.0, 48.0] | 0.4 [0.0, 1.3] | 0.971 | 0.070 | 27 | 0 (local) | 51–18 rows, p=0.00035 |
-| Baseline: protectai (dev-tuned threshold 0.0003) | 91.7 [89.3, 94.2] | 100.0 [100.0, 100.0] | 16.5 [11.6, 21.4] | 0.971 | 0.070 | 27 | 0 (local) | 47–32 rows, p=0.23 |
+| Clocked default (verdict) | 88.4 [85.7, 91.1] | 100.0 [100.0, 100.0] | 23.2 [17.9, 29.0] | 0.998 | 0.224 | 336 | 2.5 | reference |
+| Clocked default, dev-tuned threshold 0.5 | 88.2 [85.5, 90.8] | 100.0 [100.0, 100.0] | 23.7 [17.9, 29.5] | 0.998 | 0.224 | 336 | 2.5 | 0–1 rows, p=1 |
+| Clocked + AgentAudit (consensus) ★ frozen | 97.3 [95.8, 98.7] | 100.0 [100.0, 100.0] | 5.4 [2.7, 8.5] | 1.000 | 0.141 | 316 | 2.4 | 41–1 rows, p=1.2e-10 |
+| Baseline: deepset (threshold 0.5) | 57.8 [55.4, 60.3] | 100.0 [100.0, 100.0] | 84.4 [79.5, 89.3] | 0.989 | 0.751 | 27 | 0 (local) | 11–148 rows, p=6e-31 |
+| Baseline: deepset (dev-tuned threshold 0.998) | 87.5 [84.8, 90.2] | 100.0 [100.0, 100.0] | 25.0 [19.2, 30.8] | 0.989 | 0.751 | 27 | 0 (local) | 43–47 rows, p=1 |
+| Baseline: keyword (threshold 0.5) | 68.4 [58.9, 77.8] | 40.0 [20.0, 60.0] | 3.1 [1.3, 5.8] | 0.684 | 0.088 | 0 | 0 (local) | 51–21 rows, p=0.0021 |
+| Baseline: protectai (threshold 0.5) | 63.8 [55.8, 73.8] | 28.0 [12.0, 44.1] | 0.4 [0.0, 1.3] | 0.971 | 0.070 | 27 | 0 (local) | 51–18 rows, p=0.00044 |
+| Baseline: protectai (dev-tuned threshold 0.0003) | 91.7 [89.3, 94.2] | 100.0 [100.0, 100.0] | 16.5 [11.6, 21.4] | 0.971 | 0.070 | 27 | 0 (local) | 47–32 rows, p=0.34 |
 
 **Ablation (policy × decision rule), balanced accuracy [95% CI]:**
 
 | | verdict rule | consensus rule |
 |---|---|---|
-| default policy | 88.4 [85.7, 91.1] · FPR 23.2 | 96.4 [94.6, 98.0] · FPR 7.1 |
-| AgentAudit policy | 93.8 [91.5, 95.8] · FPR 12.5 | 97.3 [95.8, 98.7] · FPR 5.4 |
+| default policy | 88.4 [85.7, 91.3] · FPR 23.2 | 96.4 [94.6, 98.0] · FPR 7.1 |
+| AgentAudit policy | 93.8 [91.3, 95.8] · FPR 12.5 | 97.3 [95.8, 98.7] · FPR 5.4 |
 
 Per source (frozen arm): mtp_pair 50/50 · registry_real 187/199
+
 
 ### Skills: test split
 
@@ -132,7 +144,7 @@ Per source (frozen arm): mtp_pair 50/50 · registry_real 187/199
 
 | Arm | BAcc [95% CI] | Recall [95% CI] | FPR [95% CI] | AUROC | ECE | Median ms | Credits/row | vs reference (Holm p) |
 |---|---|---|---|---|---|---|---|---|
-| Clocked Guard, default, whole file | 56.8 [51.4, 62.2] | 13.5 [2.7, 27.0] | 0.0 [0.0, 0.0] | 0.762 | 0.279 | 380 | 3.8 | 1–17 rows, p=0.00043 |
-| Clocked Inspect, default, whole file | 79.0 [70.9, 87.1] | 59.5 [43.2, 73.0] | 1.5 [0.0, 4.5] | 0.807 | 0.174 | 721 | 16.2 | reference |
-| AgentAudit pipeline ★ frozen (Guard + Inspect on code + supply-chain) | 84.4 [76.1, 91.9] | 70.3 [56.8, 83.8] | 1.5 [0.0, 4.5] | 0.987 | 0.093 | 905 | 25.5 | 4–0 rows, p=0.25 |
-|   ablation: supply-chain check alone | 82.4 [74.3, 89.2] | 64.9 [48.6, 81.1] | 0.0 [0.0, 0.0] | 0.971 | 0.106 | — | 0 (local) | 3–0 rows, p=0.25 |
+| Clocked Guard, default, whole file | 56.8 [51.4, 62.2] | 13.5 [2.7, 24.3] | 0.0 [0.0, 0.0] | 0.762 | 0.279 | 380 | 3.8 | 1–17 rows, p=0.00043 |
+| Clocked Inspect, default, whole file | 79.0 [70.9, 86.9] | 59.5 [43.2, 75.7] | 1.5 [0.0, 4.5] | 0.807 | 0.174 | 721 | 16.2 | reference |
+| AgentAudit pipeline ★ frozen (Guard + Inspect on code + supply-chain) | 84.4 [76.9, 91.7] | 70.3 [56.8, 83.8] | 1.5 [0.0, 4.5] | 0.987 | 0.093 | 905 | 25.5 | 4–0 rows, p=0.25 |
+|   ablation: supply-chain check alone | 82.4 [74.3, 90.5] | 64.9 [48.6, 78.4] | 0.0 [0.0, 0.0] | 0.971 | 0.106 | — | 0 (local) | 3–0 rows, p=0.25 |

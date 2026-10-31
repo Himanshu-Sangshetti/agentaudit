@@ -150,10 +150,21 @@ def baseline_arms(name: str, split: str) -> list[dict]:
     return arms
 
 
+def clocked_dev_threshold(name: str) -> float:
+    """Clocked default with only its threshold tuned on dev, as Clocked's docs recommend."""
+    recs = load(RES / f"{name}_dev_default.jsonl")
+    L = [r["label"] for r in recs]
+    cands = sorted({round(r.get("p") or 0, 4) for r in recs})
+    return max(cands, key=lambda t: bacc(L, [threshold_rule(t)(r) for r in recs]))
+
+
 def suite(name: str, split: str, frozen_rule, extra_note: str = "") -> str:
     d = load(RES / f"{name}_{split}_default.jsonl")
     a = load(RES / f"{name}_{split}_agentaudit.jsonl")
     arms = [arm_row("Clocked default (verdict)", d, rule_verdict)]
+    if split != "dev":
+        t = clocked_dev_threshold(name)
+        arms.append(arm_row(f"Clocked default, dev-tuned threshold {t:.3g}", d, threshold_rule(t)))
     frozen_label = "consensus" if frozen_rule is rule_consensus else "verdict"
     arms.append(arm_row(f"Clocked + AgentAudit ({frozen_label}) ★ frozen", a, frozen_rule))
     arms += baseline_arms(name, split)
@@ -171,6 +182,15 @@ def suite(name: str, split: str, frozen_rule, extra_note: str = "") -> str:
             cells.append(f"{100 * bacc(L, P):.1f} [{100 * lo:.1f}, {100 * hi:.1f}] · FPR {fmt_pct(fpr(L, P))}")
         lines.append(f"| {label} | " + " | ".join(cells) + " |")
     lines += ["", f"Per source (frozen arm): {by_source(a, frozen_rule)}", ""]
+    for drop, label in (("hard_negative", "without the author-written hard negatives"),
+                        ("scope_pair", "without the author-written scope pairs")):
+        if any(r["source"] == drop for r in a):
+            dd = [r for r in d if r["source"] != drop]
+            aa = [r for r in a if r["source"] != drop]
+            rd, ra = arm_row("d", dd, rule_verdict), arm_row("a", aa, frozen_rule)
+            lines.append(f"Robustness, {label} (n={len(aa)}): default {fmt_pct(rd['bacc'], *rd['bacc_ci'])} BAcc, "
+                         f"FPR {fmt_pct(rd['fpr'])} → frozen {fmt_pct(ra['bacc'], *ra['bacc_ci'])} BAcc, FPR {fmt_pct(ra['fpr'])}.")
+    lines.append("")
     return "\n".join(lines)
 
 
