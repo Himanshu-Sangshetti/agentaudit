@@ -134,9 +134,16 @@ Robustness, without the author-written scope pairs (n=82): default 91.7 [84.7, 9
 Per source (frozen arm): mtp_pair 50/50 · registry_real 187/199
 
 
-### Skills: test split
+### Skills (real ClawHub campaign): test split (n=244)
 
-(pending)
+124 malicious and 223 benign SKILL.md files (yoonholee/agent-skill-malware, MIT). Context: SkillScreen (arXiv 2610.17727) reports Jev 1.13 recall 33.8% on MaliciousSkillBench (a different, larger split; not directly comparable).
+
+| Arm | BAcc [95% CI] | Recall [95% CI] | FPR [95% CI] | AUROC | ECE | Median ms | Credits/row | vs reference (Holm p) |
+|---|---|---|---|---|---|---|---|---|
+| Clocked Guard, default, whole file | 55.2 [52.3, 58.6] | 10.3 [4.6, 17.2] | 0.0 [0.0, 0.0] | 0.738 | 0.301 | 428 | 4.2 | 4–33 rows, p=2.2e-06 |
+| Clocked Inspect, default, whole file | 72.9 [67.4, 78.6] | 48.3 [37.9, 58.6] | 2.5 [0.6, 5.1] | 0.792 | 0.210 | 686 | 17.2 | reference |
+| AgentAudit pipeline ★ frozen (Guard + Inspect on code + supply-chain) | 88.6 [84.4, 93.0] | 80.5 [71.3, 88.5] | 3.2 [0.6, 6.4] | 0.984 | 0.063 | 907 | 25.3 | 32–5 rows, p=7.4e-06 |
+|   ablation: supply-chain check alone | 88.2 [83.6, 92.5] | 77.0 [68.9, 86.2] | 0.6 [0.0, 1.9] | 0.976 | 0.081 | — | — | 29–1 rows, p=1.7e-07 |
 
 ### Skills (real ClawHub campaign): dev split (n=103)
 
@@ -144,7 +151,7 @@ Per source (frozen arm): mtp_pair 50/50 · registry_real 187/199
 
 | Arm | BAcc [95% CI] | Recall [95% CI] | FPR [95% CI] | AUROC | ECE | Median ms | Credits/row | vs reference (Holm p) |
 |---|---|---|---|---|---|---|---|---|
-| Clocked Guard, default, whole file | 56.8 [51.4, 62.2] | 13.5 [2.7, 24.3] | 0.0 [0.0, 0.0] | 0.762 | 0.279 | 380 | 3.8 | 1–17 rows, p=0.00043 |
-| Clocked Inspect, default, whole file | 79.0 [70.9, 86.9] | 59.5 [43.2, 75.7] | 1.5 [0.0, 4.5] | 0.807 | 0.174 | 721 | 16.2 | reference |
-| AgentAudit pipeline ★ frozen (Guard + Inspect on code + supply-chain) | 84.4 [76.9, 91.7] | 70.3 [56.8, 83.8] | 1.5 [0.0, 4.5] | 0.987 | 0.093 | 905 | 25.5 | 4–0 rows, p=0.25 |
-|   ablation: supply-chain check alone | 82.4 [74.3, 90.5] | 64.9 [48.6, 78.4] | 0.0 [0.0, 0.0] | 0.971 | 0.106 | — | 0 (local) | 3–0 rows, p=0.25 |
+| Clocked Guard, default, whole file | 56.8 [51.4, 62.2] | 13.5 [2.7, 24.4] | 0.0 [0.0, 0.0] | 0.762 | 0.279 | 380 | 3.8 | 1–17 rows, p=0.00043 |
+| Clocked Inspect, default, whole file | 79.0 [70.9, 86.5] | 59.5 [43.2, 75.7] | 1.5 [0.0, 4.5] | 0.807 | 0.174 | 721 | 16.2 | reference |
+| AgentAudit pipeline ★ frozen (Guard + Inspect on code + supply-chain) | 84.4 [76.3, 91.9] | 70.3 [54.1, 83.8] | 1.5 [0.0, 4.5] | 0.987 | 0.093 | 905 | 25.5 | 4–0 rows, p=0.25 |
+|   ablation: supply-chain check alone | 82.4 [74.3, 90.5] | 64.9 [48.6, 78.4] | 0.0 [0.0, 0.0] | 0.971 | 0.106 | — | — | 3–0 rows, p=0.25 |

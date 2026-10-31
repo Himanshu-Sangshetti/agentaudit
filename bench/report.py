@@ -107,7 +107,8 @@ def table(rows, ref_name):
                    f"{r['median_ms']:.0f} | " if r["median_ms"] else
                    f"| {r['arm']} | {fmt_pct(r['bacc'], *r['bacc_ci'])} | {fmt_pct(r['recall'], *r['recall_ci'])} | "
                    f"{fmt_pct(r['fpr'], *r['fpr_ci'])} | {r['auroc']:.3f} | {r['ece']:.3f} | — | ")
-        out[-1] += (f"{r['credits_per_row']:.1f} | " if r["credits_per_row"] else "0 (local) | ") + vs + " |"
+        local = r["arm"].startswith("Baseline")
+        out[-1] += (f"{r['credits_per_row']:.1f} | " if r["credits_per_row"] else ("0 (local) | " if local else "— | ")) + vs + " |"
     return "\n".join(out)
 
 
