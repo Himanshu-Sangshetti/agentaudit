@@ -17,7 +17,7 @@ It ships as a CLI, a GitHub Action (SARIF in code scanning), a REST hook for age
 ## Quickstart
 
 ```bash
-uv tool install git+https://github.com/<you>/agentaudit   # or: pip install -e .
+uv tool install git+https://github.com/Himanshu-Sangshetti/agentaudit
 export CLOCKED_API_KEY=...                                 # server-side only
 
 agentaudit demo                                            # try it in 10 seconds: recorded audits, no key needed

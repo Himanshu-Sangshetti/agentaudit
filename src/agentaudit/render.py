@@ -76,7 +76,7 @@ def to_sarif(reports: list[Report]) -> dict:
                 "properties": {"agent": rep.agent, "severity": f.severity, "check": f.check},
             })
     return {"version": "2.1.0", "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
-            "runs": [{"tool": {"driver": {"name": "AgentAudit", "informationUri": "https://github.com/",
+            "runs": [{"tool": {"driver": {"name": "AgentAudit", "informationUri": "https://github.com/Himanshu-Sangshetti/agentaudit",
                                           "rules": [{"id": k, "shortDescription": {"text": v}} for k, v in used.items()]}},
                       "results": results}]}
 
