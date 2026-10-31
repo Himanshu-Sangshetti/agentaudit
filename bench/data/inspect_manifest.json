@@ -1,0 +1,2105 @@
+{
+"seed": 20261031,
+"rows": [
+{
+"id": "art:T1055.002:578025d5",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1005:d3d9af44",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1686.003:0ef45922",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1176:7a714703",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1573:21caf58e",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1560:41410c60",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1555.006:1b83cddb",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1680:3a4d51bd",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1485:476419b5",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "art:T1098.003:4d77f913",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "art:T1564.008:30f7d3d1",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1574.008:1561de08",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "art:T1055:1c91e740",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1547.005:afdfd7e3",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1547.015:ec5d76ef",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1055.012:562427b4",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1555.003:8c05b133",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1567.003:c2e8ab6e",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "art:T1685.001:69435dcf",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1091:d44b7297",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "art:T1059.001:f3132740",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1553.005:002cca30",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1114.001:3f1b5096",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "art:T1595.003:89a83c3e",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1021.006:9059e8de",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "art:T1219:8ca3b96d",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1555:234f9b7c",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1552.005:ae9b2e3e",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1134.002:dbf4f5a9",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1556.001:0ee8081f",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1204.002:8bebc690",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1001.002:c7921449",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1021.004:8f6c14d1",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "art:T1114.002:36657d95",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "art:T1652:235b30a2",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1528:9a5352e4",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1095:0268e63c",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1546.009:a5ad6104",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "art:T1059:a9b93f17",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1020:9c780d3d",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "art:T1090.003:14d55ca0",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "art:T1134.004:069258f4",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1547.002:be2590e8",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1027.006:30cbeda4",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1137.006:441b1a0f",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1098.001:b8e747c3",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "art:T1567.002:8529ee44",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "art:T1649:eb121494",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1567.004:f0057c81",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "art:T1606.002:b16a03bc",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1027.018:5917f0fd",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1572:ae9ef4b0",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1546.008:3309f53e",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "art:T1491.001:30558d53",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1546.015:48117158",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "art:T1546:aca9ae16",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "art:T1071.004:1700f5d6",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1071:3b0df731",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1505.005:0b2eadeb",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "art:T1556.002:a7961770",
+"label": 1,
+"source": "atomic_red_team",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "art:T1016.002:53cf1903",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1053.002:4a6c0dc4",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1202:cecfea7a",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1195:82a9f001",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1049:0940a971",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "dev"
+},
+{
+"id": "art:T1110.001:09480053",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1490:43819286",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1218:c426dacf",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1543.003:ed366cde",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "dev"
+},
+{
+"id": "art:T1048.002:1cdf2fb0",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1218.010:449aa403",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1216.002:275d963d",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1039:6ed67921",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "dev"
+},
+{
+"id": "art:T1003.003:dcebead7",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1547.009:ce4fc678",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1546.002:281201e7",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "dev"
+},
+{
+"id": "art:T1218.001:5cb87818",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1564.004:8822c3b0",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1484.001:9ab80952",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1216.001:9dd29a1f",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1505.004:53adbdfa",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "dev"
+},
+{
+"id": "art:T1531:1b99ef28",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "dev"
+},
+{
+"id": "art:T1134.005:6bef32e5",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1546.007:3244697d",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "dev"
+},
+{
+"id": "art:T1127.001:58742c0f",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1569.002:2382dee2",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1553.003:e12f5d8d",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1010:fe94a1c3",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "dev"
+},
+{
+"id": "art:T1036.003:5ba5a3d1",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1518:68981660",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1548.002:5073adf8",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1218.009:71bfbfac",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1574.001:8549ad4b",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "dev"
+},
+{
+"id": "art:T1129:7f843046",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1047:c107778c",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1685:40075d5f",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1552.002:b6ec082c",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1482:4700a710",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1025:0b29f7e3",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "test"
+},
+{
+"id": "art:T1546.001:10a08978",
+"label": 1,
+"source": "atomic_red_team",
+"group": "command_prompt",
+"split": "dev"
+},
+{
+"id": "art:T1135:f94b5ad9",
+"label": 1,
+"source": "atomic_red_team",
+"group": "sh",
+"split": "test"
+},
+{
+"id": "art:T1048:f6786cc8",
+"label": 1,
+"source": "atomic_red_team",
+"group": "sh",
+"split": "test"
+},
+{
+"id": "art:T1059.002:3600d97d",
+"label": 1,
+"source": "atomic_red_team",
+"group": "sh",
+"split": "test"
+},
+{
+"id": "art:T1564.001:61a782e5",
+"label": 1,
+"source": "atomic_red_team",
+"group": "sh",
+"split": "test"
+},
+{
+"id": "art:T1530:979356b9",
+"label": 1,
+"source": "atomic_red_team",
+"group": "sh",
+"split": "test"
+},
+{
+"id": "art:T1027:f45df6be",
+"label": 1,
+"source": "atomic_red_team",
+"group": "sh",
+"split": "test"
+},
+{
+"id": "art:T1548.003:150c3a08",
+"label": 1,
+"source": "atomic_red_team",
+"group": "sh",
+"split": "test"
+},
+{
+"id": "art:T1578.001:a3c09662",
+"label": 1,
+"source": "atomic_red_team",
+"group": "sh",
+"split": "test"
+},
+{
+"id": "art:T1580:99ee161b",
+"label": 1,
+"source": "atomic_red_team",
+"group": "sh",
+"split": "test"
+},
+{
+"id": "art:T1055.009:50859b3b",
+"label": 1,
+"source": "atomic_red_team",
+"group": "sh",
+"split": "test"
+},
+{
+"id": "art:T1497.001:dfbd1a21",
+"label": 1,
+"source": "atomic_red_team",
+"group": "sh",
+"split": "test"
+},
+{
+"id": "art:T1027.002:11c46cd8",
+"label": 1,
+"source": "atomic_red_team",
+"group": "sh",
+"split": "test"
+},
+{
+"id": "art:T1569.003:e58c8723",
+"label": 1,
+"source": "atomic_red_team",
+"group": "sh",
+"split": "test"
+},
+{
+"id": "art:T1497.003:8b87dd03",
+"label": 1,
+"source": "atomic_red_team",
+"group": "sh",
+"split": "test"
+},
+{
+"id": "art:T1070.006:5f9113d5",
+"label": 1,
+"source": "atomic_red_team",
+"group": "sh",
+"split": "dev"
+},
+{
+"id": "art:T1546.004:94500ae1",
+"label": 1,
+"source": "atomic_red_team",
+"group": "sh",
+"split": "dev"
+},
+{
+"id": "art:T1036.006:b95ce2eb",
+"label": 1,
+"source": "atomic_red_team",
+"group": "sh",
+"split": "test"
+},
+{
+"id": "art:T1059.006:3a95cdb2",
+"label": 1,
+"source": "atomic_red_team",
+"group": "sh",
+"split": "test"
+},
+{
+"id": "art:T1564.002:4238a7f0",
+"label": 1,
+"source": "atomic_red_team",
+"group": "sh",
+"split": "test"
+},
+{
+"id": "art:T1486:7b8ce084",
+"label": 1,
+"source": "atomic_red_team",
+"group": "sh",
+"split": "test"
+},
+{
+"id": "art:T1195.002:a9604672",
+"label": 1,
+"source": "atomic_red_team",
+"group": "bash",
+"split": "test"
+},
+{
+"id": "art:T1056.002:76628574",
+"label": 1,
+"source": "atomic_red_team",
+"group": "bash",
+"split": "test"
+},
+{
+"id": "art:T1040:7fe741f7",
+"label": 1,
+"source": "atomic_red_team",
+"group": "bash",
+"split": "test"
+},
+{
+"id": "art:T1543.002:d9e4f24f",
+"label": 1,
+"source": "atomic_red_team",
+"group": "bash",
+"split": "dev"
+},
+{
+"id": "art:T1003.008:3723ab77",
+"label": 1,
+"source": "atomic_red_team",
+"group": "bash",
+"split": "test"
+},
+{
+"id": "art:T1547.006:687dcb93",
+"label": 1,
+"source": "atomic_red_team",
+"group": "bash",
+"split": "test"
+},
+{
+"id": "art:T1113:0f47ceb1",
+"label": 1,
+"source": "atomic_red_team",
+"group": "bash",
+"split": "test"
+},
+{
+"id": "art:T1110.004:4f08197a",
+"label": 1,
+"source": "atomic_red_team",
+"group": "bash",
+"split": "test"
+},
+{
+"id": "art:T1201:085fe567",
+"label": 1,
+"source": "atomic_red_team",
+"group": "bash",
+"split": "dev"
+},
+{
+"id": "art:T1543.004:03ab8df5",
+"label": 1,
+"source": "atomic_red_team",
+"group": "bash",
+"split": "dev"
+},
+{
+"id": "art:T1037.004:97a48daa",
+"label": 1,
+"source": "atomic_red_team",
+"group": "bash",
+"split": "test"
+},
+{
+"id": "art:T1574.006:39cb0e67",
+"label": 1,
+"source": "atomic_red_team",
+"group": "bash",
+"split": "dev"
+},
+{
+"id": "art:T1053.007:ddfb0bc1",
+"label": 1,
+"source": "atomic_red_team",
+"group": "bash",
+"split": "test"
+},
+{
+"id": "art:T1543.001:a5983dee",
+"label": 1,
+"source": "atomic_red_team",
+"group": "bash",
+"split": "dev"
+},
+{
+"id": "art:T1659:9b360eaf",
+"label": 1,
+"source": "atomic_red_team",
+"group": "bash",
+"split": "test"
+},
+{
+"id": "art:T1609:d03bfcd3",
+"label": 1,
+"source": "atomic_red_team",
+"group": "bash",
+"split": "test"
+},
+{
+"id": "art:T1136.001:40d8eabd",
+"label": 1,
+"source": "atomic_red_team",
+"group": "bash",
+"split": "test"
+},
+{
+"id": "art:T1053.006:f4983098",
+"label": 1,
+"source": "atomic_red_team",
+"group": "bash",
+"split": "test"
+},
+{
+"id": "art:T1046:68e907da",
+"label": 1,
+"source": "atomic_red_team",
+"group": "bash",
+"split": "test"
+},
+{
+"id": "art:T1568.002:cc367493",
+"label": 1,
+"source": "atomic_red_team",
+"group": "bash",
+"split": "test"
+},
+{
+"id": "mcpscript:supabase_mcp:packages/mcp-server-supabase/package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "test"
+},
+{
+"id": "mcpscript:filesystem:package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "dev"
+},
+{
+"id": "mcpscript:Snowflake-Labs_mcp:docker/server/Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "test"
+},
+{
+"id": "mcpscript:everything:package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "test"
+},
+{
+"id": "mcpscript:memory:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "test"
+},
+{
+"id": "mcpscript:Flux159_mcp-server-kubernetes:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "test"
+},
+{
+"id": "mcpscript:qdrant_mcp-server-qdrant:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "test"
+},
+{
+"id": "mcpscript:neondatabase_mcp-server-neon:package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "dev"
+},
+{
+"id": "mcpscript:firecrawl_firecrawl-mcp-server:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "dev"
+},
+{
+"id": "mcpscript:cloudflare_mcp-server-cloudflare:apps/radar/package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "test"
+},
+{
+"id": "mcpscript:gdrive:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "test"
+},
+{
+"id": "mcpscript:git:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "dev"
+},
+{
+"id": "mcpscript:upstash_context7:packages/pi/package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "test"
+},
+{
+"id": "mcpscript:mobile-next_mobile-mcp:package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "test"
+},
+{
+"id": "mcpscript:exa-labs_exa-mcp-server:package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "test"
+},
+{
+"id": "mcpscript:twilio-labs_mcp:packages/openapi-mcp-server/package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "test"
+},
+{
+"id": "mcpscript:motherduckdb_mcp-server-motherduck:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "test"
+},
+{
+"id": "mcpscript:gdrive:package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "test"
+},
+{
+"id": "mcpscript:sentry:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "dev"
+},
+{
+"id": "mcpscript:puppeteer:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "dev"
+},
+{
+"id": "mcpscript:elastic_mcp-server-elasticsearch:scripts/cargo-run.sh",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".sh",
+"split": "test"
+},
+{
+"id": "mcpscript:puppeteer:package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "dev"
+},
+{
+"id": "mcpscript:upstash_context7:packages/admin-mcp/package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "test"
+},
+{
+"id": "mcpscript:grafana_mcp-grafana:testdata/prometheus-entrypoint.sh",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".sh",
+"split": "test"
+},
+{
+"id": "mcpscript:stripe_ai:benchmarks/sdk-upgrades-java/run_solution.sh",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".sh",
+"split": "test"
+},
+{
+"id": "mcpscript:executeautomation_mcp-playwright:package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "test"
+},
+{
+"id": "mcpscript:github_github-mcp-server:ui/package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "test"
+},
+{
+"id": "mcpscript:ahujasid_mcp-for-blender:install.sh",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".sh",
+"split": "test"
+},
+{
+"id": "mcpscript:heroku_heroku-mcp-server:package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "test"
+},
+{
+"id": "mcpscript:github:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "test"
+},
+{
+"id": "mcpscript:github_github-mcp-server:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "test"
+},
+{
+"id": "mcpscript:sooperset_mcp-atlassian:tests/e2e/docker/setup-test-data.sh",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".sh",
+"split": "test"
+},
+{
+"id": "mcpscript:redis:package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "dev"
+},
+{
+"id": "mcpscript:slack:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "test"
+},
+{
+"id": "mcpscript:aws-kb-retrieval-server:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "dev"
+},
+{
+"id": "mcpscript:slack:package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "test"
+},
+{
+"id": "mcpscript:filesystem:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "dev"
+},
+{
+"id": "mcpscript:makenotion_notion-mcp-server:package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "test"
+},
+{
+"id": "mcpscript:microsoft_playwright-mcp:package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "dev"
+},
+{
+"id": "mcpscript:chroma-core_chroma-mcp:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "dev"
+},
+{
+"id": "mcpscript:Flux159_mcp-server-kubernetes:package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "test"
+},
+{
+"id": "mcpscript:executeautomation_mcp-playwright:docs/package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "test"
+},
+{
+"id": "mcpscript:line_line-bot-mcp-server:.github/scripts/npm-audit.sh",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".sh",
+"split": "dev"
+},
+{
+"id": "mcpscript:brave-search:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "dev"
+},
+{
+"id": "mcpscript:zcaceres_markdownify-mcp:setup.sh",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".sh",
+"split": "dev"
+},
+{
+"id": "mcpscript:ahujasid_mcp-for-blender:install.ps1",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".ps1",
+"split": "test"
+},
+{
+"id": "mcpscript:cloudflare_mcp-server-cloudflare:apps/workers-bindings/package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "test"
+},
+{
+"id": "mcpscript:elastic_mcp-server-elasticsearch:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "test"
+},
+{
+"id": "mcpscript:gitlab:package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "test"
+},
+{
+"id": "mcpscript:browserbase_mcp-server-browserbase:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "dev"
+},
+{
+"id": "mcpscript:line_line-bot-mcp-server:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "dev"
+},
+{
+"id": "mcpscript:executeautomation_mcp-playwright:docker-build.sh",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".sh",
+"split": "test"
+},
+{
+"id": "mcpscript:taylorwilsdon_google_workspace_mcp:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "test"
+},
+{
+"id": "mcpscript:github:package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "test"
+},
+{
+"id": "mcpscript:browserbase_mcp-server-browserbase:package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "dev"
+},
+{
+"id": "mcpscript:stripe_ai:benchmarks/saas-starter-embedded-checkout/grader/grade.sh",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".sh",
+"split": "test"
+},
+{
+"id": "mcpscript:redis:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "dev"
+},
+{
+"id": "mcpscript:postgres:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "dev"
+},
+{
+"id": "mcpscript:zcaceres_markdownify-mcp:package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "dev"
+},
+{
+"id": "mcpscript:mongodb-js_mongodb-mcp-server:packages/cli/package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "dev"
+},
+{
+"id": "mcpscript:exa-labs_exa-mcp-server:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "test"
+},
+{
+"id": "mcpscript:gdrive:replace_open.sh",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".sh",
+"split": "test"
+},
+{
+"id": "mcpscript:microsoft_playwright-mcp:utils/docker/publish_docker.sh",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".sh",
+"split": "dev"
+},
+{
+"id": "mcpscript:firecrawl_firecrawl-mcp-server:.github/actions/release-summary/summary.sh",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".sh",
+"split": "dev"
+},
+{
+"id": "mcpscript:everything:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "test"
+},
+{
+"id": "mcpscript:grafana_mcp-grafana:testdata/influxdb-seed.sh",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".sh",
+"split": "test"
+},
+{
+"id": "mcpscript:aws-kb-retrieval-server:package.json",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".json",
+"split": "dev"
+},
+{
+"id": "mcpscript:sooperset_mcp-atlassian:.devcontainer/post-create.sh",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".sh",
+"split": "test"
+},
+{
+"id": "mcpscript:mapbox_mcp-server:Dockerfile",
+"label": 0,
+"source": "mcp_repo_script",
+"group": "Dockerfile",
+"split": "test"
+},
+{
+"id": "mcpscript:benborla_mcp-server-mysql:scripts/stop-tunnel-rds.sh",
+"label": 0,
+"source": "mcp_repo_script",
+"group": ".sh",
+"split": "test"
+},
+{
+"id": "lazywinadmin:TOOL-Get-ProcessForeignAddress/Get-ProcessForeignAddress.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:AZURE-Get-AzureIPRangesAndServiceTags/Get-AzureIPRangesAndServiceTags.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:TOOL-Test-RemoteDesktopIsEnabled/Test-RemoteDesktopIsEnabled.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:AZURE-AppService-Update_RestrictionIP/AppService-Update_RestrictionIP.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:_Profiles/functions/Test-ADCredential.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "lazywinadmin:SCSM-Get-SCSMObjectPrefix/Get-SCSMObjectPrefix.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "lazywinadmin:_Profiles/functions/Launch-InternetExplorer.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "lazywinadmin:TOOL-New-ScriptMessage/New-ScriptMessage.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "lazywinadmin:SCSM-Get-SCSMWorkItemRequestOffering/Get-SCSMWorkItemRequestOffering.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:AD-SITE-Get-ADSiteInventory/Get-ADSiteInventory.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "lazywinadmin:TOOL-Get-StringLastDigit/Get-StringLastDigit.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:TOOL-Remove-PSObjectEmptyOrNullProperty/Remove-PSObjectEmptyOrNullProperty.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:TOOL-New-Password/New-Password.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "lazywinadmin:SCCM-Add-SCCMUserDeviceAffinity/Add-SCCMUserDeviceAffinity.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:SCSM-Get-SCSMWorkItemAffectedCI/Get-SCSMWorkItemAffectedCI.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:SCSM-Get-SCSMWorkItemUserInput/Get-SCSMWorkItemUserInput.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:O365-Get-O365CalendarEvent/O365-Get-O365CalendarEvent.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "lazywinadmin:SCSM-Get-SCSMServiceRequestComment/Get-SCSMServiceRequestComment.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "lazywinadmin:TOOL-Get-BatteryStatus/Get-BatteryStatus.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "lazywinadmin:TOOL-New-DjoinFile/New-DjoinFile.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:TOOL-Set-RDPDisable/Set-RDPDisable.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:AD-GROUP-Monitor_MemberShip/AD-GROUP-Monitor_MemberShip.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:TOOL-Expand-ScriptAlias/Expand-ScriptAlias.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "lazywinadmin:AD-GROUP-Get-NestedMember/AD-GROUP-Get-NestedMember.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:TOOL-Set-NetworkLevelAuthentication/Set-NetworkLevelAuthentication.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "lazywinadmin:AD-GPO-Get-ADGPOReplication/AD-GPO-Get-ADGPOReplication.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:TOOL-Get-NetworkLevelAuthentication/Get-NetworkLevelAuthentication.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "lazywinadmin:SCSM-Get-SCSMWorkItemParent/Get-SCSMWorkItemParent.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:_Profiles/functions/Launch-Office365Admin.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "lazywinadmin:SCCM-Get-SCCMDeviceCollectionDeployment/Get-SCCMDeviceCollectionDeployment.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "lazywinadmin:TOOL-Resolve-ShortURL/Resolve-ShortURL.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:AZURE-Policy-Invoke-ComplianceEvaluation/Invoke-ComplianceEvaluation.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "lazywinadmin:AD-SITE-Find_Missing_Subnets/AD-Find_missing_subnets_in_ActiveDirectory.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:EXCHANGE-Connect-ExchangeOnPremises/Connect-ExchangeOnPremises.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:TOOL-Send-Email/TOOL-Send-Email.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:TOOL-Get-AsciiReaction/Get-AsciiReaction.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:AD-USER-Get-ADDirectReport/Get-ADDirectReport.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:AD-COMPUTER-New-ADDomainJoin/New-ADDomainJoin.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:SCCM-Set-SCCMClientCacheLocation/Set-SCCMClientCacheLocation.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "lazywinadmin:AZURE-Get-AzToken/Get-AzToken.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:TOOL-Get-LogFast/Get-LogFast.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:_Profiles/functions/Launch-ExchangeOnline.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "lazywinadmin:TOOL-Get-HelpMessage/Get-HelpMessage.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:AD-COMPUTER-Get-DomainComputer/Get-DomainComputer.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "test"
+},
+{
+"id": "lazywinadmin:SCCM-Get-SCCMClientCacheInformation/Get-SCCMClientCacheInformation.ps1",
+"label": 0,
+"source": "admin_powershell",
+"group": "powershell",
+"split": "dev"
+},
+{
+"id": "installer:docker_install",
+"label": 0,
+"source": "installer",
+"group": "sh",
+"split": "test"
+},
+{
+"id": "installer:homebrew_install",
+"label": 0,
+"source": "installer",
+"group": "sh",
+"split": "dev"
+},
+{
+"id": "installer:nvm_install",
+"label": 0,
+"source": "installer",
+"group": "sh",
+"split": "test"
+},
+{
+"id": "installer:ohmyzsh_install",
+"label": 0,
+"source": "installer",
+"group": "sh",
+"split": "dev"
+},
+{
+"id": "installer:rustup_init",
+"label": 0,
+"source": "installer",
+"group": "sh",
+"split": "dev"
+},
+{
+"id": "scope:00:in",
+"label": 0,
+"source": "scope_pair",
+"group": "in_scope",
+"split": "test"
+},
+{
+"id": "scope:00:out",
+"label": 1,
+"source": "scope_pair",
+"group": "out_of_scope",
+"split": "test"
+},
+{
+"id": "scope:01:in",
+"label": 0,
+"source": "scope_pair",
+"group": "in_scope",
+"split": "test"
+},
+{
+"id": "scope:01:out",
+"label": 1,
+"source": "scope_pair",
+"group": "out_of_scope",
+"split": "test"
+},
+{
+"id": "scope:02:in",
+"label": 0,
+"source": "scope_pair",
+"group": "in_scope",
+"split": "test"
+},
+{
+"id": "scope:02:out",
+"label": 1,
+"source": "scope_pair",
+"group": "out_of_scope",
+"split": "test"
+},
+{
+"id": "scope:03:in",
+"label": 0,
+"source": "scope_pair",
+"group": "in_scope",
+"split": "dev"
+},
+{
+"id": "scope:03:out",
+"label": 1,
+"source": "scope_pair",
+"group": "out_of_scope",
+"split": "dev"
+},
+{
+"id": "scope:04:in",
+"label": 0,
+"source": "scope_pair",
+"group": "in_scope",
+"split": "test"
+},
+{
+"id": "scope:04:out",
+"label": 1,
+"source": "scope_pair",
+"group": "out_of_scope",
+"split": "test"
+},
+{
+"id": "scope:05:in",
+"label": 0,
+"source": "scope_pair",
+"group": "in_scope",
+"split": "test"
+},
+{
+"id": "scope:05:out",
+"label": 1,
+"source": "scope_pair",
+"group": "out_of_scope",
+"split": "test"
+},
+{
+"id": "scope:06:in",
+"label": 0,
+"source": "scope_pair",
+"group": "in_scope",
+"split": "dev"
+},
+{
+"id": "scope:06:out",
+"label": 1,
+"source": "scope_pair",
+"group": "out_of_scope",
+"split": "dev"
+},
+{
+"id": "scope:07:in",
+"label": 0,
+"source": "scope_pair",
+"group": "in_scope",
+"split": "test"
+},
+{
+"id": "scope:07:out",
+"label": 1,
+"source": "scope_pair",
+"group": "out_of_scope",
+"split": "test"
+},
+{
+"id": "scope:08:in",
+"label": 0,
+"source": "scope_pair",
+"group": "in_scope",
+"split": "dev"
+},
+{
+"id": "scope:08:out",
+"label": 1,
+"source": "scope_pair",
+"group": "out_of_scope",
+"split": "dev"
+},
+{
+"id": "scope:09:in",
+"label": 0,
+"source": "scope_pair",
+"group": "in_scope",
+"split": "test"
+},
+{
+"id": "scope:09:out",
+"label": 1,
+"source": "scope_pair",
+"group": "out_of_scope",
+"split": "test"
+},
+{
+"id": "scope:10:in",
+"label": 0,
+"source": "scope_pair",
+"group": "in_scope",
+"split": "test"
+},
+{
+"id": "scope:10:out",
+"label": 1,
+"source": "scope_pair",
+"group": "out_of_scope",
+"split": "test"
+},
+{
+"id": "scope:11:in",
+"label": 0,
+"source": "scope_pair",
+"group": "in_scope",
+"split": "dev"
+},
+{
+"id": "scope:11:out",
+"label": 1,
+"source": "scope_pair",
+"group": "out_of_scope",
+"split": "dev"
+},
+{
+"id": "scope:12:in",
+"label": 0,
+"source": "scope_pair",
+"group": "in_scope",
+"split": "test"
+},
+{
+"id": "scope:12:out",
+"label": 1,
+"source": "scope_pair",
+"group": "out_of_scope",
+"split": "test"
+},
+{
+"id": "scope:13:in",
+"label": 0,
+"source": "scope_pair",
+"group": "in_scope",
+"split": "dev"
+},
+{
+"id": "scope:13:out",
+"label": 1,
+"source": "scope_pair",
+"group": "out_of_scope",
+"split": "dev"
+},
+{
+"id": "scope:14:in",
+"label": 0,
+"source": "scope_pair",
+"group": "in_scope",
+"split": "dev"
+},
+{
+"id": "scope:14:out",
+"label": 1,
+"source": "scope_pair",
+"group": "out_of_scope",
+"split": "dev"
+},
+{
+"id": "scope:15:in",
+"label": 0,
+"source": "scope_pair",
+"group": "in_scope",
+"split": "test"
+},
+{
+"id": "scope:15:out",
+"label": 1,
+"source": "scope_pair",
+"group": "out_of_scope",
+"split": "test"
+},
+{
+"id": "scope:16:in",
+"label": 0,
+"source": "scope_pair",
+"group": "in_scope",
+"split": "test"
+},
+{
+"id": "scope:16:out",
+"label": 1,
+"source": "scope_pair",
+"group": "out_of_scope",
+"split": "test"
+},
+{
+"id": "scope:17:in",
+"label": 0,
+"source": "scope_pair",
+"group": "in_scope",
+"split": "test"
+},
+{
+"id": "scope:17:out",
+"label": 1,
+"source": "scope_pair",
+"group": "out_of_scope",
+"split": "test"
+},
+{
+"id": "scope:18:in",
+"label": 0,
+"source": "scope_pair",
+"group": "in_scope",
+"split": "test"
+},
+{
+"id": "scope:18:out",
+"label": 1,
+"source": "scope_pair",
+"group": "out_of_scope",
+"split": "test"
+},
+{
+"id": "scope:19:in",
+"label": 0,
+"source": "scope_pair",
+"group": "in_scope",
+"split": "test"
+},
+{
+"id": "scope:19:out",
+"label": 1,
+"source": "scope_pair",
+"group": "out_of_scope",
+"split": "test"
+}
+]
+}
