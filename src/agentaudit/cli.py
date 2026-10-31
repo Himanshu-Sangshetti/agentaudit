@@ -84,14 +84,16 @@ def usage():
     from collections import Counter
 
     from .clocked import LEDGER
-    tot = Counter()
+    tot, acct = Counter(), Counter()
     if LEDGER.exists():
         for line in LEDGER.read_text().splitlines():
             r = json.loads(line)
             tot[r["tag"]] += r.get("credits") or 0
+            acct[r.get("account", "main")] += r.get("credits") or 0
     for tag, cr in tot.most_common():
         console.print(f"{tag:28s}{cr:8.0f}")
-    console.print(f"[bold]{'total':28s}{sum(tot.values()):8.0f}[/bold]")
+    for a, cr in sorted(acct.items()):
+        console.print(f"[bold]{'account ' + a:28s}{cr:8.0f}[/bold] of 20000")
 
 
 if __name__ == "__main__":

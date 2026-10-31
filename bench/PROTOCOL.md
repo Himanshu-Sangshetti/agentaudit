@@ -48,3 +48,6 @@ This file is written and committed **before** the runs it governs. The git histo
 | Inspect | agentaudit (deployment context + change scope) | verdict | 90.4 (consensus 88.6; default + verdict 86.6) | Oct 31, this commit |
 
 Inspect note: consensus has the lower dev FPR (3.8% vs 9.6%). We report both, but the pre-registered selection criterion is balanced accuracy.
+| Skills pipeline | Guard (instructions policy, consensus) OR Inspect on code blocks (verdict) OR supply-chain check (Extract + Decide, p ≥ 0.5) | — | 84.4 (best single Clocked endpoint: Inspect on whole file, 79.0) | Oct 31 |
+
+Skills note: the supply-chain check was designed on the skills dev split after a failure analysis there. On dev, missed malicious skills carried the payload as prose download instructions with no script. Thresholds 0.5, 0.7 and 0.9 gave identical dev results. Adding Guard changed nothing on dev; it's kept because the product runs it. The test split is run once.

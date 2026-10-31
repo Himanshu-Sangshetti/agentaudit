@@ -148,6 +148,38 @@ class Report:
 
 # --- The audit --------------------------------------------------------------
 
+SUPPLY_CHAIN_QUESTION = (
+    "Does this text require the agent or the user to download, install or run an executable, archive, binary or "
+    "script from a source other than an official package registry (npm, PyPI, Homebrew, apt, a vendor's own "
+    "documented installer) or the official site of the service it integrates with? Password-protected archives, "
+    "paste sites, URL shorteners, raw IP addresses and unofficial mirrors count as untrusted sources."
+)
+
+
+def supply_chain_check(client, text: str) -> dict:
+    """Extract what the text asks to download or run (verbatim, with offsets), then Decide whether it is untrusted.
+
+    Designed on the skills dev split: malicious skills mostly hide the payload in prose ("first install the
+    helper from <link>"), which neither Guard nor Inspect is built to judge.
+    """
+    ex = client.extract(text=text[:190_000], fields={"download_targets": {
+        "description": "A URL, file name or command the text asks the agent or user to download, install or run.",
+        "list": True, "max_items": 16}}).result
+    field = (ex.get("fields") or {}).get("download_targets") or {}
+    vals = field.get("value") or field.get("values") or []
+    targets = [v if isinstance(v, str) else v.get("value", "") for v in vals] if isinstance(vals, list) else []
+    targets = [t for t in targets if t]
+    if not targets:
+        return {"targets": [], "p_untrusted": 0.0, "evidence": []}
+    state = "Download or run targets found in the text:\n" + "\n".join(f"- {t}" for t in targets) + \
+            "\n\nText (beginning):\n" + text[:6000]
+    d = client.decide(state=state, questions={"untrusted": {"type": "noul", "instructions": SUPPLY_CHAIN_QUESTION}}).result
+    p = ((d.get("answers") or {}).get("untrusted") or {}).get("noul", 0.0)
+    evidence = [{"quote": v.get("value", ""), "start": v.get("start", -1), "end": v.get("end", -1)}
+                for v in field.get("items", []) if isinstance(v, dict)]
+    return {"targets": targets, "p_untrusted": p, "evidence": evidence}
+
+
 def autonomy(answers: dict, record: dict) -> str:
     """Policy, not the model, sets authority: the verdict and the agent's write access decide autonomy."""
     verdict = (answers.get("verdict") or {}).get("choice")

@@ -2902,3 +2902,574 @@
 {"ts": 1793436922.830591, "tag": "guard-external-agentaudit", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
 {"ts": 1793436923.729451, "tag": "guard-external-agentaudit", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
 {"ts": 1793436924.199554, "tag": "guard-external-agentaudit", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793436951.680545, "tag": "skills-pilot", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793436952.2007492, "tag": "skills-pilot", "endpoint": "injection", "credits": 9.0, "usd": 0.001793}
+{"ts": 1793436952.814794, "tag": "skills-pilot", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793436953.319306, "tag": "skills-pilot", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793436953.8964422, "tag": "skills-pilot", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793436954.257629, "tag": "skills-pilot", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793436954.631326, "tag": "skills-pilot", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793436955.0256, "tag": "skills-pilot", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793436955.604995, "tag": "skills-pilot", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793436956.183928, "tag": "skills-pilot", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437007.014327, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437007.3926132, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437007.7314649, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437008.0535018, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437008.4206269, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437008.8123379, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437009.151968, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437009.5128388, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437009.854341, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437010.195004, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437010.582432, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437010.897473, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437011.4683468, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437011.923122, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437012.542271, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437013.193794, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437013.7440588, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437014.085491, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437014.429096, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437014.870705, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437015.496307, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437015.811917, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437016.4056928, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437016.7957618, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437017.180887, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437017.510174, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437017.8235352, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437018.234159, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437018.9705532, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437019.3303769, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437019.672174, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437020.356182, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437020.843093, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437021.442176, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437021.893483, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437022.466208, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437022.817618, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437023.182671, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437023.5891662, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437023.938265, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437024.2703831, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437024.61027, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437024.969858, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437025.497167, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437025.8695, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437026.189347, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437026.761055, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437027.417483, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437028.041908, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437028.566852, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437028.86926, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437029.434253, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437029.779798, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437030.171659, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437030.5568519, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437030.871329, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437031.238716, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437031.60862, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437031.916446, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437032.487453, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437033.022965, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437033.5662222, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437033.974284, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437034.981059, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437035.6192708, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437036.339318, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437036.708976, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437037.2746, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437037.847312, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437038.304087, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437038.6066291, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437038.900905, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437039.36147, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437039.6606688, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437040.221372, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 8.0, "usd": 0.001594}
+{"ts": 1793437040.6348858, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437040.937359, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437041.4779751, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437041.8598871, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437042.200254, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437042.572883, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437043.2166872, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437043.5895731, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437044.1941278, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 8.0, "usd": 0.001594}
+{"ts": 1793437044.777062, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437045.13592, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437045.422571, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437045.7470841, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437046.080145, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437046.620235, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437047.1141078, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437047.870851, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 18.0, "usd": 0.003586}
+{"ts": 1793437048.1769369, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437048.5430279, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437049.268685, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 18.0, "usd": 0.003586}
+{"ts": 1793437049.625119, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437049.9605749, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437050.292746, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437050.6585972, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437051.243401, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437051.53934, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437053.071263, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 49.0, "usd": 0.009761}
+{"ts": 1793437053.920555, "tag": "skills-dev-guard_default", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437055.049186, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 17.0, "usd": 0.003386}
+{"ts": 1793437055.763519, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 10.0, "usd": 0.001992}
+{"ts": 1793437056.2636108, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 9.0, "usd": 0.001793}
+{"ts": 1793437057.0665832, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 14.0, "usd": 0.002789}
+{"ts": 1793437058.0390358, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 19.0, "usd": 0.003785}
+{"ts": 1793437059.161592, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 27.0, "usd": 0.005378}
+{"ts": 1793437059.853945, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 9.0, "usd": 0.001793}
+{"ts": 1793437060.641119, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 21.0, "usd": 0.004183}
+{"ts": 1793437061.5761101, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 16.0, "usd": 0.003187}
+{"ts": 1793437062.130367, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 11.0, "usd": 0.002191}
+{"ts": 1793437063.364792, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 27.0, "usd": 0.005378}
+{"ts": 1793437063.95721, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437065.2389052, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 32.0, "usd": 0.006374}
+{"ts": 1793437066.494147, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 38.0, "usd": 0.00757}
+{"ts": 1793437068.043962, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 43.0, "usd": 0.008566}
+{"ts": 1793437068.945523, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 25.0, "usd": 0.00498}
+{"ts": 1793437069.737351, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 21.0, "usd": 0.004183}
+{"ts": 1793437070.2980611, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 11.0, "usd": 0.002191}
+{"ts": 1793437070.953662, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 14.0, "usd": 0.002789}
+{"ts": 1793437071.7041888, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 19.0, "usd": 0.003785}
+{"ts": 1793437073.44821, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 48.0, "usd": 0.009562}
+{"ts": 1793437073.83837, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437074.4515688, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 13.0, "usd": 0.00259}
+{"ts": 1793437075.051033, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 14.0, "usd": 0.002789}
+{"ts": 1793437075.4187279, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437075.959855, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437076.414825, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 8.0, "usd": 0.001594}
+{"ts": 1793437076.97973, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 11.0, "usd": 0.002191}
+{"ts": 1793437078.110334, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 24.0, "usd": 0.004781}
+{"ts": 1793437078.8728, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 13.0, "usd": 0.00259}
+{"ts": 1793437079.554235, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 16.0, "usd": 0.003187}
+{"ts": 1793437080.8757582, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 32.0, "usd": 0.006374}
+{"ts": 1793437081.572704, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437082.465417, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 24.0, "usd": 0.004781}
+{"ts": 1793437082.948728, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 9.0, "usd": 0.001793}
+{"ts": 1793437083.951083, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 21.0, "usd": 0.004183}
+{"ts": 1793437084.605407, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 8.0, "usd": 0.001594}
+{"ts": 1793437085.173991, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 10.0, "usd": 0.001992}
+{"ts": 1793437086.58658, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 38.0, "usd": 0.00757}
+{"ts": 1793437087.0197601, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437087.427775, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437088.608298, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 29.0, "usd": 0.005777}
+{"ts": 1793437089.344513, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 11.0, "usd": 0.002191}
+{"ts": 1793437090.1339352, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 20.0, "usd": 0.003984}
+{"ts": 1793437090.991172, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 15.0, "usd": 0.002988}
+{"ts": 1793437091.427737, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437092.413776, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 20.0, "usd": 0.003984}
+{"ts": 1793437092.85249, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437094.9145758, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 63.0, "usd": 0.01255}
+{"ts": 1793437096.947928, "tag": "skills-dev-inspect_default", "endpoint": "script", "credits": 17.0, "usd": 0.003386}
+{"ts": 1793437097.679957, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437098.279646, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437098.6549382, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437099.18896, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437099.63812, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437099.975714, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437100.4072971, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437100.843625, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437101.244998, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437101.791133, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437102.308716, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 9.0, "usd": 0.001793}
+{"ts": 1793437102.688174, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437103.303007, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437103.644904, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437104.192703, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 11.0, "usd": 0.002191}
+{"ts": 1793437104.758208, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437105.247097, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437105.612519, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437105.96271, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437106.58339, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437107.409191, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 22.0, "usd": 0.004382}
+{"ts": 1793437108.011982, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437108.5640829, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437109.379101, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 14.0, "usd": 0.002789}
+{"ts": 1793437109.99334, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437110.853974, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437111.4866078, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437112.4037461, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 18.0, "usd": 0.003586}
+{"ts": 1793437112.827737, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437113.3183649, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 9.0, "usd": 0.001793}
+{"ts": 1793437113.709975, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437114.31487, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437114.6368902, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437114.97179, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437115.326708, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437115.875212, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437116.2301471, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437117.009589, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 13.0, "usd": 0.00259}
+{"ts": 1793437117.450264, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437118.017469, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 8.0, "usd": 0.001594}
+{"ts": 1793437118.5104342, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437118.864438, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437119.229873, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437119.587563, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437120.062609, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437120.402267, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437120.741107, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437121.247543, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437121.604151, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437121.913433, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437122.230874, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437122.8605871, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437123.215528, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437123.8227892, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437124.716736, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 19.0, "usd": 0.003785}
+{"ts": 1793437125.926615, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437126.387869, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437126.9408882, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437127.303253, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437127.899063, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437128.330815, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437128.6410828, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437129.1723719, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437129.950347, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 12.0, "usd": 0.00239}
+{"ts": 1793437130.361752, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437130.933695, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437131.487249, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437131.850649, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437132.1838799, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437132.554934, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437133.095708, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437133.4177542, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437133.812953, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437134.507817, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 16.0, "usd": 0.003187}
+{"ts": 1793437135.006675, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437135.385002, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437135.8992069, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437136.26096, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437136.798037, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437137.2283032, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437137.578208, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437138.291245, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 11.0, "usd": 0.002191}
+{"ts": 1793437138.694486, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437139.229321, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 11.0, "usd": 0.002191}
+{"ts": 1793437139.654944, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437139.980713, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437140.5967438, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437141.1901271, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437141.544944, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437141.9069922, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437142.259095, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437142.8436239, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437143.4839098, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437144.236116, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 10.0, "usd": 0.001992}
+{"ts": 1793437144.784749, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437145.146537, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437145.466186, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437146.009453, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437146.511044, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437146.93454, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437147.334798, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437147.7034209, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437148.052497, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437148.418247, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437148.7255812, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437149.106694, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437149.4686852, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437149.861834, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437150.5801961, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 10.0, "usd": 0.001992}
+{"ts": 1793437150.896079, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437151.233394, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437151.6762922, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437152.00128, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437152.353943, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437152.6793442, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437153.1972091, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437153.541981, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437154.009872, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437154.352395, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437154.678539, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437155.059927, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437155.682009, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437156.149169, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437156.620638, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 8.0, "usd": 0.001594}
+{"ts": 1793437156.9849029, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437157.597528, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437158.287912, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 9.0, "usd": 0.001793}
+{"ts": 1793437158.705947, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437159.6039119, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 17.0, "usd": 0.003386}
+{"ts": 1793437159.992647, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437160.470707, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 9.0, "usd": 0.001793}
+{"ts": 1793437160.9673002, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437161.364358, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437161.673876, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437162.0731049, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437164.032185, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 53.0, "usd": 0.010558}
+{"ts": 1793437165.107221, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 20.0, "usd": 0.003984}
+{"ts": 1793437166.030925, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437166.584597, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437167.0718458, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 9.0, "usd": 0.001793}
+{"ts": 1793437167.407882, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437167.751244, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437168.091561, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437168.439408, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437168.7759302, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437169.1452632, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437169.676016, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437170.059673, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437170.47771, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437170.941109, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 8.0, "usd": 0.001594}
+{"ts": 1793437171.503017, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437172.525763, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 25.0, "usd": 0.00498}
+{"ts": 1793437173.246071, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 11.0, "usd": 0.002191}
+{"ts": 1793437173.965219, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437174.59133, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 12.0, "usd": 0.00239}
+{"ts": 1793437175.0954509, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 9.0, "usd": 0.001793}
+{"ts": 1793437175.6369338, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437176.088211, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437177.028053, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 12.0, "usd": 0.00239}
+{"ts": 1793437178.2003908, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 33.0, "usd": 0.006574}
+{"ts": 1793437178.668608, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437179.189106, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437179.5910258, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437180.142146, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437180.5469, "tag": "skills-dev-agentaudit", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437181.229567, "tag": "skills-dev-agentaudit", "endpoint": "injection", "credits": 13.0, "usd": 0.00259}
+{"ts": 1793437210.1078532, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437210.901597, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 9.0, "usd": 0.001793}
+{"ts": 1793437211.8215091, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 23.0, "usd": 0.004582}
+{"ts": 1793437212.702205, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 22.0, "usd": 0.004382}
+{"ts": 1793437213.224266, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 9.0, "usd": 0.001793}
+{"ts": 1793437213.9990668, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437214.8076758, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 20.0, "usd": 0.003984}
+{"ts": 1793437215.924675, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 26.0, "usd": 0.005179}
+{"ts": 1793437216.334241, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437217.042604, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 17.0, "usd": 0.003386}
+{"ts": 1793437217.4482481, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437217.840225, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437218.8022678, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 18.0, "usd": 0.003586}
+{"ts": 1793437219.5284858, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437220.186796, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 12.0, "usd": 0.00239}
+{"ts": 1793437222.1007519, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 56.0, "usd": 0.011155}
+{"ts": 1793437223.522903, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437224.722958, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 28.0, "usd": 0.005578}
+{"ts": 1793437225.9803488, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 29.0, "usd": 0.005777}
+{"ts": 1793437227.0029771, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 20.0, "usd": 0.003984}
+{"ts": 1793437227.481099, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437228.0721412, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437229.01873, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 25.0, "usd": 0.00498}
+{"ts": 1793437229.459717, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437229.8349838, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437230.293987, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437230.715347, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437231.291693, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 12.0, "usd": 0.00239}
+{"ts": 1793437231.7459111, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437232.287071, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 11.0, "usd": 0.002191}
+{"ts": 1793437233.1713018, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 24.0, "usd": 0.004781}
+{"ts": 1793437234.0419042, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 23.0, "usd": 0.004582}
+{"ts": 1793437234.8353128, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 21.0, "usd": 0.004183}
+{"ts": 1793437235.401925, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437236.618749, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 30.0, "usd": 0.005976}
+{"ts": 1793437237.161994, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 10.0, "usd": 0.001992}
+{"ts": 1793437237.536696, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437238.122905, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 12.0, "usd": 0.00239}
+{"ts": 1793437238.575553, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437239.7021492, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 27.0, "usd": 0.005378}
+{"ts": 1793437240.406226, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437240.9148018, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 9.0, "usd": 0.001793}
+{"ts": 1793437241.351555, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437242.4066849, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 24.0, "usd": 0.004781}
+{"ts": 1793437243.14413, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 10.0, "usd": 0.001992}
+{"ts": 1793437243.638497, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 9.0, "usd": 0.001793}
+{"ts": 1793437244.558055, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 18.0, "usd": 0.003586}
+{"ts": 1793437245.062662, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 8.0, "usd": 0.001594}
+{"ts": 1793437246.061266, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 19.0, "usd": 0.003785}
+{"ts": 1793437247.555829, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 40.0, "usd": 0.007968}
+{"ts": 1793437248.184156, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437249.000621, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 22.0, "usd": 0.004382}
+{"ts": 1793437249.612355, "tag": "skills-dev-inspect_default", "account": "main", "endpoint": "script", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437250.4043572, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437251.190308, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "script", "credits": 20.0, "usd": 0.003984}
+{"ts": 1793437251.500891, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437252.2821681, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "injection", "credits": 19.0, "usd": 0.003785}
+{"ts": 1793437252.6344728, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437253.205109, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "injection", "credits": 12.0, "usd": 0.00239}
+{"ts": 1793437253.5652559, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437254.1241899, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437254.880363, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "script", "credits": 12.0, "usd": 0.00239}
+{"ts": 1793437255.638703, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "injection", "credits": 19.0, "usd": 0.003785}
+{"ts": 1793437256.0258071, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437256.425456, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "script", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437256.8018858, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437257.171034, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "script", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437257.489829, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437257.851398, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437258.197314, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437258.885159, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "script", "credits": 10.0, "usd": 0.001992}
+{"ts": 1793437259.484391, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "injection", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437260.6906612, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "script", "credits": 37.0, "usd": 0.00737}
+{"ts": 1793437261.824012, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "injection", "credits": 13.0, "usd": 0.00259}
+{"ts": 1793437262.28897, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437264.047926, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "injection", "credits": 50.0, "usd": 0.00996}
+{"ts": 1793437264.791754, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "script", "credits": 15.0, "usd": 0.002988}
+{"ts": 1793437265.822269, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "injection", "credits": 11.0, "usd": 0.002191}
+{"ts": 1793437266.173213, "tag": "skills-dev-agentaudit", "account": "main", "endpoint": "script", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437325.9998322, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 13.0, "usd": 0.00259}
+{"ts": 1793437337.132204, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 34.0, "usd": 0.006773}
+{"ts": 1793437337.5418081, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437337.893491, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437338.315457, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437338.942789, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437339.649466, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 9.0, "usd": 0.001793}
+{"ts": 1793437340.385906, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 18.0, "usd": 0.003586}
+{"ts": 1793437340.7542331, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437341.276316, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 8.0, "usd": 0.001594}
+{"ts": 1793437342.397534, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 27.0, "usd": 0.005378}
+{"ts": 1793437343.0195, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437343.589736, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437344.2548952, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437344.992896, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 19.0, "usd": 0.003785}
+{"ts": 1793437345.587593, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437346.0905101, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 8.0, "usd": 0.001594}
+{"ts": 1793437346.64183, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437347.701632, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 20.0, "usd": 0.003984}
+{"ts": 1793437348.147037, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437348.624044, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 8.0, "usd": 0.001594}
+{"ts": 1793437350.671295, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 64.0, "usd": 0.012749}
+{"ts": 1793437353.782333, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 1.0, "usd": 0.000199}
+{"ts": 1793437354.243691, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437354.637333, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437355.167881, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437355.838588, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 16.0, "usd": 0.003187}
+{"ts": 1793437356.387512, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437357.4664252, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 32.0, "usd": 0.006374}
+{"ts": 1793437358.010581, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437358.738272, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 10.0, "usd": 0.001992}
+{"ts": 1793437359.094976, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437359.615944, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 9.0, "usd": 0.001793}
+{"ts": 1793437360.043468, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437360.4131808, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437360.811836, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437361.1439948, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437361.4744802, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437361.868059, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437362.2926269, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437362.8383858, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 11.0, "usd": 0.002191}
+{"ts": 1793437363.4191191, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437363.821032, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437364.176416, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437364.655576, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 8.0, "usd": 0.001594}
+{"ts": 1793437365.361202, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 10.0, "usd": 0.001992}
+{"ts": 1793437365.804354, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437366.13431, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437366.682254, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 8.0, "usd": 0.001594}
+{"ts": 1793437367.091728, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437367.515287, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437368.01575, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437368.772125, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 16.0, "usd": 0.003187}
+{"ts": 1793437369.359165, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 13.0, "usd": 0.00259}
+{"ts": 1793437369.71392, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437372.006204, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 68.0, "usd": 0.013546}
+{"ts": 1793437375.455691, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 14.0, "usd": 0.002789}
+{"ts": 1793437376.100613, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437376.775525, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 13.0, "usd": 0.00259}
+{"ts": 1793437377.153722, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437378.8025548, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 55.0, "usd": 0.010956}
+{"ts": 1793437379.342612, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437380.656838, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 32.0, "usd": 0.006374}
+{"ts": 1793437381.048606, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437381.642263, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 12.0, "usd": 0.00239}
+{"ts": 1793437381.994194, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437382.574463, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437383.204802, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437383.6004438, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437384.218057, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 14.0, "usd": 0.002789}
+{"ts": 1793437384.961806, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 10.0, "usd": 0.001992}
+{"ts": 1793437385.610666, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437385.9487958, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437386.75234, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 19.0, "usd": 0.003785}
+{"ts": 1793437387.093882, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437387.653665, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437388.404425, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 12.0, "usd": 0.00239}
+{"ts": 1793437388.8081439, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437389.335417, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437389.860029, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437390.325601, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437390.959508, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 14.0, "usd": 0.002789}
+{"ts": 1793437391.8811278, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 27.0, "usd": 0.005378}
+{"ts": 1793437392.3085592, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 6.0, "usd": 0.001195}
+{"ts": 1793437392.6401222, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437393.180919, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 11.0, "usd": 0.002191}
+{"ts": 1793437393.6094878, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793437394.123017, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437394.884449, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 10.0, "usd": 0.001992}
+{"ts": 1793437395.440694, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437396.128852, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 9.0, "usd": 0.001793}
+{"ts": 1793437396.856537, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 12.0, "usd": 0.00239}
+{"ts": 1793437405.057687, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 1.0, "usd": 0.000199}
+{"ts": 1793437405.7118661, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 8.0, "usd": 0.001594}
+{"ts": 1793437406.087313, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 1.0, "usd": 0.000199}
+{"ts": 1793437407.1927738, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 30.0, "usd": 0.005976}
+{"ts": 1793437407.974279, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437408.664482, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 8.0, "usd": 0.001594}
+{"ts": 1793437409.0557718, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437409.811376, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 12.0, "usd": 0.00239}
+{"ts": 1793437410.146088, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437410.741642, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 13.0, "usd": 0.00259}
+{"ts": 1793437411.2346728, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 1.0, "usd": 0.000199}
+{"ts": 1793437411.915325, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 16.0, "usd": 0.003187}
+{"ts": 1793437412.529406, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437413.705708, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 36.0, "usd": 0.007171}
+{"ts": 1793437414.610368, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437415.1628768, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 12.0, "usd": 0.00239}
+{"ts": 1793437415.4632661, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 1.0, "usd": 0.000199}
+{"ts": 1793437415.765656, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437416.228665, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 8.0, "usd": 0.001594}
+{"ts": 1793437416.7071092, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 1.0, "usd": 0.000199}
+{"ts": 1793437417.6275089, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 18.0, "usd": 0.003586}
+{"ts": 1793437417.9810271, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437418.5426502, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 13.0, "usd": 0.00259}
+{"ts": 1793437419.136001, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437419.8456051, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 10.0, "usd": 0.001992}
+{"ts": 1793437420.189954, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437421.0398772, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 13.0, "usd": 0.00259}
+{"ts": 1793437421.4079502, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 1.0, "usd": 0.000199}
+{"ts": 1793437422.884583, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 47.0, "usd": 0.009362}
+{"ts": 1793437424.057874, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 1.0, "usd": 0.000199}
+{"ts": 1793437424.695595, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 14.0, "usd": 0.002789}
+{"ts": 1793437425.635537, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437426.214941, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 12.0, "usd": 0.00239}
+{"ts": 1793437426.748333, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 1.0, "usd": 0.000199}
+{"ts": 1793437427.527931, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 20.0, "usd": 0.003984}
+{"ts": 1793437427.938721, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437428.593745, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 14.0, "usd": 0.002789}
+{"ts": 1793437428.953137, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437429.310949, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437429.632632, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 1.0, "usd": 0.000199}
+{"ts": 1793437431.039375, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 45.0, "usd": 0.008964}
+{"ts": 1793437432.3905852, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 11.0, "usd": 0.002191}
+{"ts": 1793437432.7159622, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437433.677557, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 26.0, "usd": 0.005179}
+{"ts": 1793437434.049802, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437434.6624389, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 5.0, "usd": 0.000996}
+{"ts": 1793437435.144331, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 1.0, "usd": 0.000199}
+{"ts": 1793437435.782958, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 14.0, "usd": 0.002789}
+{"ts": 1793437436.344896, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437436.9766688, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 14.0, "usd": 0.002789}
+{"ts": 1793437437.2783308, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437438.716723, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 47.0, "usd": 0.009362}
+{"ts": 1793437439.8990011, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437440.582548, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 13.0, "usd": 0.00259}
+{"ts": 1793437441.101301, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437441.6953611, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 12.0, "usd": 0.00239}
+{"ts": 1793437442.100224, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437442.706846, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 10.0, "usd": 0.001992}
+{"ts": 1793437443.145951, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437443.936168, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 20.0, "usd": 0.003984}
+{"ts": 1793437444.3004181, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437444.82537, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 9.0, "usd": 0.001793}
+{"ts": 1793437445.222508, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437446.060407, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 13.0, "usd": 0.00259}
+{"ts": 1793437446.6441898, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 4.0, "usd": 0.000797}
+{"ts": 1793437447.430868, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 13.0, "usd": 0.00259}
+{"ts": 1793437447.931674, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793437448.9333959, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 28.0, "usd": 0.005578}
+{"ts": 1793437449.718636, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793437450.292212, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "extract", "credits": 12.0, "usd": 0.00239}
+{"ts": 1793437450.792174, "tag": "skills-dev-supplychain", "account": "main", "endpoint": "decide", "credits": 2.0, "usd": 0.000398}

@@ -15,7 +15,7 @@ import json
 import random
 from pathlib import Path
 
-from agentaudit.audit import INSTRUCTIONS_POLICY
+from agentaudit.audit import INSTRUCTIONS_POLICY, supply_chain_check
 from agentaudit.clocked import Clocked
 from agentaudit.collect import _fenced_shell
 
@@ -61,6 +61,8 @@ def run(split: str, arm: str, budget: float) -> None:
                 elif arm == "inspect_default":
                     call = c.script(script=text, evidence=True)
                     recs.append(base | {"inspect": keep(call.result), "rtt_ms": call.round_trip_ms, "credits": call.credits})
+                elif arm == "supplychain":
+                    recs.append(base | supply_chain_check(c, text))
                 else:
                     g = c.injection(text=text, source="content", instructions=INSTRUCTIONS_POLICY, evidence=True)
                     rec = base | {"guard": keep(g.result), "rtt_ms": g.round_trip_ms, "credits": g.credits or 0}
@@ -80,7 +82,7 @@ def run(split: str, arm: str, budget: float) -> None:
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--split", choices=["dev", "test"], required=True)
-    ap.add_argument("--arm", choices=["guard_default", "inspect_default", "agentaudit"], required=True)
+    ap.add_argument("--arm", choices=["guard_default", "inspect_default", "agentaudit", "supplychain"], required=True)
     ap.add_argument("--budget", type=float, default=2000)
     a = ap.parse_args()
     run(a.split, a.arm, a.budget)
