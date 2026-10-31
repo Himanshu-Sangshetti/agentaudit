@@ -1,53 +1,123 @@
 {
  "agent": "leave-balance-bot",
  "origin": "/Users/hims/huggingface-challenge/examples/demo_registry/leave-balance-bot.yaml",
- "findings": [],
+ "findings": [
+  {
+   "check": "verify",
+   "severity": "medium",
+   "title": "Claim contradicted by capabilities",
+   "path": "README",
+   "evidence": [
+    {
+     "quote": "It only reads leave data.",
+     "start": -1,
+     "end": -1
+    }
+   ],
+   "detail": {
+    "contradicted": 0.9668,
+    "evidence": null
+   },
+   "endpoint": "Verify /grounding",
+   "group": "facts"
+  }
+ ],
  "record": {
   "purpose": {
-   "value": "Leave Balance Bot answers \"how much leave do I have?\" questions and explains leave policy",
-   "confidence": 0.9873902667559687,
+   "value": "Tells employees how many days of annual and sick leave they have left and explains leave policy",
+   "confidence": 0.9947638676011155,
    "source": "generated"
   },
   "owner": {
-   "value": null,
+   "value": "Finance Shared Services",
+   "start": 81,
+   "end": 104,
+   "p_start": 1,
+   "p_close": 1,
+   "p_point": 0.5,
+   "p_verify": 1,
    "confidence": 1
   },
   "can_write": {
    "value": false,
-   "confidence": 0.985,
+   "confidence": 0.993,
    "probabilities": {
-    "yes": 0.007313403542795194,
-    "no": 0.9926865964572048
+    "yes": 0.003636803594532223,
+    "no": 0.9963631964054678
    }
   },
   "reaches_network": {
    "value": false,
-   "confidence": 0.985,
+   "confidence": 0.987,
    "probabilities": {
-    "yes": 0.00742514270348793,
-    "no": 0.9925748572965121
+    "yes": 0.006728837037399016,
+    "no": 0.993271162962601
    }
   },
   "data_sensitivity": {
    "value": "confidential",
-   "confidence": 0.411,
+   "confidence": 0.67,
    "probabilities": {
-    "public": 0.01950087536027077,
-    "internal": 0.25331898904506167,
-    "confidential": 0.5581431195977622,
-    "regulated": 0.16903701599690535
+    "public": 0.008461324760363787,
+    "internal": 0.022628433992333042,
+    "confidential": 0.7523660732987827,
+    "regulated": 0.2165441679485205
    }
   },
   "blast_radius": {
    "value": "single user",
-   "confidence": 0.752,
-   "expected": 1.416,
+   "confidence": 0.424,
+   "expected": 2.192,
    "probabilities": {
-    "single user": 0.8136882020808645,
-    "team": 0.05077168201161921,
-    "department": 0.04169032610258104,
-    "organization": 0.09384978980493529
+    "single user": 0.5682707375544798,
+    "team": 0.03384565562070404,
+    "department": 0.0359135945339464,
+    "organization": 0.3619700122908698
    }
+  },
+  "capability_claims": {
+   "value": [
+    "Leave Balance Bot answers \"how much leave do I have?",
+    "It only reads leave data.",
+    "explains leave policy."
+   ],
+   "items": [
+    {
+     "value": "Leave Balance Bot answers \"how much leave do I have?",
+     "start": 448,
+     "end": 500,
+     "p_start": 0.967,
+     "p_close": 1,
+     "p_point": 0.5,
+     "p_verify": 1,
+     "p_more": 0.989,
+     "confidence": 0.967
+    },
+    {
+     "value": "It only reads leave data.",
+     "start": 539,
+     "end": 564,
+     "p_start": 0.965,
+     "p_close": 1,
+     "p_point": 0.031,
+     "p_verify": 1,
+     "p_more": 0.999,
+     "confidence": 0.965
+    },
+    {
+     "value": "explains leave policy.",
+     "start": 516,
+     "end": 538,
+     "p_start": 1,
+     "p_close": 1,
+     "p_point": 0.114,
+     "p_verify": 1,
+     "p_more": 1,
+     "confidence": 1
+    }
+   ],
+   "confidence": 0.965,
+   "finish": "budget"
   }
  },
  "facts": {
@@ -206,16 +276,16 @@
    "type": "choice",
    "choice": "reuse_existing",
    "probabilities": {
-    "approve": 0.0015,
-    "needs_owner": 0.0014,
-    "reuse_existing": 0.9948,
-    "quarantine": 0.0022
+    "approve": 0.0018,
+    "needs_owner": 0.0017,
+    "reuse_existing": 0.9946,
+    "quarantine": 0.0019
    },
-   "confidence": 0.9931
+   "confidence": 0.9928
   },
   "risk_of_acting": {
    "type": "score",
-   "score": 0.5873,
+   "score": 1.2479,
    "legend": {
     "0": "negligible",
     "1": "low",
@@ -224,55 +294,48 @@
     "4": "severe"
    },
    "probabilities": {
-    "0": 0.5388,
-    "1": 0.3846,
-    "2": 0.0399,
-    "3": 0.0242,
-    "4": 0.0126
+    "0": 0.0806,
+    "1": 0.6324,
+    "2": 0.2494,
+    "3": 0.0338,
+    "4": 0.0039
    },
-   "confidence": 0.4235
+   "confidence": 0.5405
   },
   "autonomy": {
-   "type": "choice",
-   "choice": "blocked",
-   "probabilities": {
-    "autonomous": 0.011,
-    "approval_required": 0.0121,
-    "blocked": 0.9769
-   },
-   "confidence": 0.9653
+   "choice": "blocked"
   }
  },
  "duplicates": [
   {
    "agent": "hr-policy-assistant",
    "relation": "overlapping",
-   "related": 0.9961
+   "related": 0.9972
   }
  ],
  "reuse": [
   {
    "agent": "hr-policy-assistant",
    "action": "use",
-   "score": 0.679
+   "score": 0.9262
   },
   {
    "agent": "payroll-helper",
    "action": "skip",
-   "score": 0.0307
+   "score": 0.0282
   },
   {
    "agent": "mcp-memory",
    "action": "skip",
-   "score": 0.0219
+   "score": 0.017
   }
  ],
  "usage": {
-  "calls": 29,
-  "cached": 28,
-  "credits": 3.0,
-  "cost_usd": 0.0006,
-  "credits_this_report": 3.0
+  "calls": 28,
+  "cached": 16,
+  "credits": 44.0,
+  "cost_usd": 0.0088,
+  "credits_this_report": 18.0
  },
  "verdict_label": "reuse_existing",
  "artifacts": [
@@ -318,7 +381,7 @@
   "builder": "r.mehta",
   "purpose": "Tells employees how many days of annual and sick leave they have left and explains leave policy."
  },
- "markdown": "# AgentAudit: leave-balance-bot\n\n**Verdict:** `reuse_existing` (99% confidence)\n**Autonomy:** `blocked`  \u00b7  **Risk of acting:** 0.59 / 4\n\n## Registry record\n\n| Field | Value |\n|---|---|\n| purpose | Leave Balance Bot answers \"how much leave do I have?\" questions and explains leave policy |\n| owner | \u2014 |\n| can_write | False |\n| reaches_network | False |\n| data_sensitivity | confidential |\n| blast_radius | single user |\n\n## Findings (0)\n\nNo findings.\n\n## Overlapping agents\n\n- hr-policy-assistant (overlapping)\n\n## Existing agents for the same job\n\n- hr-policy-assistant: use (score 0.68)\n- payroll-helper: skip (score 0.03)\n- mcp-memory: skip (score 0.02)\n\n<sub>29 Clocked calls \u00b7 3 credits \u00b7 $0.0006</sub>",
+ "markdown": "# AgentAudit: leave-balance-bot\n\n**Verdict:** `reuse_existing` (99% confidence)\n**Autonomy:** `blocked`  \u00b7  **Risk of acting:** 1.25 / 4\n\n## Registry record\n\n| Field | Value |\n|---|---|\n| purpose | Tells employees how many days of annual and sick leave they have left and explains leave policy |\n| owner | Finance Shared Services |\n| can_write | False |\n| reaches_network | False |\n| data_sensitivity | confidential |\n| blast_radius | single user |\n| capability_claims | ['Leave Balance Bot answers \"how much leave do I have?', 'It only reads leave data.', 'explains leave policy.'] |\n\n## Findings (1)\n\n- **MEDIUM** \u00b7 AA004 \u00b7 Claim contradicted by capabilities \u2014 `README`\n  - > It only reads leave data.\n\n## Overlapping agents\n\n- hr-policy-assistant (overlapping)\n\n## Existing agents for the same job\n\n- hr-policy-assistant: use (score 0.93)\n- payroll-helper: skip (score 0.03)\n- mcp-memory: skip (score 0.02)\n\n<sub>28 Clocked calls \u00b7 44 credits \u00b7 $0.0088</sub>",
  "endpoints_used": [
   "Compare /compare",
   "Decide /decide",

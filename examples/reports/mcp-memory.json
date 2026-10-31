@@ -1,92 +1,89 @@
 {
  "agent": "mcp-memory",
  "origin": "/Users/hims/huggingface-challenge/data/raw/mcp/official-servers/src/memory",
- "findings": [
-  {
-   "check": "verify",
-   "severity": "medium",
-   "title": "Claim contradicted by capabilities",
-   "path": "README",
-   "evidence": [
-    {
-     "quote": "Fails if either the source or target entity doesn't exist",
-     "start": -1,
-     "end": -1
-    }
-   ],
-   "detail": {
-    "contradicted": 0.9245,
-    "evidence": null
-   },
-   "endpoint": "Verify /grounding",
-   "group": "facts"
-  },
-  {
-   "check": "verify",
-   "severity": "medium",
-   "title": "Claim contradicted by capabilities",
-   "path": "README",
-   "evidence": [
-    {
-     "quote": "Fails if entity doesn't exist",
-     "start": -1,
-     "end": -1
-    }
-   ],
-   "detail": {
-    "contradicted": 0.8894,
-    "evidence": null
-   },
-   "endpoint": "Verify /grounding",
-   "group": "facts"
-  }
- ],
+ "findings": [],
  "record": {
   "purpose": {
-   "value": "A basic implementation of persistent memory using a local knowledge graph that lets Claude remember information about the user across chats",
-   "confidence": 0.9340905818702904,
+   "value": "This agent provides a persistent memory implementation using a local knowledge graph to help Claude remember information about the user across chats",
+   "confidence": 0.987519924216484,
    "source": "generated"
   },
   "owner": {
    "value": null,
-   "confidence": 1
+   "confidence": 1,
+   "p_blank": 0,
+   "rejected_value": "Anthropic",
+   "rejected_p_verify": 0,
+   "reason": "verification_rejected"
   },
   "can_write": {
    "value": true,
-   "confidence": 0.977,
+   "confidence": 0.984,
    "probabilities": {
-    "yes": 0.988588830880454,
-    "no": 0.011411169119545983
+    "yes": 0.9921428953695302,
+    "no": 0.007857104630469847
    }
   },
   "reaches_network": {
    "value": false,
-   "confidence": 0.966,
+   "confidence": 0.873,
    "probabilities": {
-    "yes": 0.01706370750122821,
-    "no": 0.9829362924987718
+    "yes": 0.0636371758862827,
+    "no": 0.9363628241137173
    }
   },
   "data_sensitivity": {
-   "value": "public",
-   "confidence": 0.401,
+   "value": "internal",
+   "confidence": 0.293,
    "probabilities": {
-    "public": 0.5510903574032674,
-    "internal": 0.17945679250301627,
-    "confidential": 0.13373709806893053,
-    "regulated": 0.13571575202478584
+    "public": 0.2143845650857278,
+    "internal": 0.4697742102153994,
+    "confidential": 0.22072838652801965,
+    "regulated": 0.0951128381708531
    }
   },
   "blast_radius": {
    "value": "single user",
-   "confidence": 0.383,
-   "expected": 2.104,
+   "confidence": 0.732,
+   "expected": 1.432,
    "probabilities": {
-    "single user": 0.5370595274726757,
-    "team": 0.10561269360400555,
-    "department": 0.0734091330254288,
-    "organization": 0.28391864589788995
+    "single user": 0.7993639371066823,
+    "team": 0.05597088242068121,
+    "department": 0.05833615213044486,
+    "organization": 0.08632902834219162
    }
+  },
+  "capability_claims": {
+   "value": [
+    "This lets Claude remember information about the user across chats."
+   ],
+   "items": [
+    {
+     "value": "This lets Claude remember information about the user across chats.",
+     "start": 1191,
+     "end": 1257,
+     "p_start": 0.999,
+     "p_close": 1,
+     "p_point": 0.983,
+     "p_verify": 1,
+     "alternatives": [
+      {
+       "value": "This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License.",
+       "start": 14411,
+       "p_verify": 0
+      },
+      {
+       "value": "This MCP server is licensed under the MIT License.",
+       "start": 14360,
+       "p_verify": 0
+      }
+     ],
+     "p_more": 0.28,
+     "confidence": 0.999
+    }
+   ],
+   "confidence": 0.999,
+   "finish": "closed"
   }
  },
  "facts": {
@@ -452,16 +449,16 @@
    "type": "choice",
    "choice": "needs_owner",
    "probabilities": {
-    "approve": 0.0022,
-    "needs_owner": 0.9931,
-    "reuse_existing": 0.0025,
-    "quarantine": 0.0021
+    "approve": 0.0012,
+    "needs_owner": 0.9957,
+    "reuse_existing": 0.0017,
+    "quarantine": 0.0014
    },
-   "confidence": 0.9909
+   "confidence": 0.9943
   },
   "risk_of_acting": {
    "type": "score",
-   "score": 1.8153,
+   "score": 1.4711,
    "legend": {
     "0": "negligible",
     "1": "low",
@@ -470,49 +467,42 @@
     "4": "severe"
    },
    "probabilities": {
-    "0": 0.026,
-    "1": 0.3058,
-    "2": 0.5157,
-    "3": 0.1321,
-    "4": 0.0204
+    "0": 0.0776,
+    "1": 0.5125,
+    "2": 0.2894,
+    "3": 0.1022,
+    "4": 0.0183
    },
-   "confidence": 0.3947
+   "confidence": 0.3907
   },
   "autonomy": {
-   "type": "choice",
-   "choice": "blocked",
-   "probabilities": {
-    "autonomous": 0.0049,
-    "approval_required": 0.0073,
-    "blocked": 0.9878
-   },
-   "confidence": 0.9817
+   "choice": "blocked"
   }
  },
  "duplicates": [],
  "reuse": [
   {
-   "agent": "hr-policy-assistant",
+   "agent": "meeting-notes-agent",
    "action": "skip",
-   "score": 0.0045
+   "score": 0.0012
+  },
+  {
+   "agent": "password-reset-agent",
+   "action": "skip",
+   "score": 0.0012
   },
   {
    "agent": "payroll-helper",
    "action": "skip",
-   "score": 0.0029
-  },
-  {
-   "agent": "meeting-notes-agent",
-   "action": "skip",
-   "score": 0.0018
+   "score": 0.0012
   }
  ],
  "usage": {
-  "calls": 86,
-  "cached": 84,
-  "credits": 5.0,
-  "cost_usd": 0.001,
-  "credits_this_report": 0.0
+  "calls": 78,
+  "cached": 46,
+  "credits": 137.0,
+  "cost_usd": 0.0273,
+  "credits_this_report": 55.0
  },
  "verdict_label": "needs_owner",
  "artifacts": [
@@ -643,7 +633,7 @@
   }
  ],
  "declared": {},
- "markdown": "# AgentAudit: mcp-memory\n\n**Verdict:** `needs_owner` (99% confidence)\n**Autonomy:** `blocked`  \u00b7  **Risk of acting:** 1.82 / 4\n\n## Registry record\n\n| Field | Value |\n|---|---|\n| purpose | A basic implementation of persistent memory using a local knowledge graph that lets Claude remember information about the user across chats |\n| owner | \u2014 |\n| can_write | True |\n| reaches_network | False |\n| data_sensitivity | public |\n| blast_radius | single user |\n\n## Findings (2)\n\n- **MEDIUM** \u00b7 AA004 \u00b7 Claim contradicted by capabilities \u2014 `README`\n  - > Fails if either the source or target entity doesn't exist\n- **MEDIUM** \u00b7 AA004 \u00b7 Claim contradicted by capabilities \u2014 `README`\n  - > Fails if entity doesn't exist\n\n## Existing agents for the same job\n\n- hr-policy-assistant: skip (score 0.00)\n- payroll-helper: skip (score 0.00)\n- meeting-notes-agent: skip (score 0.00)\n\n<sub>86 Clocked calls \u00b7 5 credits \u00b7 $0.0010</sub>",
+ "markdown": "# AgentAudit: mcp-memory\n\n**Verdict:** `needs_owner` (99% confidence)\n**Autonomy:** `blocked`  \u00b7  **Risk of acting:** 1.47 / 4\n\n## Registry record\n\n| Field | Value |\n|---|---|\n| purpose | This agent provides a persistent memory implementation using a local knowledge graph to help Claude remember information about the user across chats |\n| owner | \u2014 |\n| can_write | True |\n| reaches_network | False |\n| data_sensitivity | internal |\n| blast_radius | single user |\n| capability_claims | ['This lets Claude remember information about the user across chats.'] |\n\n## Findings (0)\n\nNo findings.\n\n## Existing agents for the same job\n\n- meeting-notes-agent: skip (score 0.00)\n- password-reset-agent: skip (score 0.00)\n- payroll-helper: skip (score 0.00)\n\n<sub>78 Clocked calls \u00b7 137 credits \u00b7 $0.0273</sub>",
  "endpoints_used": [
   "Compare /compare",
   "Decide /decide",

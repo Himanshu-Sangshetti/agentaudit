@@ -4,50 +4,88 @@
  "findings": [],
  "record": {
   "purpose": {
-   "value": "Expense Summarizer produces manager-ready summaries of expense reports",
-   "confidence": 0.9687397338576216,
+   "value": "Summarizes an employee's submitted expense reports for their manager",
+   "confidence": 0.9956238645182025,
    "source": "generated"
   },
   "owner": {
-   "value": null,
+   "value": "t.nguyen",
+   "start": 84,
+   "end": 92,
+   "p_start": 1,
+   "p_close": 1,
+   "p_point": 0.994,
+   "p_verify": 1,
+   "alternatives": [
+    {
+     "value": "the model",
+     "start": 53,
+     "p_verify": 0
+    },
+    {
+     "value": "tools",
+     "start": 36,
+     "p_verify": 0
+    }
+   ],
    "confidence": 1
   },
   "can_write": {
    "value": false,
    "confidence": 0.991,
    "probabilities": {
-    "yes": 0.004691552458318871,
-    "no": 0.9953084475416811
+    "yes": 0.004432742521405131,
+    "no": 0.9955672574785949
    }
   },
   "reaches_network": {
    "value": false,
-   "confidence": 0.981,
+   "confidence": 0.979,
    "probabilities": {
-    "yes": 0.009371130403545203,
-    "no": 0.9906288695964548
+    "yes": 0.010269781724658644,
+    "no": 0.9897302182753414
    }
   },
   "data_sensitivity": {
-   "value": "internal",
-   "confidence": 0.346,
+   "value": "confidential",
+   "confidence": 0.893,
    "probabilities": {
-    "public": 0.17109057502175246,
-    "internal": 0.509256215005958,
-    "confidential": 0.22255284465651107,
-    "regulated": 0.09710036531577851
+    "public": 0.005424758956898716,
+    "internal": 0.03389400761560138,
+    "confidential": 0.9198167989395177,
+    "regulated": 0.040864434487982174
    }
   },
   "blast_radius": {
    "value": "single user",
-   "confidence": 0.797,
-   "expected": 1.27,
+   "confidence": 0.583,
+   "expected": 1.419,
    "probabilities": {
-    "single user": 0.8474413496534846,
-    "team": 0.08010004816239671,
-    "department": 0.027145843123704223,
-    "organization": 0.04531275906041445
+    "single user": 0.6871864593229342,
+    "team": 0.2458209058378859,
+    "department": 0.02737596074461046,
+    "organization": 0.03961667409456943
    }
+  },
+  "capability_claims": {
+   "value": [
+    "Expense Summarizer produces manager-ready summaries of expense reports."
+   ],
+   "items": [
+    {
+     "value": "Expense Summarizer produces manager-ready summaries of expense reports.",
+     "start": 361,
+     "end": 432,
+     "p_start": 1,
+     "p_close": 1,
+     "p_point": 0.5,
+     "p_verify": 1,
+     "p_more": 0.067,
+     "confidence": 1
+    }
+   ],
+   "confidence": 1,
+   "finish": "closed"
   }
  },
  "facts": {
@@ -173,15 +211,15 @@
    "choice": "needs_owner",
    "probabilities": {
     "approve": 0.0013,
-    "needs_owner": 0.9955,
-    "reuse_existing": 0.0017,
+    "needs_owner": 0.9954,
+    "reuse_existing": 0.0018,
     "quarantine": 0.0015
    },
-   "confidence": 0.994
+   "confidence": 0.9938
   },
   "risk_of_acting": {
    "type": "score",
-   "score": 2.3622,
+   "score": 1.5502,
    "legend": {
     "0": "negligible",
     "1": "low",
@@ -190,49 +228,42 @@
     "4": "severe"
    },
    "probabilities": {
-    "0": 0.0282,
-    "1": 0.1557,
-    "2": 0.2812,
-    "3": 0.4955,
-    "4": 0.0394
+    "0": 0.0671,
+    "1": 0.4988,
+    "2": 0.2712,
+    "3": 0.1425,
+    "4": 0.0204
    },
-   "confidence": 0.3694
+   "confidence": 0.3735
   },
   "autonomy": {
-   "type": "choice",
-   "choice": "blocked",
-   "probabilities": {
-    "autonomous": 0.0307,
-    "approval_required": 0.0625,
-    "blocked": 0.9068
-   },
-   "confidence": 0.8603
+   "choice": "blocked"
   }
  },
  "duplicates": [],
  "reuse": [
   {
-   "agent": "payroll-helper",
-   "action": "skip",
-   "score": 0.0061
-  },
-  {
    "agent": "mcp-memory",
    "action": "skip",
-   "score": 0.0032
+   "score": 0.0027
   },
   {
-   "agent": "hr-policy-assistant",
+   "agent": "payroll-helper",
    "action": "skip",
-   "score": 0.0014
+   "score": 0.0021
+  },
+  {
+   "agent": "leave-balance-bot",
+   "action": "skip",
+   "score": 0.0016
   }
  ],
  "usage": {
-  "calls": 58,
-  "cached": 56,
-  "credits": 5.0,
-  "cost_usd": 0.001,
-  "credits_this_report": 2.0
+  "calls": 56,
+  "cached": 32,
+  "credits": 82.0,
+  "cost_usd": 0.0163,
+  "credits_this_report": 21.0
  },
  "verdict_label": "needs_owner",
  "artifacts": [
@@ -277,7 +308,7 @@
   "builder": "t.nguyen",
   "purpose": "Summarizes an employee's submitted expense reports for their manager."
  },
- "markdown": "# AgentAudit: expense-summarizer\n\n**Verdict:** `needs_owner` (99% confidence)\n**Autonomy:** `blocked`  \u00b7  **Risk of acting:** 2.36 / 4\n\n## Registry record\n\n| Field | Value |\n|---|---|\n| purpose | Expense Summarizer produces manager-ready summaries of expense reports |\n| owner | \u2014 |\n| can_write | False |\n| reaches_network | False |\n| data_sensitivity | internal |\n| blast_radius | single user |\n\n## Findings (0)\n\nNo findings.\n\n## Existing agents for the same job\n\n- payroll-helper: skip (score 0.01)\n- mcp-memory: skip (score 0.00)\n- hr-policy-assistant: skip (score 0.00)\n\n<sub>58 Clocked calls \u00b7 5 credits \u00b7 $0.0010</sub>",
+ "markdown": "# AgentAudit: expense-summarizer\n\n**Verdict:** `needs_owner` (99% confidence)\n**Autonomy:** `blocked`  \u00b7  **Risk of acting:** 1.55 / 4\n\n## Registry record\n\n| Field | Value |\n|---|---|\n| purpose | Summarizes an employee's submitted expense reports for their manager |\n| owner | t.nguyen |\n| can_write | False |\n| reaches_network | False |\n| data_sensitivity | confidential |\n| blast_radius | single user |\n| capability_claims | ['Expense Summarizer produces manager-ready summaries of expense reports.'] |\n\n## Findings (0)\n\nNo findings.\n\n## Existing agents for the same job\n\n- mcp-memory: skip (score 0.00)\n- payroll-helper: skip (score 0.00)\n- leave-balance-bot: skip (score 0.00)\n\n<sub>56 Clocked calls \u00b7 82 credits \u00b7 $0.0163</sub>",
  "endpoints_used": [
   "Compare /compare",
   "Decide /decide",
