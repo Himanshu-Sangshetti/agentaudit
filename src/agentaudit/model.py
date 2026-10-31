@@ -11,6 +11,7 @@ class Tool:
     description: str
     input_schema: dict | None = None
     source: str = ""  # file path (or "live:tools/list") the definition came from
+    enabled: bool = True  # Studio-style platforms start every MCP tool disabled
 
 
 @dataclass

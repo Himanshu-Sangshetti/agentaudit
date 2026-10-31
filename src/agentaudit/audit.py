@@ -140,6 +140,8 @@ class Report:
     verdict: dict = field(default_factory=dict)  # Decide output
     duplicates: list[dict] = field(default_factory=list)
     reuse: list[dict] = field(default_factory=list)
+    tools: list[dict] = field(default_factory=list)  # per-tool enable recommendation
+    escalation: dict = field(default_factory=dict)  # item for a human approval board, when one is needed
     usage: dict = field(default_factory=dict)
 
     def to_dict(self) -> dict:
@@ -209,6 +211,40 @@ def accountable_owner(agent: Agent) -> str | None:
             if owners:
                 return ", ".join(sorted(set(owners))[:5])
     return None
+
+
+WRITE_VERBS = {"delete", "remove", "write", "update", "create", "send", "post", "execute", "run", "kill", "drop", "add",
+               "assign", "merge", "push", "close", "edit", "modify", "set", "move", "transition", "upload", "publish"}
+
+
+def tool_recommendations(agent: Agent, rep: "Report") -> list[dict]:
+    """For each tool: enable, keep_disabled (a finding points at its description) or review (can write or send)."""
+    flagged = {}
+    for f in rep.findings:
+        if "::" in f.path:
+            flagged.setdefault(f.path.split("::")[1].replace(" (override)", ""), []).append(f"{f.check}:{f.severity}")
+    can_write = (rep.record.get("can_write") or {}).get("value")
+    out = []
+    for t in agent.tools:
+        if t.name in flagged:
+            action, why = "keep_disabled", ", ".join(flagged[t.name])
+        elif can_write and WRITE_VERBS & set(re.findall(r"[a-z]+", re.sub(r"([a-z])([A-Z])", r"\1_\2", t.name).lower())):
+            action, why = "review", "can change data or act externally; enable with human approval"
+        else:
+            action, why = "enable", "no findings"
+        out.append({"tool": t.name, "source": t.source, "currently_enabled": t.enabled, "recommendation": action, "why": why})
+    return out
+
+
+def escalation_item(agent: Agent, rep: "Report") -> dict:
+    """A compact item for a human-approval queue (e.g. a collaboration board) when the gate does not approve."""
+    verdict = (rep.verdict.get("verdict") or {}).get("choice")
+    if verdict == "approve" and (rep.verdict.get("autonomy") or {}).get("choice") == "autonomous":
+        return {}
+    return {"agent": agent.name, "verdict": verdict, "autonomy": (rep.verdict.get("autonomy") or {}).get("choice"),
+            "reasons": [f"{f.severity} {f.check}: {f.title} ({f.path})" for f in rep.findings[:5]]
+            + ([f"duplicates {d['agent']}" for d in rep.duplicates[:2]]),
+            "owner": accountable_owner(agent), "evidence_refs": [f.path for f in rep.findings[:5]]}
 
 
 def autonomy(answers: dict, record: dict) -> str:
@@ -505,6 +541,8 @@ class Auditor:
         rep.facts = redact(rep.facts, self._sensitive)
         rep.record = redact(rep.record, self._sensitive)
         rep.verdict = self.decide(agent, rep)
+        rep.tools = tool_recommendations(agent, rep)
+        rep.escalation = escalation_item(agent, rep)
         rep.findings.sort(key=lambda f: -SEVERITY_RANK.get(f.severity, 0))
         u = self.c.usage
         rep.usage = {"calls": u.calls, "cached": u.cached, "credits": u.credits, "cost_usd": round(u.cost_usd, 4)}

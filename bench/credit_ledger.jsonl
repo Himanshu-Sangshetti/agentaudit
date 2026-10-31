@@ -5957,3 +5957,17 @@
 {"ts": 1793451557.142252, "tag": "guard-external-precision", "account": "reserve", "endpoint": "decide", "credits": 1.0, "usd": 0.000199}
 {"ts": 1793451557.448905, "tag": "guard-external-precision", "account": "reserve", "endpoint": "decide", "credits": 1.0, "usd": 0.000199}
 {"ts": 1793451557.7923021, "tag": "guard-external-precision", "account": "reserve", "endpoint": "decide", "credits": 1.0, "usd": 0.000199}
+{"ts": 1793451999.925801, "tag": "cli-scan", "account": "reserve", "endpoint": "injection", "credits": 3.0, "usd": 0.000598}
+{"ts": 1793452000.255397, "tag": "cli-scan", "account": "reserve", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793452000.892554, "tag": "cli-scan", "account": "reserve", "endpoint": "pii", "credits": 7.0, "usd": 0.001394}
+{"ts": 1793452001.231852, "tag": "cli-scan", "account": "reserve", "endpoint": "extract", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793452001.572546, "tag": "cli-scan", "account": "reserve", "endpoint": "extract", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793452002.121448, "tag": "cli-scan", "account": "reserve", "endpoint": "extract", "credits": 11.0, "usd": 0.002191}
+{"ts": 1793452002.58567, "tag": "cli-scan", "account": "reserve", "endpoint": "fill", "credits": 8.0, "usd": 0.001594}
+{"ts": 1793452002.896349, "tag": "cli-scan", "account": "reserve", "endpoint": "decide", "credits": 1.0, "usd": 0.000199}
+{"ts": 1793452022.96822, "tag": "cli-scan", "account": "reserve", "endpoint": "injection", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793452023.288597, "tag": "cli-scan", "account": "reserve", "endpoint": "extract", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793452023.849111, "tag": "cli-scan", "account": "reserve", "endpoint": "extract", "credits": 11.0, "usd": 0.002191}
+{"ts": 1793452024.486175, "tag": "cli-scan", "account": "reserve", "endpoint": "fill", "credits": 8.0, "usd": 0.001594}
+{"ts": 1793452024.9674802, "tag": "cli-scan", "account": "reserve", "endpoint": "grounding", "credits": 2.0, "usd": 0.000398}
+{"ts": 1793452025.27641, "tag": "cli-scan", "account": "reserve", "endpoint": "decide", "credits": 1.0, "usd": 0.000199}

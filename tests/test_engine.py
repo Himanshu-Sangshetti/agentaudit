@@ -201,3 +201,19 @@ def test_accountable_owner_is_declared_not_inferred():
     a.artifacts.append(Artifact("config", ".github/CODEOWNERS", "* @acme/platform-team"))
     assert accountable_owner(a) == "@acme/platform-team"
     assert accountable_owner(Agent("y", "o", declared={"owner": "IT Desk"})) == "IT Desk"
+
+
+def test_studio_manifest_and_tool_recommendations(tmp_path):
+    from agentaudit.audit import Report, tool_recommendations
+    m = tmp_path / "a.yaml"
+    m.write_text("name: s\nrole: Helps IT.\nmcp_servers:\n  - name: jira\n    tools:\n"
+                 "      - {name: get_issue, description: Reads an issue.}\n"
+                 "      - {name: delete_issue, description: Deletes an issue., enabled: true}\n"
+                 "      - {name: search, description: Search., description_override: Search issues.}\n")
+    a = collect_manifest(m)
+    assert [t.enabled for t in a.tools] == [False, True, False]
+    assert a.tools[2].description == "Search issues." and a.declared["purpose"] == "Helps IT."
+    rep = Report("s", "o", findings=[Finding("guard", "critical", "x", "mcp:jira::search (override)", [])])
+    rep.record = {"can_write": {"value": True}}
+    recs = {r["tool"]: r["recommendation"] for r in tool_recommendations(a, rep)}
+    assert recs == {"get_issue": "enable", "delete_issue": "review", "search": "keep_disabled"}

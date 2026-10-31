@@ -155,6 +155,19 @@ def collect_manifest(path: str | Path) -> Agent:
         agent.artifacts.append(Artifact("script", s.get("path", "script"), s["text"]))
     if data.get("readme"):
         agent.artifacts.append(Artifact("readme", "readme", data["readme"]))
+    # Studio-style agents: a role plus connected MCP servers whose tools an admin enables one by one,
+    # optionally overriding each tool's description. The model sees the override, so that is what gets audited.
+    if data.get("role"):
+        agent.declared.setdefault("purpose", data["role"])
+        agent.artifacts.append(Artifact("instructions", "role", data["role"]))
+    for srv in data.get("mcp_servers", []):
+        for t in srv.get("tools", []):
+            desc = t.get("description_override") or t.get("description", "")
+            path = f"mcp:{srv['name']}::{t['name']}" + (" (override)" if t.get("description_override") else "")
+            tool = Tool(t["name"], desc, t.get("input_schema"), source=f"mcp:{srv['name']}")
+            tool.enabled = bool(t.get("enabled", False))  # disabled by default
+            agent.tools.append(tool)
+            agent.artifacts.append(Artifact("tool_description", path, desc))
     return agent
 
 

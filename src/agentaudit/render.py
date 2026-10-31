@@ -49,6 +49,13 @@ def to_markdown(rep: Report) -> str:
         lines.append(f"- **{f.severity.upper()}** · {RULES.get(f.check, (f.check,))[0]} · {f.title} — `{f.path}`")
         for e in f.evidence[:3]:
             lines.append(f"  - > {e['quote'][:200]}")
+    if rep.tools:
+        lines += ["", "## Tool enablement", "", "| Tool | Server | Enabled now | Recommendation | Why |", "|---|---|---|---|---|"]
+        lines += [f"| {t['tool']} | {t['source']} | {'yes' if t['currently_enabled'] else 'no'} | **{t['recommendation']}** | {t['why']} |"
+                  for t in rep.tools]
+    if rep.escalation:
+        lines += ["", "## Escalation", "", f"Sent for human approval: {rep.escalation.get('verdict')} · owner "
+                  f"{rep.escalation.get('owner') or 'none'}", ""] + [f"- {r}" for r in rep.escalation.get("reasons", [])]
     if rep.duplicates:
         lines += ["", "## Overlapping agents", ""] + [f"- {d['agent']} ({d['relation']})" for d in rep.duplicates]
     if rep.reuse:
