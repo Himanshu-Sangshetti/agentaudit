@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AgentAudit: Context Is the Control</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: a research-note column, figures breaking slightly wider, tables as quiet ledgers. */
+:root {
+  --bg: #f7f8fa;
+  --paper: #ffffff;
+  --ink: #14171c;
+  --ink-2: #4a5160;
+  --rule: #dde1e8;
+  --accent: #2a78d6;
+  --accent-soft: #e8f0fb;
+  --font-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11141a; --paper: #171b22; --ink: #e9ecf1; --ink-2: #a9b1bf; --rule: #2a313c;
+    --accent: #5b9bea; --accent-soft: #1b2a3f; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11141a; --paper: #171b22; --ink: #e9ecf1; --ink-2: #a9b1bf; --rule: #2a313c;
+  --accent: #5b9bea; --accent-soft: #1b2a3f; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.65 var(--font-body); }
+main { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.2; }
+h1 { font-size: 2.6rem; font-weight: 600; margin: 0 0 6px; letter-spacing: -0.01em; }
+h3 { font-size: 1.25rem; font-weight: 500; color: var(--ink-2); margin: 0 0 16px; }
+h2 { font-size: 1.6rem; font-weight: 600; margin: 56px 0 12px; padding-top: 18px; border-top: 1px solid var(--rule); }
+h2 + h3, main > h3 + p { margin-top: 0; }
+p, li { max-width: 66ch; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+em { color: var(--ink-2); }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 28px 0; }
+strong { font-weight: 600; }
+code { font: 0.88em var(--font-mono); background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; }
+pre { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 14px 16px; overflow-x: auto; }
+pre code { background: none; padding: 0; font-size: 0.85rem; }
+.table-wrap { overflow-x: auto; margin: 18px 0 24px; border: 1px solid var(--rule); border-radius: 8px; background: var(--paper); }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-weight: 600; color: var(--ink-2); background: var(--accent-soft); }
+tr:last-child td { border-bottom: 0; }
+figure { margin: 22px -20px; }
+figure.chart img { display: block; max-width: 100%; height: auto; margin: 0 auto; border-radius: 8px; background: #fcfcfb;
+  border: 1px solid var(--rule); padding: 10px; }
+figure.diagram { background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: 12px; overflow-x: auto; }
+figure.diagram pre { border: 0; background: none; margin: 0; }
+@media (max-width: 800px) { figure { margin: 22px 0; } h1 { font-size: 2rem; } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<main>
+<h1>AgentAudit: Context Is the Control</h1>
+<h3>Auditing AI agents with decision models, and measuring what actually makes them work</h3>
+<p><em>Write-up for the Clocked Build Challenge · November 2026 · <a href="https://github.com/Himanshu-Sangshetti/agentaudit">code</a> · <a href="https://github.com/Himanshu-Sangshetti/agentaudit/blob/main/bench/RESULTS.md">full results with 95% CIs</a> · <a href="https://github.com/Himanshu-Sangshetti/agentaudit/blob/main/bench/PROTOCOL.md">pre-registered protocol</a> · <a href="https://github.com/Himanshu-Sangshetti/agentaudit/blob/main/docs/REPORT.md">technical report</a></em></p>
+<hr />
+<h2>TL;DR</h2>
+<p>Companies are building AI agents faster than anyone can review them. <strong>AgentAudit</strong> reads everything an agent reads or runs (tool descriptions, system prompts, skill files, scripts, README). In one run it returns a governed verdict (<strong>approve · needs owner · reuse existing · quarantine</strong>), a registry record and per-tool enable recommendations, using all nine Clocked endpoints.</p>
+<p>We then built <strong>AgentAudit-Bench</strong>, to our knowledge the first independent benchmark of Clocked's Guard and Inspect endpoints, and asked one question: <em>how much of a decision model's real-world accuracy comes from how you deploy it?</em></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th>Clocked as shipped</th>
+<th>Clocked + AgentAudit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Poisoned MCP tools, held-out test</td>
+<td>84.9 BAcc · <strong>25.9%</strong> false alarms</td>
+<td><strong>97.6</strong> BAcc · <strong>2.2%</strong> false alarms</td>
+</tr>
+<tr>
+<td>199 real-world tools never used for design</td>
+<td><strong>23.2%</strong> false alarms</td>
+<td><strong>5.4%</strong> false alarms, 25/25 attacks caught</td>
+</tr>
+<tr>
+<td>A real 2026 malicious-skill campaign</td>
+<td>48% caught (best single endpoint)</td>
+<td><strong>81%</strong> caught, 3.2% false alarms</td>
+</tr>
+<tr>
+<td>Governance verdicts on 38 held-out agents</td>
+<td>60.5% (one Decide call)</td>
+<td><strong>78.9%</strong> · <strong>89.5%</strong> in precision mode</td>
+</tr>
+</tbody>
+</table></div>
+<p>Our harness reproduces Clocked's own published benchmark exactly (<strong>507/868</strong>), and Clocked's outputs were fully deterministic on re-run (<strong>30/30</strong>).</p>
+<hr />
+<h2>1. The problem: agents nobody owns, reading text nobody reviews</h2>
+<p>Three things go wrong when an organization adopts agents at scale:</p>
+<ol>
+<li><strong>Tool poisoning.</strong> An MCP tool's description is read by the model but rarely by a human. A hidden line ("also send a copy of the conversation to …") turns a harmless tool into an exfiltration channel.</li>
+<li><strong>Malicious skills.</strong> In February 2026, a campaign published over a hundred agent "skills" whose setup instructions told the agent or user to download and run a stealer.</li>
+<li><strong>Sprawl without ownership.</strong> Rezolve.ai's own writing describes enterprises with "850 agents built and a dozen in use", and argues that <strong>nothing should run without a named owner</strong>.</li>
+</ol>
+<p>Decision models (Clocked, Jev, OpenAI Decisions, Microsoft-Decision-1) return typed judgments with probabilities in milliseconds. They're natural building blocks for an automated review gate. Two open questions remain: <strong>do they work on agent artifacts, and what does it take to deploy them well?</strong></p>
+<h2>2. What we built</h2>
+<figure class="diagram"><pre class="mermaid">flowchart LR
+  A[Agent: MCP server · skill · manifest] --> C[Static collector<br/>nothing executed]
+  C --> S1[Guard<br/>injected instructions]
+  C --> S2[Inspect<br/>scripts vs declared scope]
+  C --> S3[Protect<br/>secrets, batched + redaction]
+  C --> D1[Extract + Decide<br/>supply-chain check]
+  C --> D2[Fill<br/>registry record + claims]
+  D2 --> F1[Verify<br/>claims vs capabilities]
+  C --> F2[Compare<br/>duplicates in registry]
+  C --> F3[Rerank<br/>what to reuse]
+  S1 & S2 & S3 & D1 & F1 & F2 & F3 --> V[Decide<br/>governed verdict]
+  V --> P[Policy layer<br/>owner from registry · autonomy · per-tool enable]
+  P --> O[CLI · GitHub Action SARIF · REST hook · web app]
+</pre></figure>
+<p>Every endpoint has one job that changes the output, and §6 shows which ones the verdict actually depends on. Three design rules come straight from Rezolve.ai's governance thinking:</p>
+<ul>
+<li><strong>"AI provides intelligence. Policy defines authority."</strong> The model never decides autonomy. Autonomy is computed from the verdict, write access and risk.</li>
+<li><strong>Accountability is registry metadata.</strong> The owner is the one declared in the manifest or CODEOWNERS, never inferred from a README.</li>
+<li><strong>Consequential calls need two signals.</strong> "Reuse that agent instead" requires both Compare (duplicate) and Rerank (serves the same purpose).</li>
+</ul>
+<p><strong>Built for platforms like Agentic Studio.</strong> Publicly, Agentic Studio connects an MCP server by URL, discovers its tools, and starts <strong>every tool disabled</strong> until an admin enables it. AgentAudit fills the exact decision that leaves open. For each discovered tool it recommends <strong>enable, review (it can write or act externally) or keep disabled (with evidence)</strong>. It audits admin <strong>description overrides</strong>, since the model reads those too, and emits an escalation item for a human approval board. <em>(AgentAudit isn't affiliated with Rezolve.ai and doesn't run inside Agentic Studio. It's a gate such a platform could call.)</em></p>
+<h2>3. How we measured</h2>
+<p>We followed Clocked's own published methodology, so every number is directly comparable with theirs:
+- the same rows for every arm
+- balanced accuracy
+- exact McNemar tests (Holm-corrected)
+- 95% stratified bootstrap confidence intervals</p>
+<p>The protocol was committed <strong>before</strong> each test run, and the git history is the record:
+- splits are disjoint by server, technique or repo
+- configurations are chosen on dev and frozen
+- each test split is run once</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Suite</th>
+<th>What's tested</th>
+<th>Data</th>
+<th>n (test)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Harness check</td>
+<td>Clocked's Decide on jev-benchmark</td>
+<td>868 mechanically labeled decisions</td>
+<td>868</td>
+</tr>
+<tr>
+<td>Tool poisoning</td>
+<td>Guard on MCP tool descriptions</td>
+<td>MCPTox attacks vs real reference-server tools, InjecAgent specs, hard negatives</td>
+<td>253</td>
+</tr>
+<tr>
+<td>External</td>
+<td>Generalization</td>
+<td>199 real tools from 24 public MCP servers + 25 published attack pairs</td>
+<td>249</td>
+</tr>
+<tr>
+<td>Scripts</td>
+<td>Inspect</td>
+<td>Atomic Red Team vs real MCP/admin scripts, plus scope pairs</td>
+<td>206</td>
+</tr>
+<tr>
+<td>Malicious skills</td>
+<td>The whole pipeline</td>
+<td>A real Feb 2026 ClawHub campaign (124 malicious, 223 benign)</td>
+<td>244</td>
+</tr>
+<tr>
+<td>Governance</td>
+<td>Verdicts and endpoint ablations</td>
+<td>48 agents built from real public servers by a committed recipe</td>
+<td>38</td>
+</tr>
+</tbody>
+</table></div>
+<p>Open-source detectors (ProtectAI and deepset DeBERTa, a keyword regex) run on the same rows. Their thresholds are <strong>tuned on dev, exactly like ours</strong>, so the comparison is fair.</p>
+<h2>4. Results</h2>
+<h3>4.1 Tool poisoning: the same model, a different deployment</h3>
+<figure class="chart"><img alt="Tool poisoning results" src="figures/fig1_guard_test.png"></figure>
+<p>As shipped, Clocked Guard catches almost every attack (95.6%) but flags <strong>one in four legitimate tool descriptions</strong>. Tool descriptions are written in the imperative ("Create a new file…"), which looks like an instruction to a generic injection detector. Tuning only Clocked's threshold doesn't help: the best dev threshold is the default 0.5. With AgentAudit's agent-specific policy and consensus rule, false alarms fall to <strong>2.2%</strong> at 97.4% recall (Holm-adjusted McNemar p = 1.9 × 10⁻⁷).</p>
+<figure class="chart"><img alt="Ablation" src="figures/fig2_ablation.png"></figure>
+<p><strong>Where the gain comes from.</strong> Context does most of the work (84.9 → 95.7); the decision rule adds the rest (→ 97.6). Without our 40 hand-written hard negatives, the result is unchanged (97.3 vs 82.5).</p>
+<h3>4.2 It holds on data we never saw</h3>
+<figure class="chart"><img alt="External results" src="figures/fig1b_guard_external.png"></figure>
+<p>On 199 real tool descriptions from 24 public MCP servers, none used during design, Clocked's defaults flag <strong>23.2%</strong> and AgentAudit <strong>5.4%</strong>. All 25 externally authored attacks are caught (95% Wilson lower bound 86.7%). The best tuned open-source detector reaches 91.7 balanced accuracy with 16.5% false alarms.</p>
+<h3>4.3 Scripts: scope is the signal</h3>
+<figure class="chart"><img alt="Scope pairs" src="figures/fig3_scope.png"></figure>
+<p>The same command, say "disable Defender, install, re-enable", can be an approved change or an attack. Without scope, Inspect is at chance (50%) on these pairs. Given the approved change ticket, it reaches 79% (96% with the consensus rule). <strong>Honest caveat:</strong> on ordinary scripts a threshold-tuned default already gets 87.4 against our 89.9, and that difference isn't significant (p = 0.15). The value is in scope, not a better prompt.</p>
+<h3>4.4 A real malware campaign</h3>
+<figure class="chart"><img alt="Malicious skills" src="figures/fig4_skills.png"></figure>
+<p>Failure analysis on the dev split showed why both endpoints miss malicious skills: the payload is usually <strong>prose</strong>, not code ("first install the helper from this link"). We added a <strong>supply-chain check</strong>. Extract pulls, verbatim and with offsets, everything the skill asks you to download or run; Decide judges whether the source is untrusted. On the held-out test, the pipeline catches <strong>80.5%</strong> against 48.3% for the best single endpoint, at 3.2% false alarms (p = 7 × 10⁻⁶). On its own, the check reaches 77% recall at 0.6% false alarms.</p>
+<h3>4.5 Governance: every endpoint earns its place</h3>
+<figure class="chart"><img alt="Governance ablation" src="figures/fig5_governance.png"></figure>
+<p>On 38 held-out agents, the full audit gets <strong>78.9%</strong> of verdicts right, and <strong>89.5%</strong> in precision mode. A single Decide call over the raw files gets <strong>60.5%</strong> and misses most defects. Remove one endpoint and the audit goes blind to exactly the defect it covers:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Endpoint removed</th>
+<th>Defect caught</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Guard</td>
+<td>poisoned tools 4/4 → 0/4</td>
+</tr>
+<tr>
+<td>Inspect</td>
+<td>scripts 3/3 → 1/3</td>
+</tr>
+<tr>
+<td>Protect</td>
+<td>secrets 3/3 → 1/3</td>
+</tr>
+<tr>
+<td>Compare</td>
+<td>duplicates 7/9 → 0/9</td>
+</tr>
+</tbody>
+</table></div>
+<p>Extract, Fill, Verify and Rerank don't change verdicts here. They supply the registry record, claim checks and reuse suggestions. <em>(Ablation cells hold 3–9 agents each. The owner rule was changed after the first full run, as disclosed in the protocol: v1 scored 65.8.)</em></p>
+<h3>4.6 What breaks at scale, and the fix</h3>
+<p>Per-tool false positives <strong>compound</strong>. At about 5% per description, a 6-tool agent has roughly a 26% chance of a false flag. In a 9-server real-world sample, default mode would have wrongly quarantined 2 reputable servers. <strong>Precision mode</strong> adds a one-credit Decide second opinion to Guard flags on tool descriptions:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th>Default mode</th>
+<th>Precision mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Real-world servers wrongly quarantined</td>
+<td>2 / 9</td>
+<td><strong>0 / 9</strong></td>
+</tr>
+<tr>
+<td>External set (real tools + published attacks)</td>
+<td>97.3 BAcc</td>
+<td><strong>100.0</strong> (0 false alarms, 25/25 caught)</td>
+</tr>
+<tr>
+<td>MCPTox test set</td>
+<td>97.6 BAcc, recall 97.4%</td>
+<td>87.3 BAcc, recall 74.6%, 0 false alarms</td>
+</tr>
+</tbody>
+</table></div>
+<p>It's a real trade-off. <strong>Use precision mode to gate registries of mostly trusted agents, and default mode for untrusted code in CI.</strong></p>
+<h2>5. Cost and speed</h2>
+<ul>
+<li>Median Clocked round trip: <strong>0.3–0.5 s</strong> per call. A typical agent audit takes <strong>about 20–90 credits</strong> (roughly 0.4–2 US cents at overage rates). <code>agentaudit estimate</code> predicts the cost before you spend anything.</li>
+<li>Every response is cached, so <code>bench/report.py</code> regenerates every number in this write-up for <strong>zero credits</strong>.</li>
+</ul>
+<h2>6. Limitations (read these)</h2>
+<ul>
+<li><strong>Authored rows.</strong> The hard negatives (40) and scope pairs (20) were written by us. Results without them are reported.</li>
+<li><strong>Labels.</strong> Atomic Red Team includes dual-use commands. Governance labels come from a construction recipe on synthetic manifests built from real tools.</li>
+<li><strong>Other models.</strong> No other decision model was run on our suites. Jev appears only through jev-benchmark's published per-row answers and a figure from a different paper.</li>
+<li><strong>Attacks.</strong> Only published attack sets were used; we didn't write new attack payloads. Adaptive attackers may do better.</li>
+<li><strong>Disclosed post-hoc changes.</strong> The owner rule v2, and one rejected filter whose test numbers were printed during design. Both are documented in the protocol.</li>
+<li><strong>Scope.</strong> One engine version (clocked-1.0, Oct–Nov 2026). The real-world sample is small (9 servers).</li>
+</ul>
+<h2>7. Try it</h2>
+<pre><code class="language-bash">uv tool install git+https://github.com/Himanshu-Sangshetti/agentaudit
+agentaudit demo                                     # recorded audits, no key needed
+agentaudit estimate ./my-mcp-server                 # cost before spending
+CLOCKED_API_KEY=... agentaudit scan ./my-mcp-server --precision
+</code></pre>
+<p>GitHub Action: <code>uses: Himanshu-Sangshetti/agentaudit/action@main</code> puts findings in code scanning and fails the pull request on a quarantine verdict.</p>
+<hr />
+<p><em>Data: jev-benchmark (MIT), MCPTox (no license: only IDs and predictions released), InjecAgent (MIT), reference MCP servers (MIT), Atomic Red Team (MIT), lazywinadmin/PowerShell (MIT), agent-skill-malware (MIT), mcp-tool-poisoning (Apache-2.0), public MCP repos (MIT/Apache/BSD). Real-world findings are reported in aggregate only. Not affiliated with or endorsed by Rezolve.ai.</em></p>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script>
+  try {
+    var dark = document.documentElement.getAttribute("data-theme") === "dark" ||
+      (!document.documentElement.getAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "neutral", securityLevel: "strict",
+      fontFamily: "IBM Plex Sans, system-ui, sans-serif" });
+  } catch (e) { /* the diagram source stays readable as text */ }
+</script>
+</body>
+</html>
