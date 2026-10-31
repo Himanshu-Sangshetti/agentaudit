@@ -54,8 +54,9 @@
     } catch (e) { status(esc(e.message), "error"); }
     finally { btn.disabled = false; }
   }
-  $("#gh-form").onsubmit = (ev) => { ev.preventDefault(); runAudit({ github_url: $("#gh-url").value.trim() }, ev.submitter || $("#gh-form button")); };
-  $("#mf-form").onsubmit = (ev) => { ev.preventDefault(); runAudit({ manifest_yaml: $("#mf-text").value }, ev.submitter || $("#mf-form .primary")); };
+  const precision = () => $("#precision").checked;
+  $("#gh-form").onsubmit = (ev) => { ev.preventDefault(); runAudit({ github_url: $("#gh-url").value.trim(), precision: precision() }, ev.submitter || $("#gh-form button")); };
+  $("#mf-form").onsubmit = (ev) => { ev.preventDefault(); runAudit({ manifest_yaml: $("#mf-text").value, precision: precision() }, ev.submitter || $("#mf-form .primary")); };
   $("#mf-sample").onclick = () => { $("#mf-text").value = $("#sample-manifest").innerHTML.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">"); };
 
   // Rendering -----------------------------------------------------------------
@@ -88,19 +89,24 @@
     return out + esc(text.slice(at));
   }
 
+  const RULE = { guard: "AA001", inspect: "AA002", protect: "AA003", verify: "AA004", supply_chain: "AA005" };
+
   function findingCard(f, artifacts) {
     const art = artifacts.find((a) => a.path === f.path);
     const spans = (f.evidence || []).filter((e) => e.start >= 0);
     const quotes = (f.evidence || []).slice(0, 4).map((e) => `<li>${esc(e.type ? `[${e.type}] ` : "")}${esc(e.quote)}</li>`).join("");
     const detail = f.detail || {};
-    const prob = detail.probability ?? detail.malicious ?? detail.contradicted;
+    const prob = detail.probability ?? detail.malicious ?? detail.contradicted ?? detail.p_untrusted;
+    const targets = f.check === "supply_chain" && (detail.targets || []).length
+      ? `<div class="targets">Download / run targets: ${detail.targets.slice(0, 6).map((t) => `<code>${esc(t)}</code>`).join(" ")}</div>` : "";
     return `<div class="finding sev-${esc(f.severity)}">
       <div class="finding-top"><span class="pill sev-${esc(f.severity)}">${esc(f.severity)}</span>
+        ${RULE[f.check] ? `<span class="rule">${RULE[f.check]}</span>` : ""}
         <span class="title">${esc(f.title)}</span>
         ${prob !== undefined && prob !== null ? `<span class="muted" title="Endpoint probability">p=${Number(prob).toFixed(3)}</span>` : ""}
         <span class="ep" title="Clocked endpoint that produced this finding">${esc(f.endpoint || f.check)}</span></div>
       <div class="path">${esc(f.path)}</div>
-      ${quotes ? `<ul class="quotes">${quotes}</ul>` : ""}
+      ${quotes ? `<ul class="quotes">${quotes}</ul>` : ""}${targets}
       ${art && spans.length ? `<details class="source"><summary>Show in source</summary><pre class="src">${highlight(art.text, spans)}</pre></details>` : ""}
     </div>`;
   }
@@ -142,8 +148,8 @@
 
       <div class="card group">
         <div class="group-head"><span class="dot safety"></span>Safety findings (${safety.length})
-          <span class="muted" style="font-weight:400;margin-left:auto;font-size:13px">Guard · Inspect · Protect</span></div>
-        ${safety.length ? safety.map((f) => findingCard(f, d.artifacts || [])).join("") : `<p class="empty">No injected instructions, risky scripts or embedded secrets found.</p>`}
+          <span class="muted" style="font-weight:400;margin-left:auto;font-size:13px">Guard · Inspect · Protect · Extract + Decide</span></div>
+        ${safety.length ? safety.map((f) => findingCard(f, d.artifacts || [])).join("") : `<p class="empty">No injected instructions, risky scripts, embedded secrets or untrusted setup steps found.</p>`}
       </div>
 
       <div class="two">

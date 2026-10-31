@@ -20,10 +20,13 @@ It ships as a CLI, a GitHub Action (SARIF in code scanning), a REST hook for age
 uv tool install git+https://github.com/<you>/agentaudit   # or: pip install -e .
 export CLOCKED_API_KEY=...                                 # server-side only
 
+agentaudit demo                                            # try it in 10 seconds: recorded audits, no key needed
+agentaudit estimate ./my-mcp-server                        # credit estimate, no API calls
 agentaudit scan ./my-mcp-server                            # local repo
 agentaudit scan https://github.com/org/some-mcp-server     # shallow clone, nothing executed
 agentaudit scan agent.yaml --registry ./approved-agents    # manifest + duplicate/reuse check
 agentaudit scan . --format sarif --out agentaudit.sarif    # for GitHub code scanning
+agentaudit scan ./agent --precision                        # fewer false flags (Decide second opinion)
 agentaudit usage                                           # credits spent, by experiment
 ```
 
@@ -40,7 +43,7 @@ Exit code 1 means a quarantine verdict or a finding at or above `--fail-on` (def
 | Safety | **Protect** `/pii` | Secrets and personal data in prompts and configs. Its spans also redact every other part of the report | AA003 findings, redaction |
 | Documents | **Extract** `/extract` | Verbatim owner, systems reached, credentials, and the download targets a skill asks for (with offsets) | Supply-chain check, record |
 | Documents | **Fill** `/fill` | The registry record (choice, score and yes/no fields) and the README's capability claims, verbatim | Record, Verify input |
-| Documents | **Decide** `/decide` | Governance verdict and risk of acting. Untrusted-download judgment for skills | Verdict |
+| Documents | **Decide** `/decide` | Governance verdict and risk of acting. Untrusted-download judgment (AA005, with Extract). Second opinion in `--precision` mode | Verdict, AA005 |
 | Facts | **Verify** `/grounding` | Each README claim checked against machine-extracted capability facts | AA004 findings |
 | Facts | **Compare** `/compare` | Duplicate and overlapping agents across the registry | `reuse_existing` (with Rerank) |
 | Facts | **Rerank** `/rerank` | "Is there already an agent for this?" over the registry | `reuse_existing` (with Compare) |
@@ -114,3 +117,12 @@ Code: MIT. Benchmark rows we wrote (hard negatives, scope pairs) are CC-BY-4.0. 
 - public MCP registry repos (MIT/Apache/BSD; see `data/raw/registry_benign/README.md`)
 
 Findings from scanning public projects are reported only in aggregate.
+
+## Security & data handling
+
+- **What is sent to Clocked.** Only the text of an agent's artifacts: tool descriptions, instructions and skill files, READMEs, configs and scripts, plus short summaries AgentAudit builds from them (capability facts, a findings summary for Decide). Each request goes over HTTPS to `clocked.rezolve.ai`. Clocked's own data handling is documented at https://clocked.rezolve.ai/docs/security.
+- **Nothing is executed.** Repositories are shallow-cloned and read as text. Install hooks, scripts, `package.json` lifecycle scripts and code blocks are sent to Inspect as data, never run. The one exception is opt-in: `collect_live` starts an MCP server command *you* supply, to read its `tools/list`.
+- **Keys stay server-side.** `CLOCKED_API_KEY` is read from the environment or a local `.env` (git-ignored). The web service never sends it to the browser, and the Docker image takes it at runtime (`-e CLOCKED_API_KEY=...`). The GitHub Action reads it from a repository secret.
+- **Redaction.** Every value Protect finds (secrets, tokens, personal data) is masked everywhere in the report: evidence quotes, Extract output, the registry record, and the Markdown/JSON/SARIF output. The web API also scrubs the artifact text it returns for highlighting. Reports never echo a secret back.
+- **Spend limits.** Every scan has a credit budget (`--budget`; the web service caps each request at 60 credits and each day at `AGENTAUDIT_DAILY_CREDITS`, plus a per-IP rate limit). `agentaudit estimate` predicts cost without calling the API, and responses are cached on disk (`.cache/`) so re-running a scan costs nothing.
+- **Local state.** The response cache (`.cache/clocked/`) and the credit ledger contain the text that was sent and the results. Delete `.cache/` to remove them.

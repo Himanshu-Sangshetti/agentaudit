@@ -29,7 +29,8 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 from .audit import Auditor, Report, capability_facts
-from .clocked import Clocked
+from .cli import explain
+from .clocked import Clocked, ClockedError
 from .collect import collect_manifest, collect_repo
 from .model import Agent
 from .render import to_markdown, verdict_of
@@ -48,8 +49,9 @@ MAX_MANIFEST_CHARS = 60_000
 # Which Clocked endpoint produced each kind of output, for the UI's provenance tags.
 ENDPOINT_OF = {"guard": "Guard /injection", "inspect": "Inspect /script", "protect": "Protect /pii",
                "verify": "Verify /grounding", "compare": "Compare /compare", "rerank": "Rerank /rerank",
-               "extract": "Extract /extract", "fill": "Fill /fill", "decide": "Decide /decide"}
-GROUP_OF = {"guard": "safety", "inspect": "safety", "protect": "safety", "verify": "facts"}
+               "extract": "Extract /extract", "fill": "Fill /fill", "decide": "Decide /decide",
+               "supply_chain": "Extract + Decide"}
+GROUP_OF = {"guard": "safety", "inspect": "safety", "protect": "safety", "supply_chain": "safety", "verify": "facts"}
 
 
 # --- Payload ---------------------------------------------------------------
@@ -160,6 +162,7 @@ limits = Limits()
 class AuditRequest(BaseModel):
     github_url: str | None = None
     manifest_yaml: str | None = None
+    precision: bool = False  # Decide second opinion on Guard flags in tool descriptions
 
 
 app = FastAPI(title="AgentAudit", version="0.1.0",
@@ -230,10 +233,14 @@ def audit(req: AuditRequest, request: Request):
     reg = [(a.name, capability_facts(a)) for a in registry + [agent]]
     try:
         with Clocked(tag="web-live", budget=PER_REQUEST_CREDITS) as c:
-            rep = Auditor(c).run(agent, reg)
-            limits.charge(c.usage.credits)
+            try:
+                rep = Auditor(c, precision=req.precision).run(agent, reg)
+            finally:
+                limits.charge(c.usage.credits)
+    except ClockedError as e:
+        raise HTTPException(502, explain(e)) from e
     except RuntimeError as e:
-        raise HTTPException(503, str(e)) from e
+        raise HTTPException(503, explain(e, PER_REQUEST_CREDITS)) from e
     return JSONResponse(build_payload(agent, rep))
 
 
@@ -253,15 +260,17 @@ EXAMPLES = [
     ("leave-balance-bot", "examples/demo_registry/leave-balance-bot.yaml", "manifest",
      "Safe, but it duplicates the approved HR Policy Assistant already in the registry."),
     ("password-reset-agent", "examples/demo_registry/password-reset-agent.yaml", "manifest",
-     "An IT agent whose admin script passes Inspect, but Guard flags its own system instructions as an override (a known false-positive pattern on 'instructions' artifacts)."),
+     "An IT agent with an admin script inside its declared scope: approved, with human approval for writes."),
     ("expense-summarizer", "examples/demo_registry/expense-summarizer.yaml", "manifest",
      "A clean, read-only agent with no named owner."),
+    ("pdf-tools-skill", "examples/pdf-tools-skill.yaml", "manifest",
+     "A skill whose setup tells the agent to fetch and run a password-protected archive from a raw IP (the ClawHub campaign pattern)."),
     ("mcp-memory", "data/raw/mcp/official-servers/src/memory", "repo",
      "Anthropic's reference Memory MCP server, scanned straight from its repository."),
 ]
 
 
-def build_examples(budget: float = 230) -> None:
+def build_examples(budget: float = 240) -> None:
     registry = load_registry()
     targets = []
     for name, path, kind, blurb in EXAMPLES:
@@ -277,7 +286,11 @@ def build_examples(budget: float = 230) -> None:
         auditor = Auditor(c)
         for name, agent, blurb in targets:
             before = c.usage.credits
-            rep = auditor.run(agent, reg)
+            try:
+                rep = auditor.run(agent, reg)
+            except RuntimeError as e:  # budget reached: keep what is done, re-run later for free (cached)
+                print(f"{name}: stopped ({e}); earlier examples were written")
+                break
             d = build_payload(agent, rep)
             d["blurb"] = blurb
             d["usage"] = {**d["usage"], "credits_this_report": c.usage.credits - before}

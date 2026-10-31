@@ -51,6 +51,7 @@
             <div class="row end"><button type="button" id="mf-sample" class="ghost">Load sample</button><button type="submit" class="primary">Audit</button></div>
           </form>
         </div>
+        <label class="precision" title="Ask Decide for a second opinion before flagging a tool description. Fewer false positives, some recall cost. Adds about 1 credit per flagged tool."><input type="checkbox" id="precision"> Precision mode for live audits <span class="muted">(Decide second opinion on Guard flags)</span></label>
         <div id="status" class="status hidden" role="status"></div>
       </div>
     </section>
@@ -63,7 +64,8 @@
         <div class="card"><h3><span class="dot safety"></span>Safety</h3>
           <p><b>Guard</b> finds instructions hidden in tool descriptions, skills and READMEs.
              <b>Inspect</b> judges every script against the agent's declared scope.
-             <b>Protect</b> finds secrets and personal data in prompts and configs.</p></div>
+             <b>Protect</b> finds secrets and personal data in prompts and configs.
+             <b>Extract + Decide</b> catch setup steps that fetch and run code from untrusted sources.</p></div>
         <div class="card"><h3><span class="dot docs"></span>Registry record</h3>
           <p><b>Extract</b> pulls owner, systems and credentials verbatim with offsets.
              <b>Fill</b> writes the five-field registry record.

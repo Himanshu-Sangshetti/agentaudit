@@ -471,6 +471,19 @@ class Auditor:
             rep.findings += self.inspect(agent)
         if on("pii"):
             rep.findings += self.protect(agent)
+        if on("supply_chain") and on("extract"):
+            # Prose that tells the agent or user to fetch and run something (Extract the targets, Decide trust).
+            # It needs Extract, so skipping "extract" (ablations) skips it too.
+            for a in agent.artifacts:
+                if a.kind not in {"instructions", "readme"} or not a.text.strip():
+                    continue
+                sc = supply_chain_check(self.c, a.text)
+                if sc["p_untrusted"] >= 0.5:
+                    rep.findings.append(Finding(
+                        "supply_chain", "high", "Untrusted download or execution prerequisite", a.path,
+                        [e for e in sc["evidence"] if e.get("quote")] or [{"quote": t, "start": -1, "end": -1}
+                                                                          for t in sc["targets"][:4]],
+                        {"p_untrusted": sc["p_untrusted"], "targets": redact(sc["targets"][:16], self._sensitive)}))
         if on("extract"):
             rep.facts = self.extract(agent)
         if on("fill"):

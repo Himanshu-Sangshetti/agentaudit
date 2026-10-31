@@ -12,6 +12,7 @@ RULES = {
     "inspect": ("AA002", "Script behaviour outside the agent's declared scope"),
     "protect": ("AA003", "Secret or personal data embedded in agent configuration"),
     "verify": ("AA004", "Capability claim contradicted by the agent's actual tools"),
+    "supply_chain": ("AA005", "Untrusted download or execution prerequisite"),
 }
 
 
