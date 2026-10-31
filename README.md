@@ -30,7 +30,7 @@ agentaudit scan ./agent --precision                        # fewer false flags (
 agentaudit usage                                           # credits spent, by experiment
 ```
 
-Exit code 1 means a quarantine verdict or a finding at or above `--fail-on` (default `high`). That makes it a drop-in CI gate. A scan of a typical agent costs about 20–60 credits (well under a cent) and takes a few seconds.
+Exit code 1 means a quarantine verdict or a finding at or above `--fail-on` (default `high`). That makes it a drop-in CI gate. A typical agent audit costs about 20–90 credits (roughly 0.4–2 US cents); run `agentaudit estimate` first to see the cost.
 
 **Web app:** `uv run uvicorn agentaudit.server:app --port 8000`. Judge mode shows recorded audits without spending credits. **GitHub Action:** see `action/` and `.github/workflows/agentaudit-example.yml`.
 
@@ -56,7 +56,7 @@ Design rules we kept to:
 
 ## Evidence: AgentAudit-Bench
 
-The first independent benchmark of Clocked's Guard and Inspect endpoints, run with Clocked's own methodology:
+To our knowledge, the first independent benchmark of Clocked's Guard and Inspect endpoints, run with Clocked's own methodology:
 - the same rows for every arm
 - balanced accuracy and AUROC
 - exact McNemar with Holm correction
@@ -67,16 +67,16 @@ Full tables, ablations and per-source breakdowns are in **[bench/RESULTS.md](ben
 | Suite (held-out) | Clocked default | Clocked + AgentAudit | Notes |
 |---|---|---|---|
 | Harness check: jev-benchmark (868) | 507/868 | — | Matches Clocked's published 507/868 exactly |
-| Tool poisoning, test (253) | 84.9 BAcc · 25.9% FPR | **97.6 · 2.2% FPR** | p = 9×10⁻⁸. The policy does most of the work, the rule the rest |
+| Tool poisoning, test (253) | 84.9 BAcc · 25.9% FPR | **97.6 · 2.2% FPR** | Holm p = 1.9×10⁻⁷. The policy does most of the work, the rule the rest |
 | Tool poisoning, external (249) | 88.4 · 23.2% FPR | **97.3 · 5.4% FPR** | Real-world benign MCP tools + published attacks, never used for design |
-| Scripts, test (206) | 84.4 | **89.9** | Change scope turns 50% (chance) into 79% on scope pairs |
+| Scripts, test (206) | 84.4 (87.4 with a tuned threshold, n.s.) | **89.9** | The gain is scope: 50% (chance) → 79% on scope pairs |
 | Malicious skills, real campaign (244) | 72.9 (best single endpoint) | **88.6** · 3.2% FPR | New Extract + Decide supply-chain check: recall 48% → 81% |
-| Governance verdicts, held-out agents (38) | 60.5 (one Decide call) | **78.9** · **89.5** in `--precision` | Leave-one-out: each safety endpoint and Compare is necessary for its own defect type |
+| Governance verdicts, held-out agents (38) | 60.5 (one Decide call) | **78.9** · **89.5** in `--precision` | Each safety endpoint and Compare is necessary for its own defect type (cells of 3–9 agents). Owner rule v2 is post hoc and disclosed (v1: 65.8) |
 | Real-world: 9 public MCP repos | — | 0 false quarantines in `--precision` (2 in default) | Hand-verified, aggregate only (`bench/REALWORLD.md`) |
 
 **Which mode?** Use `--precision` to gate a registry of mostly reputable agents. The default is the maximum-recall setting for CI on untrusted code. Full write-up: [docs/REPORT.md](docs/REPORT.md).
 
-Open-source baselines (ProtectAI and deepset DeBERTa, keyword regex) are in every table. They're scored both at their standard threshold and at a threshold tuned on dev, to match the tuning our configuration got.
+Open-source baselines (ProtectAI and deepset DeBERTa, keyword regex) are in the Guard tables. They're scored both at their standard threshold and at a threshold tuned on dev, to match the tuning our configuration got.
 
 **Reproduce:** every Clocked response is cached, so `uv run python bench/report.py` regenerates every number without spending credits. Raw runs: `bench/suites/run_*.py`. Credit ledger: `bench/credit_ledger.jsonl`.
 

@@ -6,9 +6,9 @@
 
 Enterprises now deploy AI agents (MCP servers, agent skills and assistant configurations) faster than they can review them. We present **AgentAudit**, a pre-deployment audit that composes nine endpoints of the Clocked decision-model API into one governed verdict, and **AgentAudit-Bench**, to our knowledge the first independent evaluation of Clocked's Guard (prompt injection) and Inspect (script behaviour) endpoints on agent artifacts.
 
-First, we validate our harness by reproducing Clocked's published decision benchmark exactly (507/868). We then show that how a decision model is deployed matters as much as the model:
+First, we validate our harness by reproducing Clocked's published decision benchmark exactly (507/868). We then measure how much of the accuracy comes from how the model is deployed:
 
-1. **Tool poisoning.** On held-out MCP tool descriptions, agent-specific context and a consensus decision rule raise balanced accuracy from 84.9 to **97.6** and cut false positives from 25.9% to **2.2%** (McNemar p < 10⁻⁷). Tuning only Clocked's threshold gives no gain. On real-world tool descriptions never used for design, false positives fall from 23.2% to 5.4% at 100% recall.
+1. **Tool poisoning.** On held-out MCP tool descriptions, agent-specific context and a consensus decision rule raise balanced accuracy from 84.9 to **97.6** and cut false positives from 25.9% to **2.2%** (Holm-adjusted McNemar p = 1.9×10⁻⁷). Tuning only Clocked's threshold gives no gain. On real-world tool descriptions never used for design, false positives fall from 23.2% to 5.4% at 100% recall.
 2. **Scripts.** Supplying the approved change scope lets Inspect separate the same command under authorized and unauthorized scopes. Accuracy on these pairs rises from 50% (chance) to 79%. Without scope pairs the gain over a threshold-tuned default is small and not significant.
 3. **Malicious skills.** On a real 2026 malware campaign, a new supply-chain check (Extract + Decide) raises balanced accuracy from 72.9 (best single endpoint) to **88.6** (recall 48% → 81%, false positives 3.2%).
 4. **Governance.** On 38 held-out agents, the full audit reaches 78.9% verdict accuracy (89.5% in precision mode), against 60.5% for a single decision call. Leave-one-endpoint-out ablations show each safety endpoint and Compare is necessary for exactly the defect class it covers.
@@ -165,7 +165,7 @@ Extract, Fill, Verify and Rerank don't change verdicts here. They supply the rec
 **Determinism and cost.**
 - A 30-row uncached re-run was identical (Δp = 0).
 - Median round trip: 0.3–0.5 s per call.
-- A typical audit costs 15–60 credits (under one US cent).
+- A typical audit costs about 20–90 credits (about 0.4–2 US cents at overage rates).
 
 ## 6. Limitations
 
