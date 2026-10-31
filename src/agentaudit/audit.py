@@ -198,6 +198,18 @@ def supply_chain_check(client, text: str) -> dict:
     return {"targets": targets, "p_untrusted": p, "evidence": evidence}
 
 
+def accountable_owner(agent: Agent) -> str | None:
+    """The owner the registry holds accountable: a manifest `owner`, or a CODEOWNERS file in the repo."""
+    if agent.declared.get("owner"):
+        return str(agent.declared["owner"])
+    for a in agent.artifacts:
+        if a.path.lower().endswith("codeowners"):
+            owners = re.findall(r"@[\w./-]+", a.text)
+            if owners:
+                return ", ".join(sorted(set(owners))[:5])
+    return None
+
+
 def autonomy(answers: dict, record: dict) -> str:
     """Policy, not the model, sets authority: the verdict and the agent's write access decide autonomy."""
     verdict = (answers.get("verdict") or {}).get("choice")
@@ -406,7 +418,9 @@ class Auditor:
     # Verdict --------------------------------------------------------------
     def decide(self, agent: Agent, report: Report) -> dict:
         lines = [f"Agent '{agent.name}' audit summary."]
-        lines.append(f"Owner: {report.record.get('owner', {}).get('value') or agent.declared.get('owner') or 'none named'}")
+        # Accountability is registry metadata, not something to infer: an upstream maintainer named in a README
+        # is not an accountable internal owner. Owner = the declared owner (manifest field or CODEOWNERS).
+        lines.append(f"Accountable owner: {accountable_owner(agent) or 'none named'}")
         for f in report.findings:
             q = f" Evidence: \"{f.evidence[0]['quote'][:160]}\"" if f.evidence and f.check != "protect" else ""
             lines.append(f"- [{f.severity}] {f.check}: {f.title} in {f.path}.{q}")

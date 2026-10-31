@@ -192,3 +192,12 @@ def test_protect_batches_and_maps_offsets():
     f = aud.protect(a)
     assert len(calls) == 1 and len(f) == 1 and f[0].path == "sys"
     assert a.artifacts[1].text[f[0].evidence[0]["start"]:f[0].evidence[0]["end"]] == "sk_live_XYZ1234"
+
+
+def test_accountable_owner_is_declared_not_inferred():
+    from agentaudit.audit import accountable_owner
+    a = Agent("x", "o", artifacts=[Artifact("readme", "README.md", "Maintained by Acme Corp. github.com/acme/x")])
+    assert accountable_owner(a) is None
+    a.artifacts.append(Artifact("config", ".github/CODEOWNERS", "* @acme/platform-team"))
+    assert accountable_owner(a) == "@acme/platform-team"
+    assert accountable_owner(Agent("y", "o", declared={"owner": "IT Desk"})) == "IT Desk"

@@ -124,6 +124,8 @@ def collect_repo(root: str | Path, name: str | None = None) -> Agent:
                 agent.artifacts.append(Artifact("script", rel + "#install", sh))
         elif p.suffix in SCRIPT_EXT or low == "dockerfile" or (p.suffix == ".py" and "scripts" in p.parts):
             agent.artifacts.append(Artifact("script", rel, _read(p)))
+        elif low == "codeowners":
+            agent.artifacts.append(Artifact("config", rel, _read(p)))
         elif low in {"mcp.json", "claude_desktop_config.json", "smithery.yaml", "server.json"}:
             agent.artifacts.append(Artifact("config", rel, _read(p)))
     for t in agent.tools:
