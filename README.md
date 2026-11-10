@@ -4,7 +4,11 @@
 
 AgentAudit checks an AI agent before it is allowed to run inside a company. You give it the agent: an MCP server, a skill file, or an agent definition from a platform. It tells you whether the agent should be approved, needs an owner, duplicates an agent you already have, or should be quarantined, and it quotes the exact lines that led to that decision.
 
-It is built on [Clocked](https://clocked.rezolve.ai), Rezolve.ai's API of small decision models, and uses all nine of its endpoints. It was made for the Clocked Build Challenge.
+It is built on [Clocked](https://clocked.rezolve.ai), Rezolve.ai's decision API, and uses all nine of its endpoints. It was made for the Clocked Build Challenge.
+
+<a href="https://himanshu-sangshetti.github.io/agentaudit/media/demo.mp4"><img src="docs/media/poster.png" alt="Video still: the terminal running agentaudit scan on a payroll agent. Each finding is listed next to the Clocked endpoint that caught it, ending in the verdict Quarantine, 99.5%." width="100%"></a>
+
+**[Watch the 73-second video](https://himanshu-sangshetti.github.io/agentaudit/media/demo.mp4)**: the problem, one full audit in the terminal, where it runs, and the results.
 
 ## The problem
 
@@ -76,8 +80,6 @@ agentaudit scan . --format sarif --out agentaudit.sarif      # for GitHub code s
 Nothing from the agent is ever executed: repositories are cloned and read as text. A typical audit costs 20 to 90 credits, about 0.4 to 2 US cents, and `agentaudit estimate` predicts the cost before you spend anything. The command exits with code 1 on a quarantine, so it can block a CI job or a publish step.
 
 There are two modes. The default favours catching problems, which suits code you don't trust. `--precision` asks Decide for a second opinion before flagging a tool description, which suits a registry of mostly trusted agents: in our real-world sample it removed every false quarantine.
-
-A short video walks through the web version of the same reports: [demo.mp4](https://himanshu-sangshetti.github.io/agentaudit/media/demo.mp4).
 
 ## How it works
 
