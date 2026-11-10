@@ -72,12 +72,12 @@ def roc_panel(ax, curves, ops=None, title="", inset=True):
                             edgecolor=SURF, linewidth=1, zorder=5)
                 short = {"Clocked default verdict": "as shipped", "AgentAudit frozen (consensus)": "AgentAudit",
                          "AgentAudit precision mode": "precision"}.get(name, name)
-                ins.annotate(short, (pt["fpr"], pt["tpr"]), xytext=(-48 if "as shipped" in short else 5, -9 if "precision" in name else 4),
+                ins.annotate(short, (pt["fpr"], pt["tpr"]), xytext={"as shipped": (-14, -13), "AgentAudit": (5, -24), "precision": (5, -13)}.get(short, (5, -13)),
                              textcoords="offset points", fontsize=7, color=INK)
         ins.set_xlim(-0.005, 0.3)
         ins.set_ylim(0.6, 1.01)
         ins.tick_params(labelsize=7)
-        ins.set_title("zoom: FPR 0–0.3, dots = deployed operating points", fontsize=7, color=INK2, loc="left", fontweight="normal")
+        ins.set_xlabel("zoom: FPR 0–0.3 · dots = deployed operating points", fontsize=7, color=INK2)
         for s in ins.spines.values():
             s.set_edgecolor("#cfcdc6")
 
