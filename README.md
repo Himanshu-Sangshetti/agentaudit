@@ -8,7 +8,7 @@ On held-out data, composing the endpoints gets 78.9% of whole-agent verdicts rig
 
 <a href="https://himanshu-sangshetti.github.io/agentaudit/media/demo.mp4"><img src="docs/media/poster.png" alt="Video still: the AgentAudit architecture, with agent artifacts routed to the nine Clocked endpoints, their typed outputs, the policy rules and the governed verdict." width="100%"></a>
 
-[Watch the 90-second video](https://himanshu-sangshetti.github.io/agentaudit/media/demo.mp4): the problem, a real recorded walkthrough of the CLI against the live Clocked API, and the benchmark results.
+[Watch the 84-second video](https://himanshu-sangshetti.github.io/agentaudit/media/demo.mp4): the problem, a real recorded walkthrough of the CLI against the live Clocked API, and the benchmark results.
 
 ## Where it sits
 
