@@ -16,10 +16,10 @@ We then built **AgentAudit-Bench**, to our knowledge the first independent bench
 |---|---|---|
 | Poisoned MCP tools, held-out test | 84.9 BAcc · **25.9%** false alarms | **97.6** BAcc · **2.2%** false alarms |
 | 199 real-world tools never used for design | **23.2%** false alarms | **5.4%** false alarms, 25/25 attacks caught |
-| A real 2026 malicious-skill campaign | 48% caught (best single endpoint) | **81%** caught, 3.2% false alarms |
+| A real 2026 malicious-skill campaign | 48.3% caught (best single endpoint) | **80.5%** caught, 3.2% false alarms |
 | Governance verdicts on 38 held-out agents | 60.5% (one Decide call) | **78.9%** · **89.5%** in precision mode |
 
-Our harness reproduces Clocked's own published benchmark exactly (**507/868**), and Clocked's outputs were fully deterministic on re-run (**30/30**).
+Our harness reproduces Clocked's own published benchmark exactly (**507/868**), and Clocked Guard's outputs were fully deterministic on re-run (**30/30 Guard re-runs**).
 
 ---
 
@@ -89,7 +89,7 @@ Open-source detectors (ProtectAI and deepset DeBERTa, a keyword regex) run on th
 
 ![Figure 1. (a) ROC on the held-out poisoned-tool test set with deployed operating points; (b) Guard score distributions for benign and poisoned tools, as shipped vs with the AgentAudit policy; (c) balanced accuracy with 95% CIs for every arm on three suites.](figures/fig0_hero.png)
 
-*Figure 1. Same model, different deployment. (a) ROC curves with the operating points each deployment actually uses. (b) As shipped, 27% of benign tool descriptions score above 0.5; with the agent policy, 9%. (c) Every arm with 95% bootstrap CIs.*
+*Figure 1. Same model, different deployment. (a) ROC curves with the operating points each deployment actually uses. (b) As shipped, 25.9% of benign tool descriptions score above 0.5; with the agent policy, 8.6%. (c) Every arm with 95% bootstrap CIs.*
 
 As shipped, Clocked Guard catches almost every attack (95.6%) but flags **one in four legitimate tool descriptions**. Tool descriptions are written in the imperative ("Create a new file…"), which looks like an instruction to a generic injection detector. Tuning only Clocked's threshold doesn't help: the best dev threshold is the default 0.5. With AgentAudit's agent-specific policy and consensus rule, false alarms fall to **2.2%** at 97.4% recall (Holm-adjusted McNemar p = 1.9 × 10⁻⁷).
 
@@ -119,7 +119,7 @@ On 199 real tool descriptions from 24 public MCP servers, none used during desig
 
 
 
-The same command, say "disable Defender, install, re-enable", can be an approved change or an attack. Without scope, Inspect is at chance (50%) on these pairs. Given the approved change ticket, it reaches 79% (96% with the consensus rule). **Honest caveat:** on ordinary scripts a threshold-tuned default already gets 87.4 against our 89.9, and that difference isn't significant (p = 0.15). The value is in scope, not a better prompt.
+The same command, say "disable Defender, install, re-enable", can be an approved change or an attack. Without scope, Inspect is at chance (50%) on these pairs. Given the approved change ticket, it reaches 78.6% (96.4% with the consensus rule). **Honest caveat:** on ordinary scripts a threshold-tuned default already gets 87.4 against our 89.9, and that difference isn't significant (p = 0.15). The value is in scope, not a better prompt.
 
 ### 4.4 A real malware campaign
 
@@ -127,7 +127,7 @@ The same command, say "disable Defender, install, re-enable", can be an approved
 
 *Figure 6. Balanced accuracy with 95% bootstrap CIs for every arm on every suite.*
 
-Failure analysis on the dev split showed what the endpoints miss. Inspect caught 22 of 37 malicious skills, nearly all with base64 or pipe-to-shell commands. Of the 15 it missed, 14 carry a link and only one pipes to a shell: the payload is **prose**, not code ("first install the helper from this link"). We added a **supply-chain check**. Extract pulls, verbatim and with offsets, everything the skill asks you to download or run; Decide judges whether the source is untrusted. On the held-out test, the pipeline catches **80.5%** against 48.3% for the best single endpoint, at 3.2% false alarms (p = 7 × 10⁻⁶). On its own, the check reaches 77% recall at 0.6% false alarms.
+Failure analysis on the dev split showed what the endpoints miss. Inspect caught 22 of 37 malicious skills, nearly all with base64 or pipe-to-shell commands. Of the 15 it missed, 14 carry a link and only one pipes to a shell: the payload is **prose**, not code ("first install the helper from this link"). We added a **supply-chain check**. Extract pulls, verbatim and with offsets, everything the skill asks you to download or run; Decide judges whether the source is untrusted. On the held-out test, the pipeline catches **80.5%** against 48.3% for the best single endpoint, at 3.2% false alarms (Holm p = 7.4 × 10⁻⁶). On its own, the check reaches 77% recall at 0.6% false alarms.
 
 ### 4.5 Governance: every endpoint earns its place
 

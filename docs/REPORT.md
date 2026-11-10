@@ -10,10 +10,10 @@ First, we validate our harness by reproducing Clocked's published decision bench
 
 1. **Tool poisoning.** On held-out MCP tool descriptions, agent-specific context and a consensus decision rule raise balanced accuracy from 84.9 to **97.6** and cut false positives from 25.9% to **2.2%** (Holm-adjusted McNemar p = 1.9×10⁻⁷). Tuning only Clocked's threshold gives no gain. On real-world tool descriptions never used for design, false positives fall from 23.2% to 5.4% at 100% recall.
 2. **Scripts.** Supplying the approved change scope lets Inspect separate the same command under authorized and unauthorized scopes. Accuracy on these pairs rises from 50% (chance) to 79%. Without scope pairs the gain over a threshold-tuned default is small and not significant.
-3. **Malicious skills.** On a real 2026 malware campaign, a new supply-chain check (Extract + Decide) raises balanced accuracy from 72.9 (best single endpoint) to **88.6** (recall 48% → 81%, false positives 3.2%).
+3. **Malicious skills.** On a real 2026 malware campaign, a new supply-chain check (Extract + Decide) raises balanced accuracy from 72.9 (best single endpoint) to **88.6** (recall 48.3% → 80.5%, false positives 3.2%).
 4. **Governance.** On 38 held-out agents, the full audit reaches 78.9% verdict accuracy (89.5% in precision mode), against 60.5% for a single decision call. Leave-one-endpoint-out ablations show each safety endpoint and Compare is necessary for exactly the defect class it covers.
 
-Clocked's outputs were fully deterministic in a re-run (30/30 identical).
+Clocked Guard's outputs were fully deterministic in a re-run (30/30 Guard re-runs identical).
 
 ## 1. Introduction
 
@@ -130,7 +130,7 @@ Ablation (BAcc): the policy alone gives 95.7, the rule alone 88.1, both 97.6. Re
 
 **Scripts (test, n = 206).**
 - AgentAudit: 89.9, against 84.4 for the default and 87.4 for a threshold-tuned default (p = 0.15).
-- Scope pairs: 50% → 79% (96% with the consensus rule).
+- Scope pairs: 50% → 78.6% (96.4% with the consensus rule).
 - Most of the value is scope, not a better generic prompt.
 
 **Malicious skills (test, n = 244):**

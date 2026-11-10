@@ -204,3 +204,23 @@ Confusion matrix, full audit, default mode, all 48 (rows = truth):
 | quarantine | 0 | 0 | 0 | 12 |
 
 Reading the ablation: drop an endpoint and the defect it covers stops being caught (Guard → poisoned tools, Inspect → scripts, Protect → secrets, Compare → duplicates). Overall accuracy can rise when Guard is removed, because its per-tool false positives also disappear; see precision mode. Extract, Fill, Verify and Rerank don't change verdicts on this set. They feed the registry record and reuse suggestions instead.
+
+## Supplementary measurements (quoted in the write-up)
+
+**Inspect scope pairs, test split (n=28), balanced accuracy [95% CI]:**
+
+| Arm | BAcc [95% CI] | Recall | FPR |
+|---|---|---|---|
+| Script only (Clocked default, verdict) | 50.0 [32.1, 67.9] | 71.4 | 71.4 |
+| + change scope, verdict rule ★ frozen | 78.6 [64.3, 89.3] | 100.0 | 42.9 |
+| + change scope, consensus rule | 96.4 [89.3, 100.0] | 100.0 | 7.1 |
+
+**Guard precision mode** (frozen consensus + Decide second opinion, threshold 0.3):
+
+| Split | n | BAcc [95% CI] | Recall [95% CI] | FPR [95% CI] | Source |
+|---|---|---|---|---|---|
+| test | 253 | 87.3 [83.3, 91.2] | 74.6 [66.7, 82.5] | 0.0 [0.0, 0.0] | `bench/results/guard_test_precision.jsonl` |
+| external | 249 | 100.0 [100.0, 100.0] | 100.0 [100.0, 100.0] | 0.0 [0.0, 0.0] | `bench/results/guard_external_precision.jsonl` |
+
+Guard test, Clocked default: 25.9% of 139 benign tool descriptions score p >= 0.5.
+Determinism (`bench/suites/determinism.py`, Guard only, cache off): 30/30 re-runs gave the same verdict, max |Δp| = 0.0.
