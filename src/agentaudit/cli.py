@@ -178,6 +178,8 @@ def scan(
         if out:
             out.write_text(text)
             console.print(f"Wrote {out}")
+        elif fmt == "md" and sys.stdout.isatty():
+            Console().print(Markdown(text))  # rendered for a terminal; piped output stays plain Markdown
         else:
             sys.stdout.write(text + "\n")
     console.print(f"[dim]{spent:.0f} credits spent[/dim]")
