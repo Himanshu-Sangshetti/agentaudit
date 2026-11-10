@@ -19,7 +19,7 @@ Clocked Guard's outputs were fully deterministic in a re-run (30/30 Guard re-run
 
 Agent platforms make it cheap to create agents and expensive to govern them. One practitioner's account of "850 agents built and a dozen in use" captures the problem (Rezolve.ai, 2026). The risks are concrete:
 - **Tool poisoning:** instructions hidden in tool descriptions the model reads but the user doesn't see (Invariant Labs, 2025; MCPTox, Wang et al., 2025).
-- **Malicious skills:** delivered through marketplaces (Liu et al., USENIX Security 2026).
+- **Malicious skills:** delivered through skill marketplaces, as in the February 2026 ClawHub campaign (agent-skill-malware dataset; MaliciousSkillBench, arXiv:2608.19901).
 - **Unowned agents:** agents with broad access and no accountable owner.
 
 Decision models such as Clocked, TypeSafe Jev, OpenAI Decisions and Microsoft-Decision-1 return typed judgments with probabilities in milliseconds. That makes them natural building blocks for automated review. Two questions remain open:
