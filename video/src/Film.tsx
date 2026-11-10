@@ -96,43 +96,35 @@ const Sits: React.FC = () => {
 };
 
 // ---------------------------------------------------------------- 3 · real walkthrough
-const VW = 1760, VH = 900, VX = 80, VY = 120, S0 = VW / 1640;
+const SRCW = 3280, SRCH = 4300;
+const VW = 1760, VH = 900, VX = 80, VY = 120, S0 = VW / SRCW;
 type Seg = {from: number; len: number; src: number; rate: number};
 const SEGS: Seg[] = [
-  {from: 0, len: 140, src: 0.3, rate: 1},       // type the scan
-  {from: 140, len: 110, src: 4.9, rate: 2},     // live scan (2x)
-  {from: 250, len: 260, src: 11.8, rate: 0.35}, // report 1 (static)
-  {from: 510, len: 120, src: 17.8, rate: 1.75}, // type scan 2
-  {from: 630, len: 100, src: 24.75, rate: 3},   // live scan 2 (3x)
-  {from: 730, len: 270, src: 34.6, rate: 0.3},  // report 2 (static)
-  {from: 1000, len: 90, src: 42.3, rate: 0.4},  // exit code
+  {from: 0, len: 150, src: 0.2, rate: 1},      // type the command
+  {from: 150, len: 110, src: 4.7, rate: 1.4},  // live scan
+  {from: 260, len: 600, src: 9.75, rate: 0.05}, // the report (static)
+  {from: 860, len: 90, src: 11.0, rate: 0.4},  // exit code
 ];
-export const WALK_LEN = 1090;
+export const WALK_LEN = 950;
 const CAM: [number, number, number, number][] = [
-  [0, 620, 120, 1.6], [140, 620, 150, 1.6], [250, 620, 200, 1.45], [310, 620, 234, 1.5], [340, 620, 770, 1.4], [400, 620, 940, 1.4],
-  [450, 620, 1160, 1.35], [510, 620, 120, 1.6], [630, 620, 150, 1.6], [730, 620, 200, 1.45], [790, 620, 756, 1.4],
-  [845, 620, 836, 1.4], [900, 620, 1056, 1.4], [950, 620, 1700, 1.35], [1000, 620, 1850, 1.45], [1090, 620, 1860, 1.5],
+  [0, 1500, 430, 1.55], [150, 1500, 450, 1.5], [260, 1500, 460, 1.45], [300, 1500, 460, 1.5], [375, 1500, 1530, 1.4],
+  [485, 1500, 1690, 1.4], [595, 1500, 2140, 1.4], [705, 1500, 2590, 1.4], [815, 1500, 2620, 1.4], [860, 1500, 3760, 1.5], [950, 1500, 3790, 1.55],
 ];
 const cam = (f: number) => {
   const xs = CAM.map((k) => k[0]);
   const at = (i: number) => interpolate(f, xs, CAM.map((k) => k[i]), {...cl, easing: io});
   const z = at(3);
-  return {cx: Math.min(at(1), VW / (2 * S0 * z) + 4), cy: at(2), z};
+  return {cx: Math.min(at(1), VW / (2 * S0 * z) + 8), cy: at(2), z};
 };
-type Mark = {a: number; b: number; y0: number; y1: number; x0?: number; x1?: number; note: string; color?: string; dim?: number};
+type Mark = {a: number; b: number; y0: number; y1: number; x0?: number; x1?: number; note: string; sub?: string; color?: string; dim?: number};
 const MARKS: Mark[] = [
-  {a: 50, b: 140, y0: 88, y1: 122, x1: 900, note: 'one command · nothing from the agent is executed'},
-  {a: 270, b: 335, y0: 216, y1: 252, x1: 1150, note: 'verdict, from Decide', color: C.red},
-  {a: 345, b: 398, y0: 712, y1: 828, x1: 1220, note: 'Guard: the setup step is an order to the model', color: C.red},
-  {a: 402, b: 448, y0: 896, y1: 984, x1: 1060, note: 'Extract → Decide: untrusted download', color: C.red},
-  {a: 452, b: 510, y0: 1130, y1: 1196, x1: 1540, note: 'each tool: review, enable or keep disabled'},
-  {a: 560, b: 630, y0: 88, y1: 122, x1: 1110, note: 'an in-house agent vs the approved registry'},
-  {a: 740, b: 790, y0: 216, y1: 252, x1: 1150, note: 'quarantine again', color: C.red},
-  {a: 795, b: 845, y0: 712, y1: 800, x1: 1360, note: 'Guard: hidden BCC instruction', color: C.red},
-  {a: 850, b: 900, y0: 792, y1: 880, x1: 1140, note: 'Inspect: uploads ~/.aws and ~/.ssh', color: C.red},
-  {a: 905, b: 950, y0: 1026, y1: 1086, x1: 900, note: 'Verify: README claim is false', color: C.red},
-  {a: 955, b: 1000, y0: 1626, y1: 1766, x1: 700, note: 'Compare + Rerank: no approved duplicate'},
-  {a: 1004, b: 1090, y0: 1866, y1: 1902, x1: 220, note: 'exit 1: the CI job fails, the merge is blocked', color: C.red, dim: 0.9},
+  {a: 60, b: 150, y0: 160, y1: 206, x0: 60, x1: 2120, note: 'one command · nothing from the agent is executed', sub: 'AGENTAUDIT CLI'},
+  {a: 272, b: 368, y0: 424, y1: 472, x0: 60, x1: 2200, note: 'blocked before it ever runs', sub: 'CLOCKED DECIDE · GOVERNED VERDICT', color: C.red},
+  {a: 382, b: 478, y0: 1452, y1: 1584, x0: 60, x1: 2600, note: 'a hidden line BCCs every payslip to an outsider', sub: 'CLOCKED GUARD · TOOL DESCRIPTION', color: C.red},
+  {a: 492, b: 588, y0: 1616, y1: 1744, x0: 60, x1: 1960, note: 'its cleanup script uploads your cloud and SSH keys', sub: 'CLOCKED INSPECT · SCRIPT', color: C.red},
+  {a: 602, b: 698, y0: 2096, y1: 2176, x0: 60, x1: 1700, note: "the README says it never sends data out. it does.", sub: 'CLOCKED VERIFY · README CLAIM', color: C.red},
+  {a: 712, b: 852, y0: 2524, y1: 2660, x0: 60, x1: 2240, note: 'so the risky tool stays switched off', sub: 'POLICY · PER-TOOL DECISION'},
+  {a: 866, b: 950, y0: 3800, y1: 3850, x0: 60, x1: 300, note: 'exit code 1: CI blocks the merge', sub: 'SAME CHECK AS A GITHUB ACTION', color: C.red, dim: 0.9},
 ];
 
 const Walk: React.FC = () => {
@@ -140,19 +132,19 @@ const Walk: React.FC = () => {
   const {cx, cy, z} = cam(f);
   const s = S0 * z;
   const toScreen = (x: number, y: number) => ({x: VX + VW / 2 + (x - cx) * s, y: VY + VH / 2 + (y - cy) * s});
-  const live = (f >= 140 && f < 250) || (f >= 630 && f < 730);
+  const live = f >= 150 && f < 260;
   const enter = p(f, 0, 30);
   return (
     <AbsoluteFill style={{background: darkBg}}>
       <Kicker n="02" t="THE REAL PRODUCT · RECORDED, LIVE API" dark />
       <div style={{position: 'absolute', left: VX, top: VY, width: VW, height: VH, borderRadius: 20, overflow: 'hidden', background: '#1e1e2e',
         boxShadow: '0 40px 120px rgba(0,0,0,.5)', transform: `scale(${0.94 + 0.06 * enter})`, opacity: enter}}>
-        <div style={{position: 'absolute', left: 0, top: 0, width: 1640, height: 2400, transformOrigin: '0 0',
+        <div style={{position: 'absolute', left: 0, top: 0, width: SRCW, height: SRCH, transformOrigin: '0 0',
           transform: `translate(${VW / 2}px, ${VH / 2}px) scale(${s}) translate(${-cx}px, ${-cy}px)`}}>
           {SEGS.map((g) => (
             <Sequence key={g.from} from={g.from} durationInFrames={g.len} layout="none">
               <OffthreadVideo src={staticFile('walkthrough.mp4')} startFrom={Math.round(g.src * 30)} playbackRate={g.rate} muted
-                style={{width: 1640, height: 2400, display: 'block'}} />
+                style={{width: SRCW, height: SRCH, display: 'block'}} />
             </Sequence>
           ))}
         </div>
@@ -164,7 +156,7 @@ const Walk: React.FC = () => {
         const tl = toScreen(m.x0 ?? 30, m.y0), br = toScreen(m.x1 ?? 1600, m.y1);
         const col = m.color ?? LIGHT_BLUE;
         const left = Math.max(VX + 10, tl.x - 14), top = tl.y - 8, w = Math.min(VX + VW - 10, br.x + 14) - left, h = br.y - tl.y + 16;
-        const noteY = top + h + 18 + 70 > VY + VH ? top - 78 : top + h + 14;
+        const noteY = top + h + 18 + 120 > VY + VH ? top - 132 : top + h + 16;
         return (
           <div key={i} style={{position: 'absolute', inset: 0, opacity: o}}>
             <svg width={1920} height={1080} style={{position: 'absolute', inset: 0}}>
@@ -176,7 +168,10 @@ const Walk: React.FC = () => {
             </svg>
             <div style={{position: 'absolute', left: Math.min(left + 10, 1300), top: noteY, fontFamily: HAND, fontWeight: 700, fontSize: 50, color: col,
               transform: `rotate(-2deg) translateY(${(1 - t) * 10}px)`, opacity: t, whiteSpace: 'nowrap',
-              background: '#121318ee', padding: '2px 18px 6px', borderRadius: 12, boxShadow: '0 10px 30px rgba(0,0,0,.5)'}}>{m.note}</div>
+              background: '#121318f2', padding: '6px 22px 10px', borderRadius: 14, boxShadow: '0 10px 30px rgba(0,0,0,.5)', fontSize: 60}}>
+              {m.note}
+              {m.sub && <div style={{fontFamily: HEAD, fontSize: 24, letterSpacing: 2, color: '#9a9ca3', marginTop: -2, transform: 'rotate(2deg)'}}>{m.sub}</div>}
+            </div>
           </div>
         );
       })}
@@ -185,7 +180,7 @@ const Walk: React.FC = () => {
           background: '#0e0f13dd', border: `1.5px solid ${C.blue}`}}>
           <div style={{width: 14, height: 14, borderRadius: 7, background: C.red, opacity: 0.5 + 0.5 * Math.sin(f / 3)}} />
           <span style={{fontFamily: HEAD, fontSize: 30, color: '#fff', letterSpacing: 2}}>LIVE · CALLING CLOCKED</span>
-          <span style={{fontFamily: MONO, fontSize: 20, color: '#9a9ca3'}}>{f < 300 ? '2×' : '3×'}</span>
+          <span style={{fontFamily: MONO, fontSize: 22, color: '#9a9ca3'}}>{Math.round(15 * Math.min(1, (f - 150) / 105))} / 15 calls</span>
         </div>
       )}
     </AbsoluteFill>

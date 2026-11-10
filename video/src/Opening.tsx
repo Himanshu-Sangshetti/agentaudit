@@ -176,7 +176,8 @@ const PaperBeat: React.FC = () => {
         <path d="M110,772 C600,769 1200,775 1810,771" stroke={C.ink} strokeWidth={2.5} fill="none" pathLength={1}
           strokeDasharray="1 1" strokeDashoffset={1 - p(f, 0, 22)} opacity={1 - gone} />
       </svg>
-      <Note text="one agent" x={640} y={300} at={30} until={T.title - 6} arrow="M60,70 C90,120 120,150 150,190" />
+      <Note text="an AI agent: Payroll Helper" x={560} y={300} at={30} until={T.title - 6} arrow="M160,70 C190,120 210,150 230,190" />
+      <Note text="it emails employees their payslips" x={560} y={240} at={44} until={T.title - 6} color="#8a8c94" size={40} />
       <Headline at={T.title} />
       <svg width={1920} height={1080} style={{position: 'absolute', inset: 0}}>
         <path d={`M${HL.x},${HL.y + 390} C700,${HL.y + 382} 1100,${HL.y + 396} ${PERIOD.x - 50},${HL.y + 386}`} stroke={C.blue} strokeWidth={9}
@@ -216,7 +217,7 @@ const CodeBeat: React.FC = () => {
         })}
       </div>
       <Note text="hidden instruction!" x={1130} y={96} at={T.note + 8} color={C.red} arrow="M10,66 C-40,110 -120,160 -190,176" />
-      <Note text="a person skims it. the model obeys it." x={20} y={480} at={T.note + 24} color={C.mute} size={44} />
+      <Note text="every payslip, silently copied to an outsider" x={20} y={480} at={T.note + 24} color={C.red} size={50} />
     </div>
   );
 };
@@ -258,7 +259,7 @@ const OrbitBeat: React.FC = () => {
         })}
         <div style={{position: 'absolute', left: 0, right: 0, top: 892, textAlign: 'center', fontFamily: HEAD, fontSize: 42, color: '#d6d7dc',
           opacity: p(f, T.orbit + 10)}}>{Math.round(prog * 9)} / 9 CLOCKED ENDPOINTS</div>
-        <Note text="each part to the endpoint built for it" x={1290} y={140} at={T.orbit + 18} until={T.slam} size={42} arrow="M40,64 C20,110 -40,140 -110,150" />
+        <Note text="AgentAudit asks Clocked one question per part" x={1290} y={140} at={T.orbit + 18} until={T.slam} size={42} arrow="M40,64 C20,110 -40,140 -110,150" />
       </div>
       {after && (
         <div style={{position: 'absolute', left: 0, right: 0, top: 360, textAlign: 'center'}}>
@@ -270,7 +271,7 @@ const OrbitBeat: React.FC = () => {
             </svg>
           </div>
           <div style={{fontFamily: HAND, fontWeight: 700, fontSize: 52, color: '#d6d7dc', marginTop: 40, opacity: p(f, T.slam + 14)}}>
-            policy, not the model, sets the agent's authority
+            blocked before it ever runs
           </div>
         </div>
       )}
