@@ -13,8 +13,8 @@
 </p>
 
 <p align="center">
-  <a href="docs/media/demo.mp4"><img src="docs/media/demo.gif" alt="Judge mode in the AgentAudit web app: a payroll agent is quarantined with a poisoned tool description, an exfiltrating script and a masked secret, each finding quoting its source; then a malicious skill that tells the agent to download a password-protected archive is quarantined." width="100%"></a>
-  <br><sub>Judge mode replays recorded real audits, so no key and no credits are needed. <a href="docs/media/demo.mp4">MP4</a> · <a href="https://himanshu-sangshetti.github.io/agentaudit/site/">Interactive write-up</a> · <a href="docs/REPORT.md">Technical report</a></sub>
+  <a href="https://himanshu-sangshetti.github.io/agentaudit/media/demo.mp4"><img src="docs/media/demo.gif" alt="Captioned walkthrough of the AgentAudit web app in judge mode. A payroll agent is quarantined: Decide gives the verdict, Fill the registry record, Guard flags a hidden BCC instruction, Inspect an exfiltrating script, Protect masks a token, Verify contradicts a README claim. A malicious skill is caught by Extract and Decide. A duplicate agent gets reuse existing from Compare and Rerank. Ends on the held-out results." width="100%"></a>
+  <br><sub>An 80-second walkthrough of judge mode, which replays recorded real audits (no key, no credits): a poisoned payroll agent, a malicious skill and a duplicate agent. <a href="https://himanshu-sangshetti.github.io/agentaudit/media/demo.mp4">Watch the MP4</a> · <a href="https://himanshu-sangshetti.github.io/agentaudit/site/">Interactive write-up</a> · <a href="docs/REPORT.md">Technical report</a></sub>
 </p>
 
 ## Findings
@@ -24,7 +24,7 @@
 3. **Most of the tool-poisoning gain is configuration, and we say so.** On the MCPTox held-out test (n=253), balanced accuracy goes from 84.9 to 97.6 and false alarms from 25.9% to 2.2%. Agent-specific `instructions` do most of it (→ 95.7) and a consensus rule the rest. Re-tuning the default threshold doesn't help (83.8).
 4. **The harness is faithful to Clocked's own.** It reproduces Clocked's published jev-benchmark result exactly: **507/868**. Guard returned identical outputs on 30/30 uncached re-runs.
 
-<p align="center"><img src="docs/figures/fig1_roc_external_skills.png" alt="ROC curves. Left: never-seen real tools plus published attacks; all detectors rank well but deployed operating points differ (as shipped at 23% FPR, AgentAudit at 5%, precision at 0%). Right: malicious-skill campaign; Guard AUROC 0.738, Inspect 0.792, supply-chain check 0.976, AgentAudit pipeline 0.984." width="100%"></p>
+<p align="center"><img src="docs/assets/supply_chain.svg" alt="Three panels. a: of 37 malicious skills on dev, Inspect caught 22 (code with base64 or pipe-to-shell) and missed 15; 14 of the misses contain a download link and carry the payload in prose. b: on the demo skill, Extract pulls the download URL and the install command verbatim with character offsets, then Decide answers whether the source is untrusted: yes, p = 0.994, finding AA005. c: held-out test, balanced accuracy with 95% CIs: Guard 55.2, Inspect 72.9, supply-chain check alone 88.2, AgentAudit pipeline 88.6." width="100%"></p>
 
 ## Quickstart
 
@@ -48,9 +48,9 @@ Exit code `1` means a quarantine verdict or a finding at or above `--fail-on` (d
 
 ## How it works
 
-<p align="center"><img src="docs/assets/pipeline.svg" alt="Pipeline: agent artifacts flow into Safety (Guard, Inspect, Protect), Documents (Extract+Decide, Fill, Decide) and Fact-check (Verify, Compare, Rerank), then a policy layer, producing a verdict, per-tool enablement, evidence and an escalation item." width="100%"></p>
+<p align="center"><img src="docs/assets/anatomy.svg" alt="One recorded audit of the payroll-helper demo agent. Left: the agent's tool description, system prompt, cleanup script, README, manifest and the approved-agent registry, with flagged spans shaded. Middle: each Clocked endpoint and its recorded output: Guard injection p = 0.990; Protect five spans masked; Inspect malicious p = 0.995; Extract systems and credentials; Fill write access, network reach, sensitivity, blast radius; Verify claim contradicted p = 0.929; Compare and Rerank no duplicate. Right: the deterministic policy layer, then Decide's verdict: quarantine 99.5%, risk 3.98 of 4, autonomy blocked." width="100%"></p>
 
-Collection is static: repos are shallow-cloned and read as text, and nothing is executed. Each endpoint has one job, and each one produces something you can see in the report.
+Collection is static: repos are shallow-cloned and read as text, and nothing is executed. Each endpoint has one job and leaves something visible in the report:
 
 | Group | Endpoint | Job | What it puts in the report |
 |---|---|---|---|
@@ -71,7 +71,9 @@ Three policy rules sit on top, because *policy, not the model, should set an age
 
 ## Results
 
-Every arm runs on the same rows. Metrics are balanced accuracy (BAcc) and AUROC, with 95% stratified bootstrap CIs and exact McNemar tests with Holm correction, following Clocked's own published method. Splits are disjoint by server, technique or repository. Each configuration was chosen on dev and frozen before its test run. The plan is in [`bench/PROTOCOL.md`](bench/PROTOCOL.md), and the commit history records the order.
+<p align="center"><img src="docs/assets/eval_design.svg" alt="Evaluation design. Process: build each suite from public data, design on the dev split, freeze the configuration in a git commit, run once on the held-out test, report from per-row records. Table of seven suites with their attack and benign sources, split key, dev and test sizes, and which arms were run on each: as shipped, tuned threshold, AgentAudit, precision mode, open-source detectors." width="100%"></p>
+
+Every arm runs on the same rows, and the method follows Clocked's own published one. The plan was written before the runs, in [`bench/PROTOCOL.md`](bench/PROTOCOL.md), and the commit history records the order: dev, freeze, test.
 
 | Suite (held out) | Clocked as shipped | Clocked + AgentAudit | Strongest other baseline |
 |---|---|---|---|
@@ -84,6 +86,8 @@ Every arm runs on the same rows. Metrics are balanced accuracy (BAcc) and AUROC,
 | **Harness check**, jev-benchmark, n=868 | 507/868 | — | matches Clocked's published 507/868 |
 
 <p align="center"><img src="docs/figures/fig4_forest.png" alt="Forest plot of balanced accuracy with 95% CIs for every arm on every suite: Clocked as shipped in orange, AgentAudit in blue, open-source detectors in aqua." width="80%"></p>
+
+<p align="center"><img src="docs/figures/fig1_roc_external_skills.png" alt="ROC curves. Left: never-seen real tools plus published attacks; every detector ranks well, but the deployed operating points differ (as shipped at 23% false alarms, AgentAudit at 5%, precision mode at 0%). Right: malicious-skill campaign; Guard AUROC 0.738, Inspect 0.792, supply-chain check 0.976, AgentAudit pipeline 0.984." width="100%"></p>
 
 **Read the table this way:**
 - **Free detectors come close on accuracy but not on false alarms.** A free, locally run DeBERTa with a dev-tuned threshold gets within 6–7 BAcc points on tool poisoning. It flags 15.8% of benign tools, against our 2.2%, and returns no categories, evidence spans or registry record.
