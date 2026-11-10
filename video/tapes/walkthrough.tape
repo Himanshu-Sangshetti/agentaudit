@@ -18,15 +18,9 @@ Enter
 Sleep 2s
 Show
 
-Type "# a skill from a marketplace. What will an audit cost?"
+Type "# a skill downloaded from a marketplace"
 Sleep 600ms
 Enter
-Type "agentaudit estimate examples/pdf-tools-skill.yaml"
-Sleep 500ms
-Enter
-Wait+Screen@30s /credits/
-Sleep 2.5s
-
 Type "agentaudit scan examples/pdf-tools-skill.yaml"
 Sleep 500ms
 Enter
