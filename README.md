@@ -61,7 +61,7 @@ Verdict: quarantine (99% confidence)   Autonomy: blocked   Risk of acting: 3.98 
  • MEDIUM · AA004 · Claim contradicted by capabilities — README
      ▌ It never sends data outside the company.
 
-15 Clocked calls · 37 credits · $0.0074
+15 Clocked calls
 ```
 
 Also available as JSON, SARIF (GitHub code scanning) and a REST response, with the registry record, per-tool decisions and the escalation item. Exit code 1 on quarantine.
@@ -87,7 +87,7 @@ Every setting was chosen on a development split and committed before a single ru
 
 <p align="center"><img src="docs/assets/supply_chain.svg" alt="Supply-chain check: of 37 malicious skills on dev, Inspect caught 22 and missed 15, 14 of which contain a download link; on the demo skill, Extract pulls the targets verbatim with offsets and Decide answers untrusted, p = 0.994; held-out test balanced accuracy: Guard 55.2, Inspect 72.9, supply-chain check alone 88.2, pipeline 88.6." width="100%"></p>
 
-**Cost and latency.** Median round trip per call is 349 ms for Guard and 463 ms for Inspect. A full agent audit is typically 20 to 90 credits (0.4 to 2 US cents). Guard returned identical outputs on 30/30 uncached re-runs.
+**Latency and determinism.** Median round trip per call is 349 ms for Guard and 463 ms for Inspect. Guard returned identical outputs on 30/30 uncached re-runs.
 
 <p align="center"><img src="docs/figures/fig4_forest.png" alt="Forest plot: balanced accuracy with 95% CIs for every arm on every suite." width="80%"></p>
 
@@ -116,7 +116,6 @@ The open-source baselines are the ProtectAI and deepset DeBERTa prompt-injection
 uv tool install git+https://github.com/Himanshu-Sangshetti/agentaudit
 agentaudit demo payroll-helper                               # recorded audit, no key
 export CLOCKED_API_KEY=...
-agentaudit estimate ./my-mcp-server                          # predicted credits, no calls
 agentaudit scan ./my-mcp-server                              # folder, repo URL, skill or manifest
 agentaudit scan agent.yaml --registry ./approved --precision
 agentaudit scan . --format sarif --out agentaudit.sarif
@@ -135,7 +134,7 @@ with Clocked(tag="publish-gate", budget=100) as c:
 report.verdict["verdict"]["choice"], report.tools, report.escalation
 ```
 
-REST: `uv run --extra web uvicorn agentaudit.server:app`, then `POST /api/audit` (60 credits per request cap, daily cap, per-IP rate limit). GitHub Action: `uses: Himanshu-Sangshetti/agentaudit/action@main` with `clocked-api-key`; findings go to code scanning and the job fails on quarantine.
+REST: `uv run --extra web uvicorn agentaudit.server:app`, then `POST /api/audit` (per-request and daily caps, per-IP rate limit). GitHub Action: `uses: Himanshu-Sangshetti/agentaudit/action@main` with `clocked-api-key`; findings go to code scanning and the job fails on quarantine.
 
 Data handling: only artifact text and summaries built from it are sent to Clocked over HTTPS. The key stays server-side. Responses are cached in `.cache/clocked/`.
 
@@ -143,13 +142,13 @@ Data handling: only artifact text and summaries built from it are sent to Clocke
 
 ```bash
 uv sync --all-extras --all-groups
-uv run python bench/report.py            # all tables from per-row records, 0 credits
-uv run python bench/figures.py           # all figures, 0 credits
-uv run python scripts/make_diagrams.py   # README diagrams, 0 credits
+uv run python bench/report.py            # all tables from per-row records, no API calls
+uv run python bench/figures.py           # all figures
+uv run python scripts/make_diagrams.py   # README diagrams
 uv run pytest -q                         # 35 offline tests
 ```
 
-Paid runs are `bench/suites/run_*.py`, each with a credit budget, logged to `bench/credit_ledger.jsonl`. The video source is in [`video/`](video) (Remotion).
+Runs that call Clocked are `bench/suites/run_*.py`; every call is logged to `bench/credit_ledger.jsonl`. The video source is in [`video/`](video) (Remotion).
 
 ## References
 

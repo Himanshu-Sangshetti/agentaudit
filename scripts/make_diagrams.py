@@ -120,7 +120,7 @@ def anatomy():
     s = Svg(W, 1180)
     title(s, "Anatomy of one audit", [
         "payroll-helper, a synthetic demo agent with four planted problems. Every arrow is a Clocked call and",
-        f"every number is the recorded response: {u['calls']} calls, {u['credits']:.0f} credits, all 9 endpoints."])
+        f"every number is the recorded response: {u['calls']} calls across all 9 endpoints."])
 
     ax, aw, ex, ew = 20, 440, 530, 430
     s.head(ax, 128, "1  What the agent ships", aw)
